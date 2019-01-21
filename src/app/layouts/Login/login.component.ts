@@ -1,12 +1,8 @@
-import {
-  Component,
-} from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'layout-login',
-  template: `
-    LOGIN LAYOUT
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export class LayoutLoginComponent {}

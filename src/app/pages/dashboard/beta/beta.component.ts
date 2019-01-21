@@ -1,14 +1,11 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-dashboard-alpha',
-  template: `<div>Dashboard Beta</div>`,
+  template: `
+    <div>Dashboard Beta</div>
+  `,
 })
 export class DashboardBetaComponent implements OnInit {
-  ngOnInit() {
-    console.log(222)
-  }
+  ngOnInit() {}
 }

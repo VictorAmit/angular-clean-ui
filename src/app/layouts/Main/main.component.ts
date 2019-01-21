@@ -1,12 +1,7 @@
-import {
-  Component,
-} from '@angular/core';
+import { Component } from '@angular/core'
 
 @Component({
   selector: 'layout-main',
-  template: `
-    MAIN LAYOUT
-    <router-outlet></router-outlet>
-  `,
+  templateUrl: './main.component.html',
 })
 export class LayoutMainComponent {}

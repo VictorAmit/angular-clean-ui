@@ -1,16 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { SharedModule } from './shared.module'
+
 // layputs
-import { LayoutLoginComponent } from './layouts/Login/login.component';
-import { LayoutMainComponent } from './layouts/Main/main.component';
+import { LayoutLoginComponent } from './layouts/Login/login.component'
+import { LayoutMainComponent } from './layouts/Main/main.component'
 
 // dashboard
-import { LoginComponent } from './pages/user/login/login.component';
-import { ForgotComponent } from './pages/user/forgot/forgot.component';
+import { LoginComponent } from './pages/user/login/login.component'
+import { ForgotComponent } from './pages/user/forgot/forgot.component'
 
 // dashboard
-import { DashboardAlphaComponent } from './pages/dashboard/alpha/alpha.component';
-import { DashboardBetaComponent } from './pages/dashboard/beta/beta.component';
+import { DashboardAlphaComponent } from './pages/dashboard/alpha/alpha.component'
+import { DashboardBetaComponent } from './pages/dashboard/beta/beta.component'
 
 const COMPONENTS = [
   LoginComponent,
@@ -29,29 +32,38 @@ const routes: Routes = [
     path: '',
     component: LayoutMainComponent,
     children: [
-      { path: 'dashboard/alpha', component: DashboardAlphaComponent },
-      { path: 'dashboard/beta', component: DashboardBetaComponent },
-    ]
+      {
+        path: 'dashboard/alpha',
+        component: DashboardAlphaComponent,
+        data: { title: 'Dashboard Alpha' },
+      },
+      {
+        path: 'dashboard/beta',
+        component: DashboardBetaComponent,
+        data: { title: 'Dashboard Beta' },
+      },
+    ],
   },
   {
     path: 'user',
     component: LayoutLoginComponent,
     children: [
-      { path: 'login', component: LoginComponent },
-      { path: 'forgot', component: ForgotComponent },
-    ]
+      { path: 'login', component: LoginComponent, data: { title: 'Login' } },
+      { path: 'forgot', component: ForgotComponent, data: { title: 'Restore Password' } },
+    ],
   },
-];
+]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      routes, {
-        useHash: true,
-      }
-    )
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes, {
+      useHash: true,
+    }),
   ],
   declarations: [...COMPONENTS],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class RoutesModule { }
+export class RoutesModule {}

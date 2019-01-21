@@ -1,0 +1,20 @@
+<nz-layout>
+  <nz-back-top></nz-back-top>
+  <nz-sider [nzWidth]="256" nzCollapsible [nzCollapsed]="false" [nzBreakpoint]="'lg'">
+    <cui-menu></cui-menu>
+  </nz-sider>
+  <nz-layout>
+      <nz-header>
+        <cui-topbar></cui-topbar>
+      </nz-header>
+      <nz-content style="height: 100%; position: relative;">
+        <div>Breadcrumbs</div>
+        <div class="utils__content">
+          <router-outlet></router-outlet>
+        </div>
+      </nz-content>
+      <nz-footer>
+        <cui-footer></cui-footer>
+      </nz-footer>
+  </nz-layout>
+</nz-layout>
