@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   submitForm(): void {
-    for (const i of this.validateForm.controls) {
+    for (const i of Object.keys(this.validateForm.controls)) {
       this.validateForm.controls[i].markAsDirty()
       this.validateForm.controls[i].updateValueAndValidity()
     }
