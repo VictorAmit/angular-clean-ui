@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "e2e": "ng e2e",
+    "lint-staged": "lint-staged",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,less}\"",
     "tslint": "tslint \"src/**/*.{ts,tsx}\"",
     "stylelint": "stylelint \"src/**/*.{scss,less}\""
