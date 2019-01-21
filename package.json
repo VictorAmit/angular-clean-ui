@@ -20,16 +20,18 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{ts,scss,less}": [
-      "prettier --write",
-      "git add"
-    ],
-    "src/**/*.{ts}": [
-      "tslint"
-    ],
-    "src/**/*.{scss,less}": [
-      "stylelint"
-    ],
+    "linters": {
+      "src/**/*.{ts,scss,less}": [
+        "prettier --write",
+        "git add"
+      ],
+      "src/**/*.{ts}": [
+        "tslint"
+      ],
+      "src/**/*.{scss,less}": [
+        "stylelint"
+      ]
+    },
     "ignore": [
       "src/assets/fonts/*",
       "src/assets/images/*"
