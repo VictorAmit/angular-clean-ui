@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from './shared.module'
+import { AuthService } from './services/auth.service'
+import { AuthGuard } from './components/LayoutComponents/Guard/auth.guard'
 
 // layputs
 import { LayoutLoginComponent } from './layouts/Login/login.component'
@@ -36,11 +38,13 @@ const routes: Routes = [
         path: 'dashboard/alpha',
         component: DashboardAlphaComponent,
         data: { title: 'Dashboard Alpha' },
+        canActivate: [AuthGuard],
       },
       {
         path: 'dashboard/beta',
         component: DashboardBetaComponent,
         data: { title: 'Dashboard Beta' },
+        canActivate: [AuthGuard],
       },
     ],
   },
@@ -63,6 +67,7 @@ const routes: Routes = [
       useHash: true,
     }),
   ],
+  providers: [AuthService],
   declarations: [...COMPONENTS],
   exports: [RouterModule],
 })

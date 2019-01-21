@@ -6,6 +6,7 @@ import { filter, map, mergeMap } from 'rxjs/operators'
 @Component({
   selector: 'app-root',
   template: `
+    <ng-progress></ng-progress>
     <router-outlet></router-outlet>
   `,
 })
@@ -37,5 +38,13 @@ export class AppComponent implements OnInit {
         mergeMap(route => route.data),
       )
       .subscribe(event => this.titleService.setTitle('Clean UI | ' + event['title']))
+
+    // this.router.events
+    //   .pipe(
+    //     filter(event => event instanceof NavigationEnd)
+    //   )
+    //   .subscribe(event => {
+
+    //   })
   }
 }

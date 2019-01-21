@@ -20,12 +20,12 @@
             <strong>Please log in</strong>
           </h4>
           <br />
-          <form nz-form [nzLayout]="'vertical'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+          <form nz-form [nzLayout]="'vertical'" [formGroup]="form" (ngSubmit)="submitForm()" role="form">
             <nz-form-item>
               <nz-form-label nzFor="email">Email</nz-form-label>
               <nz-form-control>
                 <input nz-input id="email" formControlName="email">
-                <nz-form-explain *ngIf="validateForm.get('email').dirty && validateForm.get('email').errors">
+                <nz-form-explain *ngIf="email.dirty && email.errors">
                   Please input your e-mail address
                 </nz-form-explain>
               </nz-form-control>
@@ -34,7 +34,7 @@
               <nz-form-label nzFor="password">Password</nz-form-label>
               <nz-form-control>
                 <input type="password" nz-input id="password" formControlName="password">
-                <nz-form-explain *ngIf="validateForm.get('password').dirty && validateForm.get('password').errors">
+                <nz-form-explain *ngIf="password.dirty && password.errors">
                   Please input your e-mail address
                 </nz-form-explain>
               </nz-form-control>
