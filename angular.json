@@ -29,11 +29,6 @@
                 "input": "src/assets/",
                 "ignore": ["**/styles/**/*"],
                 "output": "/assets/"
-              },
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
-                "output": "/assets/"
               }
             ],
             "styles": [
