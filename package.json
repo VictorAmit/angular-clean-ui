@@ -10,8 +10,8 @@
     "test": "ng test",
     "e2e": "ng e2e",
     "lint-staged": "lint-staged",
-    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss,less}\"",
-    "tslint": "tslint \"src/**/*.{ts,tsx}\"",
+    "prettier": "prettier --write \"src/**/*.{ts,scss,less}\"",
+    "tslint": "tslint \"src/**/*.{ts}\"",
     "stylelint": "stylelint \"src/**/*.{scss,less}\""
   },
   "husky": {
@@ -20,12 +20,12 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,scss,less}": [
+    "src/**/*.{ts,scss,less}": [
       "prettier --write",
       "git add"
     ],
-    "src/**/*.{js,jsx}": [
-      "eslint"
+    "src/**/*.{ts}": [
+      "tslint"
     ],
     "src/**/*.{scss,less}": [
       "stylelint"
