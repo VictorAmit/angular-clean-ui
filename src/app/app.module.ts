@@ -8,12 +8,12 @@ import { IconDefinition } from '@ant-design/icons-angular'
 import * as AllIcons from '@ant-design/icons-angular/icons'
 import { NgProgressModule } from '@ngx-progressbar/core'
 import { NgProgressRouterModule } from '@ngx-progressbar/router'
+import { NgProgressHttpModule } from '@ngx-progressbar/http'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AngularFirestoreModule } from '@angular/fire/firestore'
 
-import { RoutesModule } from './router.module'
-import { LayoutsModule } from './layouts/layouts.module'
+import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
 // config angular i18n
@@ -51,11 +51,11 @@ const firebaseConfig = {
       color: '#0190fe',
     }),
     NgProgressRouterModule,
+    NgProgressHttpModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    RoutesModule,
-    LayoutsModule,
+    AppRoutingModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, { provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent],

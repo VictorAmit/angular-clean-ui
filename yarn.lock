@@ -507,6 +507,13 @@
   dependencies:
     tslib "^1.9.0"
 
+"@ngx-progressbar/http@^5.3.1":
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@ngx-progressbar/http/-/http-5.3.1.tgz#8a4e49eff4bdc6f6e0f09922e8d8bc10f3a598cb"
+  integrity sha512-aX2Frk5zKboX68VHB/oxvr9GXVgCA+eIwPc/z3m3rhlNgB2H2dThAReQb1NGFZY3lBtcrXhesWR27VYSb7g2Cg==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngx-progressbar/router@^5.3.1":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@ngx-progressbar/router/-/router-5.3.1.tgz#c9d8454ca1f36966633a7471530d486d5986be8b"
