@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NgModule, LOCALE_ID } from '@angular/core'
+import { NgModule } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 import { IconDefinition } from '@ant-design/icons-angular'
 import * as AllIcons from '@ant-design/icons-angular/icons'
+import { NZ_ICONS } from 'ng-zorro-antd'
 import { NgProgressModule } from '@ngx-progressbar/core'
 import { NgProgressRouterModule } from '@ngx-progressbar/router'
 import { NgProgressHttpModule } from '@ngx-progressbar/http'
@@ -14,6 +15,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+
+// map antd icons
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition
+}
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 // firebase config
 const firebaseConfig = {
@@ -45,6 +52,7 @@ const firebaseConfig = {
     AngularFirestoreModule,
     AppRoutingModule,
   ],
+  providers: [{ provide: NZ_ICONS, useValue: icons }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
