@@ -10,9 +10,10 @@
     </nz-header>
     <nz-content style="height: 100%; position: relative;">
       <div>Breadcrumbs</div>
-      <button (click)="toggleTheme()">Toggle Theme</button>
-      <button (click)="toggleCollapsed()">Toggle Collapsed</button>
       <div class="utils__content">
+        <button (click)="toggleTheme()">Toggle Theme</button>
+        <button (click)="toggleCollapsed()">Toggle Collapsed</button>
+        <br />
         <router-outlet></router-outlet>
       </div>
     </nz-content>

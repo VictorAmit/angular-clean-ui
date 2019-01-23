@@ -47,11 +47,20 @@
         display: none;
       }
 
-      .ant-menu-submenu > .ant-menu-submenu-title .ant-menu-submenu-arrow {
-        display: block;
-        opacity: 0.2;
-        top: 48%;
-        right: 14px;
+      .ant-menu-submenu {
+        > .ant-menu-submenu-title {
+          &:hover {
+            .ant-menu-submenu-arrow {
+              opacity: 1;
+            }
+          }
+          .ant-menu-submenu-arrow {
+            display: block;
+            opacity: 0.45;
+            top: 48%;
+            right: 14px;
+          }
+        }
       }
 
       .icon {
@@ -59,8 +68,12 @@
       }
     }
 
-    .ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow {
-      right: 50px;
+    .ant-menu-submenu-inline {
+      > .ant-menu-submenu-title {
+        .ant-menu-submenu-arrow {
+          right: 50px;
+        }
+      }
     }
 
     .ant-menu-light {
@@ -87,6 +100,20 @@
 
       .ant-dropdown-menu-item-divider {
         opacity: 0.2;
+      }
+
+      .ant-menu-submenu-inline {
+        > .ant-menu-submenu-title {
+          &:hover {
+            .ant-menu-submenu-arrow {
+              opacity: 1;
+              &:before,
+              &:after {
+                background: $white !important;
+              }
+            }
+          }
+        }
       }
 
       .ant-menu-sub {
