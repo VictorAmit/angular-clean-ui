@@ -7,6 +7,7 @@ import { AppPreloader } from 'src/app/app-routing-loader'
 
 // layouts & notfound
 import { LayoutLoginComponent } from 'src/app/layouts/Login/login.component'
+import { LayoutMainComponent } from 'src/app/layouts/Main/main.component'
 import { NotFoundComponent } from 'src/app/pages/404.component'
 
 // user
@@ -30,20 +31,26 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'dashboard',
-    loadChildren: 'src/app/pages/dashboard/dashboard.module#DashboardModule',
-  },
-  {
-    path: 'antd',
-    loadChildren: 'src/app/pages/antd/antd.module#AntdModule',
-  },
-  {
-    path: 'apps',
-    loadChildren: 'src/app/pages/apps/apps.module#AppsModule',
-  },
-  {
-    path: 'blog',
-    loadChildren: 'src/app/pages/blog/blog.module#BlogModule',
+    path: '',
+    component: LayoutMainComponent,
+    children: [
+      {
+        path: 'dashboard',
+        loadChildren: 'src/app/pages/dashboard/dashboard.module#DashboardModule',
+      },
+      {
+        path: 'antd',
+        loadChildren: 'src/app/pages/antd/antd.module#AntdModule',
+      },
+      {
+        path: 'apps',
+        loadChildren: 'src/app/pages/apps/apps.module#AppsModule',
+      },
+      {
+        path: 'blog',
+        loadChildren: 'src/app/pages/blog/blog.module#BlogModule',
+      },
+    ],
   },
   { path: '**', component: NotFoundComponent },
 ]
