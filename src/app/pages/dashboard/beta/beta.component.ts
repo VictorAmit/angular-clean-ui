@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-dashboard-alpha',
-  template: `
-    <div>Dashboard Beta</div>
-  `,
+  templateUrl: './beta.component.html',
 })
 export class DashboardBetaComponent implements OnInit {
   ngOnInit() {}

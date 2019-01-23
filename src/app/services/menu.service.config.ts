@@ -45,7 +45,7 @@ export const getLeftMenuData: any[] = [
     title: 'AntDesign Components',
     key: 'antComponents',
     icon: 'icmn icmn-menu',
-    url: '/antd',
+    url: '/antd/index',
   },
   {
     divider: true,
@@ -378,7 +378,7 @@ export const getTopMenuData: any[] = [
     title: 'AntDesign Components',
     key: 'antComponents',
     icon: 'icmn icmn-menu',
-    url: '/antd',
+    url: '/antd/index',
   },
   {
     title: 'Apps',
