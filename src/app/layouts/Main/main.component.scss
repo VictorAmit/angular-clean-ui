@@ -1,0 +1,32 @@
+@import 'src/assets/styles/mixins.scss';
+
+.sider {
+  border-right: 1px solid $gray-border;
+  box-sizing: content-box;
+  transition: all 0.3s !important;
+  ::ng-deep {
+    .ant-layout-sider-children {
+      position: fixed;
+      height: 100%;
+      width: 256px;
+      transition: width 0.3s;
+    }
+  }
+  &.ant-layout-sider-collapsed {
+    ::ng-deep {
+      .ant-layout-sider-children {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.light {
+  background: $white;
+  ::ng-deep {
+    .ant-layout-sider-trigger {
+      color: inherit;
+      background: $gray-border !important;
+    }
+  }
+}

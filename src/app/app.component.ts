@@ -38,13 +38,5 @@ export class AppComponent implements OnInit {
         mergeMap(route => route.data),
       )
       .subscribe(event => this.titleService.setTitle('Clean UI | ' + event['title']))
-
-    // this.router.events
-    //   .pipe(
-    //     filter(event => event instanceof NavigationEnd)
-    //   )
-    //   .subscribe(event => {
-
-    //   })
   }
 }

@@ -11,18 +11,25 @@ import { NgProgressRouterModule } from '@ngx-progressbar/router'
 import { NgProgressHttpModule } from '@ngx-progressbar/http'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireAuthModule } from '@angular/fire/auth'
-import { AngularFirestoreModule } from '@angular/fire/firestore'
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { StoreModule } from '@ngrx/store'
+import { StoreRouterConnectingModule } from '@ngrx/router-store'
+import { reducers, metaReducers } from './store/reducers'
 
-// map antd icons
+/**
+ * AntDesign Icon
+ */
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition
 }
 const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
-// firebase config
+/**
+ * Firebase Config
+ */
 const firebaseConfig = {
   apiKey: 'AIzaSyAE5G0RI2LwzwTBizhJbnRKIKbiXQIA1dY',
   authDomain: 'cleanui-72a42.firebaseapp.com',
@@ -40,6 +47,15 @@ const firebaseConfig = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    /**
+     * NgRx Store
+     */
+    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreRouterConnectingModule.forRoot(),
+
+    /**
+     * Nprogress Modules
+     */
     NgProgressModule.withConfig({
       thick: true,
       spinner: false,
@@ -47,12 +63,23 @@ const firebaseConfig = {
     }),
     NgProgressRouterModule,
     NgProgressHttpModule,
+
+    /**
+     * Firebase Modules
+     */
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+
+    /**
+     * Routing Module
+     */
     AppRoutingModule,
   ],
-  providers: [{ provide: NZ_ICONS, useValue: icons }],
+  providers: [
+    { provide: NZ_ICONS, useValue: icons },
+    { provide: FirestoreSettingsToken, useValue: {} },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
