@@ -13,7 +13,7 @@ import { Component } from '@angular/core'
         max-width: 560px;
         background-color: #fff;
         padding: 80px 30px;
-        margin: 200px auto 100px;
+        margin: 100px auto;
         border-radius: 10px;
         flex: 1;
       }

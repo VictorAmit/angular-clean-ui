@@ -162,17 +162,17 @@ export const getLeftMenuData: any[] = [
       },
       {
         title: 'Products Catalog',
-        key: 'productsCatalog',
+        key: 'productCatalog',
         url: '/ecommerce/products-catalog',
       },
       {
-        title: 'Products Details',
-        key: 'productsDetails',
+        title: 'Product Details',
+        key: 'productDetails',
         url: '/ecommerce/product-details',
       },
       {
-        title: 'Products Edit',
-        key: 'productsEdit',
+        title: 'Product Edit',
+        key: 'productEdit',
         url: '/ecommerce/product-edit',
       },
       {
@@ -416,17 +416,17 @@ export const getTopMenuData: any[] = [
           },
           {
             title: 'Products Catalog',
-            key: 'productsCatalog',
+            key: 'productCatalog',
             url: '/ecommerce/products-catalog',
           },
           {
-            title: 'Products Details',
-            key: 'productsDetails',
+            title: 'Product Details',
+            key: 'productDetails',
             url: '/ecommerce/product-details',
           },
           {
-            title: 'Products Edit',
-            key: 'productsEdit',
+            title: 'Product Edit',
+            key: 'productEdit',
             url: '/ecommerce/product-edit',
           },
           {

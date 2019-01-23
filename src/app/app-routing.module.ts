@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 import { AppPreloader } from 'src/app/app-routing-loader'
+import { AuthGuard } from 'src/app/components/LayoutComponents/Guard/auth.guard'
 
 // layouts & notfound
 import { LayoutLoginComponent } from 'src/app/layouts/Login/login.component'
@@ -50,9 +51,37 @@ const routes: Routes = [
         path: 'blog',
         loadChildren: 'src/app/pages/blog/blog.module#BlogModule',
       },
+      {
+        path: 'youtube',
+        loadChildren: 'src/app/pages/youtube/youtube.module#YoutubeModule',
+      },
+      {
+        path: 'ecommerce',
+        loadChildren: 'src/app/pages/ecommerce/ecommerce.module#EcommerceModule',
+      },
+      {
+        path: 'pages',
+        loadChildren: 'src/app/pages/pages/pages.module#PagesModule',
+      },
+      {
+        path: 'github',
+        loadChildren: 'src/app/pages/github/github.module#GithubModule',
+      },
+      {
+        path: 'icons',
+        loadChildren: 'src/app/pages/icons/icons.module#IconsModule',
+      },
+      {
+        path: 'charts',
+        loadChildren: 'src/app/pages/charts/charts.module#ChartsModule',
+      },
+      {
+        path: 'layout',
+        loadChildren: 'src/app/pages/layout/layout.module#LayoutModule',
+      },
+      { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] },
     ],
   },
-  { path: '**', component: NotFoundComponent },
 ]
 
 @NgModule({

@@ -20,7 +20,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { reducers, metaReducers } from './store/reducers'
 
 /**
- * AntDesign Icon
+ * AntDesign Icons
  */
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition
