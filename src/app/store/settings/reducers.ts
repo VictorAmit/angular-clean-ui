@@ -10,6 +10,7 @@ const STORED_SETTINGS = (storedSettings: any) => {
 }
 
 export const initialState: any = {
+  // default settings, if not exist in localStorage
   ...STORED_SETTINGS({
     isMobileView: false,
     isMobileMenuOpen: false,
