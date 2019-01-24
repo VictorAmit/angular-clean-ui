@@ -1,1 +1,52 @@
-[P]
+<nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" (nzVisibleChange)="badgeCountIncrease($event)">
+  <a nz-dropdown class="dropdown">
+    <nz-badge [nzCount]="badgeCount">
+      <nz-avatar nzIcon="user" [nzShape]="'square'" [nzSize]="'large'" class="avatar"></nz-avatar>
+    </nz-badge>
+  </a>
+  <ul nz-menu>
+    <li nz-menu-item>
+      <strong>Hello, Username</strong>
+      <div>
+        <strong class="mr-1">
+          Billing plan:
+        </strong>
+        Professional
+      </div>
+      <div>
+        <strong>
+          Role:
+        </strong>
+        Admin
+      </div>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item>
+      <div>
+        <strong>
+          Email:
+        </strong>
+        admin@mediatec.org
+        <br />
+        <strong>
+          Phone:
+        </strong>
+        -
+      </div>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item>
+      <a href="javascript: void(0);">
+        <i class="menuIcon icmn-user"></i>
+        Edit Profile
+      </a>
+    </li>
+    <li nz-menu-divider></li>
+    <li nz-menu-item >
+      <a href="javascript: void(0);" (click)="logout()">
+        <i class="menuIcon icmn-exit"></i>
+        Logout
+      </a>
+    </li>
+  </ul>
+</nz-dropdown>

@@ -6,6 +6,11 @@
 
 .ant-dropdown {
   animation-duration: 0s !important;
+
+  .ant-menu-item-group-title {
+    padding: rem(8) rem(20);
+    color: $text;
+  }
 }
 
 .ant-dropdown-menu {
