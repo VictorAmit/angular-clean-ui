@@ -16,7 +16,9 @@ export class TopbarLiveSearchComponent {
 
   setVisible() {
     this.showSearch = true
-    this.liveSearchInput.nativeElement.focus()
+    setTimeout(() => {
+      this.liveSearchInput.nativeElement.focus()
+    }, 100)
   }
 
   setHidden() {

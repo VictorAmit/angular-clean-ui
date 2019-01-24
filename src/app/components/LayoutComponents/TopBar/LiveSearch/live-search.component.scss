@@ -7,19 +7,20 @@
   width: 100%;
   height: 100%;
   background-color: $white;
+  z-index: 100;
   @include transition-slow;
 }
 
 .livesearchHidden {
   @extend %livesearch;
   opacity: 0;
-  z-index: -100;
+  visibility: hidden;
 }
 
 .livesearchShowed {
   @extend %livesearch;
   opacity: 1;
-  z-index: 100;
+  visibility: visible;
 }
 
 .extInput {
