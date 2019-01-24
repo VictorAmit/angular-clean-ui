@@ -12,24 +12,31 @@ import * as Reducers from 'src/app/store/reducers'
 export class LayoutMainComponent {
   settings$: Observable<any>
   isLightTheme: boolean
-  isCollapsed: boolean
+  isMenuCollapsed: boolean
+  isBorderless: boolean
+  isSquaredBorders: boolean
+  isFixedWidth: boolean
+  isMenuShadow: boolean
+
+  coldLoad: boolean = true
 
   constructor(private store: Store<any>) {
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
-      this.isCollapsed = state.isCollapsed
+      this.isMenuCollapsed = state.isMenuCollapsed
+      this.isBorderless = state.isBorderless
+      this.isSquaredBorders = state.isSquaredBorders
+      this.isFixedWidth = state.isFixedWidth
+      this.isMenuShadow = state.isMenuShadow
     })
   }
 
   onCollapse(value: any) {
-    if (value !== this.isCollapsed) {
-      console.log('triggered') // TODO: detection change wont be triggered
-      this.store.dispatch(
-        new SettingsActions.SetStateAction({
-          isCollapsed: value,
-        }),
-      )
-    }
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        isMenuCollapsed: value,
+      }),
+    )
   }
 
   toggleTheme() {
@@ -43,7 +50,7 @@ export class LayoutMainComponent {
   toggleCollapsed() {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
-        isCollapsed: !this.isCollapsed,
+        isMenuCollapsed: !this.isMenuCollapsed,
       }),
     )
   }

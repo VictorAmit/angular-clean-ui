@@ -12,7 +12,7 @@ import * as Reducers from 'src/app/store/reducers'
 export class MenuComponent implements OnInit {
   menuData: any[]
   isLightTheme: boolean
-  isCollapsed: boolean
+  isMenuCollapsed: boolean
   isSettingsOpen: boolean
 
   constructor(private menuService: MenuService, private store: Store<any>) {}
@@ -21,7 +21,7 @@ export class MenuComponent implements OnInit {
     this.menuService.getLeftMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
-      this.isCollapsed = state.isCollapsed
+      this.isMenuCollapsed = state.isMenuCollapsed
       this.isSettingsOpen = state.isSettingsOpen
     })
   }
@@ -35,11 +35,11 @@ export class MenuComponent implements OnInit {
   }
 
   onCollapse(value: any) {
-    if (value !== this.isCollapsed) {
+    if (value !== this.isMenuCollapsed) {
       console.log('triggered') // TODO: chagne detection wont triggers
       this.store.dispatch(
         new SettingsActions.SetStateAction({
-          isCollapsed: value,
+          isMenuCollapsed: value,
         }),
       )
     }

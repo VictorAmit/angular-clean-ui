@@ -1,12 +1,12 @@
 <div class="logo">
   <div class="logoContainer">
-    <img *ngIf="!isCollapsed" src="assets/images/logo-inverse.png" alt="" />
-    <img *ngIf="isCollapsed" src="assets/images/logo-inverse-mobile.png" alt="" />
+    <img *ngIf="!isMenuCollapsed" src="assets/images/logo-inverse.png" alt="" />
+    <img *ngIf="isMenuCollapsed" src="assets/images/logo-inverse-mobile.png" alt="" />
   </div>
 </div>
 <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
   <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'"
-    [nzInlineCollapsed]="isCollapsed">
+    [nzInlineCollapsed]="isMenuCollapsed">
     <ng-container *ngFor="let item of menuData">
       <ng-container *ngIf="item.key === 'settings'">
         <li nz-menu-item (click)="toggleSettings()">

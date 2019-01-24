@@ -1,6 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { select, Store } from '@ngrx/store'
-import { Observable } from 'rxjs'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
@@ -32,12 +31,10 @@ export class SettingsComponent {
     })
   }
 
-  settingChange(event: boolean, setting: string) {
-    console.log(123)
-
+  settingChange(value: boolean, setting: string) {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
-        [setting]: event,
+        [setting]: value,
       }),
     )
   }

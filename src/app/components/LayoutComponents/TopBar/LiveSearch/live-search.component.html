@@ -1,6 +1,11 @@
 <div class="d-inline-block mr-4">
-  <input nz-input class="extInput" (focus)="setVisible()" placeholder="Type to search..." style="width: 200px" />
-  <div [ngClass]="showSearch ? 'livesearchShowed' : 'livesearchHidden'">
+  <nz-input-group [nzPrefix]="prefixIconSearch">
+    <input nz-input class="extInput" (focus)="setVisible()" placeholder="Type to search..." style="width: 200px" />
+  </nz-input-group>
+  <ng-template #prefixIconSearch>
+    <i nz-icon type="search"></i>
+  </ng-template>
+  <div class="livesearch" [ngClass]="{'livesearchShowed': showSearch}">
     <button class="close" type="button" (click)="setHidden()">
       <span class="utils__visibilityHidden">Close</span>
       <i class="icmn-cross"></i>
@@ -18,69 +23,59 @@
           <li class="option">Press enter to search</li>
         </ul>
         <div class="results">
-            <div class="resultsTitle">
-              <span>Pages Search Results</span>
-            </div>
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="resultContent">
-                  <div
-                    class="resultThumb"
-                    style="background-image: url(assets/images/photos/1.jpeg)"
-                  >
-                    #1
-                  </div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
+          <div class="resultsTitle">
+            <span>Pages Search Results</span>
+          </div>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="resultContent">
+                <div class="resultThumb" style="background-image: url(assets/images/photos/1.jpeg)">
+                  #1
                 </div>
-                <div class="resultContent">
-                  <div
-                    class="resultThumb"
-                    style="background-image:url(assets/images/photos/2.jpeg)"
-                  >
-                    KF
-                  </div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
-                </div>
-                <div class="resultContent">
-                  <div
-                    class="resultThumb"
-                    style="background-image:url(assets/images/photos/3.jpeg)"
-                  >
-                    GF
-                  </div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <div class="resultContent">
-                  <div class="resultThumb">01</div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
+              <div class="resultContent">
+                <div class="resultThumb" style="background-image:url(assets/images/photos/2.jpeg)">
+                  KF
                 </div>
-                <div class="resultContent">
-                  <div class="resultThumb">02</div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
                 </div>
-                <div class="resultContent">
-                  <div class="resultThumb">03</div>
-                  <div class="result">
-                    <div class="resultText">Text from input field must be here</div>
-                    <div class="resultSource">In some partition</div>
-                  </div>
+              </div>
+              <div class="resultContent">
+                <div class="resultThumb" style="background-image:url(assets/images/photos/3.jpeg)">
+                  GF
+                </div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="resultContent">
+                <div class="resultThumb">01</div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
+                </div>
+              </div>
+              <div class="resultContent">
+                <div class="resultThumb">02</div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
+                </div>
+              </div>
+              <div class="resultContent">
+                <div class="resultThumb">03</div>
+                <div class="result">
+                  <div class="resultText">Text from input field must be here</div>
+                  <div class="resultSource">In some partition</div>
                 </div>
               </div>
             </div>
@@ -89,3 +84,4 @@
       </div>
     </div>
   </div>
+</div>

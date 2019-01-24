@@ -1,6 +1,6 @@
 @import 'src/assets/styles/mixins.scss';
 
-%livesearch {
+.livesearch {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,17 +8,12 @@
   height: 100%;
   background-color: $white;
   z-index: 100;
+  opacity: 0;
+  visibility: hidden;
   @include transition-slow;
 }
 
-.livesearchHidden {
-  @extend %livesearch;
-  opacity: 0;
-  visibility: hidden;
-}
-
 .livesearchShowed {
-  @extend %livesearch;
   opacity: 1;
   visibility: visible;
 }

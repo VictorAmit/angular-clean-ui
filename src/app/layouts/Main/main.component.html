@@ -1,7 +1,12 @@
-<nz-layout>
+<nz-layout [ngClass]="{
+    'settings__borderLess': isBorderless,
+    'settings__squaredBorders': isSquaredBorders,
+    'settings__fixedWidth': isFixedWidth,
+    'settings__menuShadow': isMenuShadow
+  }">
   <nz-back-top></nz-back-top>
-  <nz-sider [ngClass]="isLightTheme ? 'sider light' : 'sider'" nzCollapsible="true" [nzBreakpoint]="'lg'" [nzWidth]="256"
-    [nzCollapsed]="isCollapsed" (nzCollapsedChange)="onCollapse($event)">
+  <nz-sider [ngClass]="isLightTheme ? 'sider light' : 'sider'" nzCollapsible [nzWidth]="256" [(nzCollapsed)]="isMenuCollapsed"
+    (nzCollapsedChange)="onCollapse($event)">
     <cui-menu></cui-menu>
   </nz-sider>
   <cui-settings></cui-settings>

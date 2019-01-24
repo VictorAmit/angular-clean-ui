@@ -193,6 +193,14 @@
 //   height: calc(100vh - 67px) !important;
 // }
 
+::ng-deep {
+  @media (min-width: 1435px) {
+    .settings__fixedWidth .sider.ant-layout-sider {
+      border-left: 1px solid $gray-border;
+    }
+  }
+}
+
 .handle {
   position: absolute;
   left: -100px;
