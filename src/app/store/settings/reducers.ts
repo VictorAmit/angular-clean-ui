@@ -1,6 +1,6 @@
 import * as actions from './actions'
 
-const STORED_SETTINGS = (storedSettings: any) => {
+const STORED_SETTINGS = (storedSettings: object) => {
   const settings = {}
   Object.keys(storedSettings).forEach(key => {
     const item = localStorage.getItem(`app.settings.${key}`)
@@ -9,7 +9,7 @@ const STORED_SETTINGS = (storedSettings: any) => {
   return settings
 }
 
-export const initialState: any = {
+export const initialState: object = {
   // default settings, if not exist in localStorage
   ...STORED_SETTINGS({
     isMobileView: false,
@@ -25,7 +25,7 @@ export const initialState: any = {
   }),
 }
 
-export function reducer(state = initialState, action: actions.Actions): any {
+export function reducer(state = initialState, action: actions.Actions): object {
   switch (action.type) {
     case actions.SET_STATE:
       return { ...state, ...action.payload }

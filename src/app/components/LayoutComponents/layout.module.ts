@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 
 import { TopbarComponent } from './Topbar/topbar.component'
@@ -11,6 +12,7 @@ import { TopbarProjectManagementComponent } from './Topbar/ProjectManagement/pro
 import { MenuComponent } from './Menu/menu.component'
 import { FooterComponent } from './Footer/footer.component'
 import { BreadcrumbsComponent } from './Breadcrumbs/breadcrumbs.component'
+import { SettingsComponent } from './Settings/settings.component'
 
 const COMPONENTS = [
   TopbarComponent,
@@ -23,10 +25,11 @@ const COMPONENTS = [
   MenuComponent,
   FooterComponent,
   BreadcrumbsComponent,
+  SettingsComponent,
 ]
 
 @NgModule({
-  imports: [SharedModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
 })

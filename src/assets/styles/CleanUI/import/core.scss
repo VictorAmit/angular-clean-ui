@@ -16,6 +16,7 @@ body {
   color: $text-darken-more;
   background: $gray-lighten-more;
   line-height: 1.7;
+  padding: 0 !important;
   @media (max-width: $sm-max-width) {
     font-size: 12px;
   }

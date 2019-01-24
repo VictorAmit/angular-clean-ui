@@ -11,8 +11,9 @@ import * as Reducers from 'src/app/store/reducers'
 })
 export class MenuComponent implements OnInit {
   menuData: any[]
-  isLightTheme: any
-  isCollapsed: any
+  isLightTheme: boolean
+  isCollapsed: boolean
+  isSettingsOpen: boolean
 
   constructor(private menuService: MenuService, private store: Store<any>) {}
 
@@ -21,7 +22,16 @@ export class MenuComponent implements OnInit {
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
       this.isCollapsed = state.isCollapsed
+      this.isSettingsOpen = state.isSettingsOpen
     })
+  }
+
+  toggleSettings() {
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        isSettingsOpen: !this.isSettingsOpen,
+      }),
+    )
   }
 
   onCollapse(value: any) {

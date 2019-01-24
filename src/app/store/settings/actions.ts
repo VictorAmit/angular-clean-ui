@@ -5,12 +5,12 @@ export const CHANGE_SETTING = '[Settings] Change Setting'
 
 export class SetStateAction implements Action {
   readonly type = SET_STATE
-  constructor(public payload: any) {}
+  constructor(public payload: object) {}
 }
 
 export class ChangeSettingAction implements Action {
   readonly type = CHANGE_SETTING
-  constructor(public payload: any) {}
+  constructor(public payload: object) {}
 }
 
 export type Actions = SetStateAction | ChangeSettingAction
