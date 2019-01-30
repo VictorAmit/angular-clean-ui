@@ -5,14 +5,15 @@ import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
 @Component({
-  selector: 'cui-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: 'cui-menu-left',
+  templateUrl: './menu-left.component.html',
+  styleUrls: ['./menu-left.component.scss'],
 })
-export class MenuComponent implements OnInit {
+export class MenuLeftComponent implements OnInit {
   @Input() isMenuCollapsed: boolean = false
   isLightTheme: boolean
   isSettingsOpen: boolean
+  isMobileView: boolean
   menuData: any[]
 
   constructor(private menuService: MenuService, private store: Store<any>) {}
@@ -21,7 +22,7 @@ export class MenuComponent implements OnInit {
     this.menuService.getLeftMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
-      this.isSettingsOpen = state.isSettingsOpen
+      this.isMobileView = state.isMobileView
     })
   }
 

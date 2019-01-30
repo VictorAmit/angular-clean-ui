@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
-import { Router, NavigationEnd, ActivatedRoute, ActivationEnd } from '@angular/router'
+import qs from 'qs'
+import { Router, NavigationEnd, ActivatedRoute, NavigationStart } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { filter, map, mergeMap } from 'rxjs/operators'
 import { Store } from '@ngrx/store'
@@ -45,18 +46,21 @@ export class AppComponent implements OnInit {
 
     // listen url query params and set them to ngrx store
     this.router.events
-      .pipe(filter(event => event instanceof ActivationEnd))
-      .subscribe((event: ActivationEnd) => {
-        const queryParams = { ...event.snapshot.queryParams }
-        const keys = Object.keys(queryParams)
-        if (keys.length) {
-          keys.forEach(key => {
-            this.store.dispatch(
-              new SettingsActions.SetStateAction({
-                [key]: queryParams[key] === 'true',
-              }),
-            )
-          })
+      .pipe(filter(event => event instanceof NavigationStart))
+      .subscribe((event: NavigationStart) => {
+        const queryString = event.url.match(/\?(.*)/)
+        if (queryString) {
+          const queryParams = qs.parse(queryString[1])
+          const keys = Object.keys(queryParams)
+          if (keys.length) {
+            keys.forEach(key => {
+              this.store.dispatch(
+                new SettingsActions.SetStateAction({
+                  [key]: queryParams[key] === 'true',
+                }),
+              )
+            })
+          }
         }
       })
 

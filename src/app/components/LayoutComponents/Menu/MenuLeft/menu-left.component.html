@@ -1,0 +1,50 @@
+<div class="logo">
+  <div class="logoContainer">
+    <img *ngIf="!isMenuCollapsed" src="assets/images/logo-inverse.png" alt="" />
+    <img *ngIf="isMenuCollapsed" src="assets/images/logo-inverse-mobile.png" alt="" />
+  </div>
+</div>
+<perfect-scrollbar [ngClass]="isMobileView ? 'scrollbarMobile' : 'scrollbarDesktop'">
+  <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
+    <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isMenuCollapsed">
+      <ng-container *ngFor="let item of menuData">
+        <ng-container *ngIf="item.key === 'settings'">
+          <li nz-menu-item (click)="toggleSettings()">
+            <span>
+              <span class="title">{{item.title}}</span>
+              <i [ngClass]="[item.icon, 'icon']"></i>
+            </span>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="item.url && item.target">
+          <li nz-menu-item>
+            <a href={{item.url}} target={{item.target}}>
+              <span class="title">{{item.title}}</span>
+              <i [ngClass]="[item.icon, 'icon']"></i>
+            </a>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="item.url && !item.target">
+          <li nz-menu-item routerLink={{item.url}}>
+            <span>
+              <span class="title">{{item.title}}</span>
+              <i [ngClass]="[item.icon, 'icon']"></i>
+            </span>
+          </li>
+        </ng-container>
+        <ng-container *ngIf="item.children">
+          <li nz-submenu>
+            <span title>
+              <span class="title">{{item.title}}</span>
+              <i [ngClass]="[item.icon, 'icon']"></i>
+            </span>
+            <!-- submenu items here -->
+          </li>
+        </ng-container>
+        <ng-container *ngIf="item.divider">
+          <li nz-menu-divider></li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</perfect-scrollbar>
