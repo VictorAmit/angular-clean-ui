@@ -1,0 +1,67 @@
+{
+  "taskTableData": [
+    {
+      "name": "Mark Stevenson",
+      "username": "@mdo",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "name": "Jacob Hoffman",
+      "username": "@fat",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "name": "Larry Page",
+      "username": "@twitter",
+      "checked": false,
+      "disabled": false
+    },
+    {
+      "name": "Mark Stevenson",
+      "username": "@mdo",
+      "checked": false,
+      "disabled": false
+    }
+  ],
+  "rangeSlider": {
+    "first": 34,
+    "second": [
+      18,
+      67
+    ]
+  },
+  "weekChartData": {
+    "labels": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ],
+    "series": [
+      [
+        5,
+        2,
+        4,
+        2,
+        5
+      ],
+      [
+        3,
+        1,
+        5,
+        4,
+        2
+      ],
+      [
+        0,
+        4,
+        3,
+        5,
+        1
+      ]
+    ]
+  }
+}

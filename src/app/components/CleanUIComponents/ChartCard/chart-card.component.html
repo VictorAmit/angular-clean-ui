@@ -1,13 +1,13 @@
-<div class="cui-chart-card card">
- <div class="cui-chart-card-graph">
-   <x-chartist
-     [data]="chartData"
-     [type]="chartOptions.type"
-     [options]="chartOptions.options"
-     [responsiveOptions]="chartOptions.responsiveOptions"
-     [events]="chartOptions.events">
-   </x-chartist>
- </div>
-  <div class="cui-chart-card-amount">{{amount}}</div>
-  <div class="cui-chart-card-title">{{title}}</div>
+<div class="chart-card card">
+  <div class="chart-card-graph">
+    <x-chartist
+      [data]="chartData"
+      [type]="chartOptions.type"
+      [options]="chartOptions.options"
+      [responsiveOptions]="chartOptions.responsiveOptions"
+      [events]="chartOptions.events">
+    </x-chartist>
+  </div>
+  <div class="chart-card-amount">{{amount}}</div>
+  <div class="chart-card-title">{{title}}</div>
 </div>

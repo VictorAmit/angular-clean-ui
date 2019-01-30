@@ -14,8 +14,10 @@ export class DashboardAlphaComponent implements OnInit {
   paymentCardsData = data.paymentCardsData
   paymentTransactionsData = data.paymentTransactionsData
   pricingItemData = data.pricingItemData
-  progressCardsData = data.progressCardsData
   referalsData = data.referalsData
+  displayReferalsData = [...this.referalsData]
+  sortNameReferals = null
+  sortValueReferals = null
   constructor() {
     this.chartCardGraphOptions = {
       options: {
@@ -51,4 +53,26 @@ export class DashboardAlphaComponent implements OnInit {
     }
   }
   ngOnInit() {}
+
+  sort(sort: { key: string; value: string }): void {
+    this.sortNameReferals = sort.key
+    this.sortValueReferals = sort.value
+    this.search()
+  }
+
+  search(): void {
+    if (this.sortNameReferals && this.sortValueReferals) {
+      this.displayReferalsData = this.referalsData.sort((a, b) =>
+        this.sortValueReferals === 'ascend'
+          ? a[this.sortNameReferals] > b[this.sortNameReferals]
+            ? 1
+            : -1
+          : b[this.sortNameReferals] > a[this.sortNameReferals]
+          ? 1
+          : -1,
+      )
+    } else {
+      this.displayReferalsData = this.referalsData
+    }
+  }
 }
