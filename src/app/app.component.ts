@@ -59,5 +59,45 @@ export class AppComponent implements OnInit {
           })
         }
       })
+
+    // detecting & set mobile/tablet/desktop viewports
+    const setViewPort = (isMobileView: any = false, isTabletView: any = false) => {
+      this.store.dispatch(
+        new SettingsActions.SetStateAction({
+          isMobileView,
+        }),
+      )
+      this.store.dispatch(
+        new SettingsActions.SetStateAction({
+          isTabletView,
+        }),
+      )
+    }
+    const detectViewPort = (load = false) => {
+      const _isMobileView = window.innerWidth < 768
+      const _isTabletView = window.innerWidth < 992
+      const _isDesktopView = !_isMobileView && !_isTabletView
+      const isMobileView = JSON.parse(window.localStorage.getItem('app.settings.isMobileView'))
+      const isTabletView = JSON.parse(window.localStorage.getItem('app.settings.isTabletView'))
+      const isDesktopView = !isMobileView && !isTabletView
+      if (_isDesktopView && (_isDesktopView !== isDesktopView || load)) {
+        setViewPort(false, false)
+      }
+      if (_isTabletView && !_isMobileView && (_isTabletView !== isTabletView || load)) {
+        setViewPort(false, true)
+        this.store.dispatch(
+          new SettingsActions.SetStateAction({
+            isMenuCollapsed: true,
+          }),
+        )
+      }
+      if (_isMobileView && (_isMobileView !== isMobileView || load)) {
+        setViewPort(true, false)
+      }
+    }
+    detectViewPort(true)
+    window.addEventListener('resize', () => {
+      detectViewPort()
+    })
   }
 }

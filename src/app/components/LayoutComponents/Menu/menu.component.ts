@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { MenuService } from 'src/app/services/menu.service'
 import * as SettingsActions from 'src/app/store/settings/actions'
@@ -10,10 +10,10 @@ import * as Reducers from 'src/app/store/reducers'
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
-  menuData: any[]
+  @Input() isMenuCollapsed: boolean = false
   isLightTheme: boolean
-  isMenuCollapsed: boolean
   isSettingsOpen: boolean
+  menuData: any[]
 
   constructor(private menuService: MenuService, private store: Store<any>) {}
 
@@ -21,7 +21,6 @@ export class MenuComponent implements OnInit {
     this.menuService.getLeftMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
-      this.isMenuCollapsed = state.isMenuCollapsed
       this.isSettingsOpen = state.isSettingsOpen
     })
   }
@@ -32,16 +31,5 @@ export class MenuComponent implements OnInit {
         isSettingsOpen: !this.isSettingsOpen,
       }),
     )
-  }
-
-  onCollapse(value: any) {
-    if (value !== this.isMenuCollapsed) {
-      console.log('triggered') // TODO: chagne detection wont triggers
-      this.store.dispatch(
-        new SettingsActions.SetStateAction({
-          isMenuCollapsed: value,
-        }),
-      )
-    }
   }
 }

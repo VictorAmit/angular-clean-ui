@@ -13,6 +13,7 @@ export const initialState: object = {
   // default settings, if not exist in localStorage
   ...STORED_SETTINGS({
     isMobileView: false,
+    isTabletView: false,
     isMobileMenuOpen: false,
     isLightTheme: true,
     isSettingsOpen: false,

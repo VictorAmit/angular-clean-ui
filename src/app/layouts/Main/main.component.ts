@@ -17,6 +17,8 @@ export class LayoutMainComponent {
   isSquaredBorders: boolean
   isFixedWidth: boolean
   isMenuShadow: boolean
+  isMobileView: boolean
+  isMenuTop: boolean
 
   coldLoad: boolean = true
 
@@ -28,6 +30,8 @@ export class LayoutMainComponent {
       this.isSquaredBorders = state.isSquaredBorders
       this.isFixedWidth = state.isFixedWidth
       this.isMenuShadow = state.isMenuShadow
+      this.isMobileView = state.isMobileView
+      this.isMenuTop = state.isMenuTop
     })
   }
 
