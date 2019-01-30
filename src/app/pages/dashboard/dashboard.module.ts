@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { DashboardRouterModule } from './dashboard-routing.module'
+import { CleanUIModule } from 'src/app/components/CleanUIComponents/cleanui.module'
 
 // dashboard
 import { DashboardAlphaComponent } from 'src/app/pages/dashboard/alpha/alpha.component'
@@ -16,7 +17,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, DashboardRouterModule],
+  imports: [SharedModule, DashboardRouterModule, CleanUIModule],
   declarations: [...COMPONENTS],
 })
 export class DashboardModule {}

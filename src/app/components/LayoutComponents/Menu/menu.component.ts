@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit {
 
   onCollapse(value: any) {
     if (value !== this.isMenuCollapsed) {
-      console.log('triggered') // TODO: chagne detection wont triggers
+      console.log('triggered') // TODO: change detection wont triggers
       this.store.dispatch(
         new SettingsActions.SetStateAction({
           isMenuCollapsed: value,
