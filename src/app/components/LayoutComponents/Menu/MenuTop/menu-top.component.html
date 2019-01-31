@@ -5,8 +5,7 @@
   </div>
 </div>
 <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
-  <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'"
-    [nzInlineCollapsed]="isMenuCollapsed">
+  <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'horizontal'">
     <ng-container *ngFor="let item of menuData">
       <ng-container *ngIf="item.key === 'settings'">
         <li nz-menu-item (click)="toggleSettings()">

@@ -17,6 +17,9 @@ export class LayoutMainComponent {
   isSquaredBorders: boolean
   isFixedWidth: boolean
   isMenuShadow: boolean
+  isMobileView: boolean
+  isMenuTop: boolean
+  isMobileMenuOpen: boolean
 
   coldLoad: boolean = true
 
@@ -28,6 +31,9 @@ export class LayoutMainComponent {
       this.isSquaredBorders = state.isSquaredBorders
       this.isFixedWidth = state.isFixedWidth
       this.isMenuShadow = state.isMenuShadow
+      this.isMobileView = state.isMobileView
+      this.isMenuTop = state.isMenuTop
+      this.isMobileMenuOpen = state.isMobileMenuOpen
     })
   }
 
@@ -51,6 +57,14 @@ export class LayoutMainComponent {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
         isMenuCollapsed: !this.isMenuCollapsed,
+      }),
+    )
+  }
+
+  toggleMobileMenu() {
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        isMobileMenuOpen: !this.isMobileMenuOpen,
       }),
     )
   }

@@ -1,19 +1,20 @@
-import { Component, OnInit, ViewContainerRef, ViewChild } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 import { select, Store } from '@ngrx/store'
 import { MenuService } from 'src/app/services/menu.service'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
 @Component({
-  selector: 'cui-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss'],
+  selector: 'cui-menu-left',
+  templateUrl: './menu-left.component.html',
+  styleUrls: ['./menu-left.component.scss'],
 })
-export class MenuComponent implements OnInit {
-  menuData: any[]
+export class MenuLeftComponent implements OnInit {
+  @Input() isMenuCollapsed: boolean = false
   isLightTheme: boolean
-  isMenuCollapsed: boolean
   isSettingsOpen: boolean
+  isMobileView: boolean
+  menuData: any[]
 
   constructor(private menuService: MenuService, private store: Store<any>) {}
 
@@ -21,8 +22,7 @@ export class MenuComponent implements OnInit {
     this.menuService.getLeftMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
-      this.isMenuCollapsed = state.isMenuCollapsed
-      this.isSettingsOpen = state.isSettingsOpen
+      this.isMobileView = state.isMobileView
     })
   }
 
@@ -32,16 +32,5 @@ export class MenuComponent implements OnInit {
         isSettingsOpen: !this.isSettingsOpen,
       }),
     )
-  }
-
-  onCollapse(value: any) {
-    if (value !== this.isMenuCollapsed) {
-      console.log('triggered') // TODO: change detection wont triggers
-      this.store.dispatch(
-        new SettingsActions.SetStateAction({
-          isMenuCollapsed: value,
-        }),
-      )
-    }
   }
 }
