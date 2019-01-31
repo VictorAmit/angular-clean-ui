@@ -31,9 +31,11 @@
   }
 }
 
-// mobile menu drawer styles
-
 ::ng-deep {
+  .ant-layout-sider-trigger {
+    transition: all 0.3s !important;
+  }
+
   .mobileMenu {
     .ant-drawer-content,
     ant-drawer-wrapper-body {

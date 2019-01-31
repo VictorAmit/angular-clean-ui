@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import tooltip from 'chartist-plugin-tooltip'
+import tooltip from 'chartist-plugin-tooltips-updated'
 
 declare var require: any
 const data: any = require('./data.json')
