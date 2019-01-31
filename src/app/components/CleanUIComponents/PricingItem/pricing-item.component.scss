@@ -22,20 +22,13 @@
 
 .item {
   flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0;
   text-align: center;
   border: 1px solid $gray-border;
-  border-left: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
   padding: rem(20);
   background: $white;
-  &:first-child {
-    border-left: 1px solid $gray-border;
-    border-radius: 6px 0 0 6px;
-  }
-  &:last-child {
-    border-radius: 0 6px 6px 0;
-  }
   ul {
     list-style: none;
     padding: 0;

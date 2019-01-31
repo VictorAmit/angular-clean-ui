@@ -19,6 +19,9 @@ import { StoreModule } from '@ngrx/store'
 import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { reducers, metaReducers } from './store/reducers'
 
+import { registerLocaleData } from '@angular/common'
+import localeZh from '@angular/common/locales/en'
+registerLocaleData(localeZh)
 /**
  * AntDesign Icons
  */

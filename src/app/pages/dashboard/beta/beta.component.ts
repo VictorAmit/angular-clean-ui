@@ -41,6 +41,18 @@ export class DashboardBetaComponent implements OnInit {
       }),
     ],
   }
+  monthChartData = data.monthChartData
+  monthChartOptions = {
+    seriesBarDistance: 10,
+    plugins: [
+      tooltip({
+        seriesName: false,
+      }),
+    ],
+  }
+
+  date = new Date(2012, 11, 21)
+  mode = 'month'
 
   currentPageDataChange(
     $event: Array<{ name: string; username: number; checked: boolean; disabled: boolean }>,
@@ -67,5 +79,6 @@ export class DashboardBetaComponent implements OnInit {
     })
     this.refreshStatus()
   }
+
   ngOnInit() {}
 }

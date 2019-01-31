@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { PagesRouterModule } from './pages-routing.module'
+import { CleanUIModule } from 'src/app/components/CleanUIComponents/cleanui.module'
 
 // pages
 import { PagesInvoiceComponent } from 'src/app/pages/pages/invoice/invoice.component'
@@ -20,7 +21,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, PagesRouterModule],
+  imports: [SharedModule, PagesRouterModule, CleanUIModule],
   declarations: [...COMPONENTS],
 })
 export class PagesModule {}
