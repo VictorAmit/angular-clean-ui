@@ -3,6 +3,12 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 /*  CORE MODULE STYLES */
 
+html,
+body {
+  width: auto;
+  height: auto;
+}
+
 html {
   font-size: 13px;
   overflow-y: scroll;
