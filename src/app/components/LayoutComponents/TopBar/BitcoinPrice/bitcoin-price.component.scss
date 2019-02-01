@@ -2,6 +2,10 @@
 .bitcoinPriceContainer {
   display: flex;
   flex-direction: row;
+
+  @media (max-width: $xs-max-width) {
+    display: none;
+  }
 }
 
 .bitcoinPrice {
