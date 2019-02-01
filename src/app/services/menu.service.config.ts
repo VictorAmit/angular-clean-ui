@@ -313,10 +313,12 @@ export const getLeftMenuData: any[] = [
           {
             title: 'Nested Item 1-1-1',
             key: 'nestedItem1-1-1',
+            url: '/',
           },
           {
             title: 'Nested Items 1-1-2',
             key: 'nestedItem1-1-2',
+            url: '/',
             disabled: true,
           },
         ],
@@ -324,12 +326,14 @@ export const getLeftMenuData: any[] = [
       {
         title: 'Nested Items 1-2',
         key: 'nestedItem1-2',
+        url: '/',
       },
     ],
   },
   {
     title: 'Disabled Item',
     key: 'disabledItem',
+    url: '/',
     disabled: true,
     icon: 'icmn icmn-cancel-circle',
   },
@@ -626,23 +630,27 @@ export const getTopMenuData: any[] = [
               {
                 title: 'Nested Item 1-1-1',
                 key: 'nestedItem1-1-1',
+                url: '/',
               },
               {
                 title: 'Nested Items 1-1-2',
                 key: 'nestedItem1-1-2',
                 disabled: true,
+                url: '/',
               },
             ],
           },
           {
             title: 'Nested Items 1-2',
             key: 'nestedItem1-2',
+            url: '/',
           },
         ],
       },
       {
         title: 'Disabled Item',
         key: 'disabledItem',
+        url: '/',
         disabled: true,
       },
     ],

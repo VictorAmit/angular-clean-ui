@@ -6,12 +6,13 @@
   }">
   <nz-back-top></nz-back-top>
   <!-- left menu -->
-  <nz-sider *ngIf="!isMobileView && !isMenuTop" [ngClass]="isLightTheme ? 'sider light' : 'sider'" nzCollapsible [nzWidth]="256" [(nzCollapsed)]="isMenuCollapsed"
-    (nzCollapsedChange)="onCollapse($event)">
+  <nz-sider *ngIf="!isMobileView && !isMenuTop" [ngClass]="isLightTheme ? 'sider light' : 'sider'" nzCollapsible
+    [nzWidth]="256" [(nzCollapsed)]="isMenuCollapsed" (nzCollapsedChange)="onCollapse($event)">
     <cui-menu-left [isMenuCollapsed]="isMenuCollapsed"></cui-menu-left>
   </nz-sider>
   <!-- mobile menu with drawer -->
-  <nz-drawer *ngIf="isMobileView" [nzClosable]="false" [nzWrapClassName]="'mobileMenu'" [nzVisible]="isMobileMenuOpen" nzPlacement="left" (nzOnClose)="toggleMobileMenu()">
+  <nz-drawer *ngIf="isMobileView" [nzClosable]="false" [nzWrapClassName]="'mobileMenu'" [nzVisible]="isMobileMenuOpen"
+    nzPlacement="left" (nzOnClose)="toggleMobileMenu()">
     <div class="mobileMenu-handler" (click)="toggleMobileMenu()">
       <div class="mobileMenu-handlerIcon"></div>
     </div>
