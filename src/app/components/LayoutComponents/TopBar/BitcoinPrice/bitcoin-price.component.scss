@@ -1,1 +1,17 @@
 @import 'src/assets/styles/mixins.scss';
+.bitcoinPriceContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.bitcoinPrice {
+  height: 62px;
+  width: 70px;
+  overflow: hidden;
+
+  ::ng-deep {
+    .ct-line {
+      stroke-width: 1px;
+    }
+  }
+}

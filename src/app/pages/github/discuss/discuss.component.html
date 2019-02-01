@@ -1,1 +1,31 @@
-discuss/discuss
+<section class="card">
+  <div class="card-header">
+    <div class="utils__title">
+      <strong>GitHub Discussion</strong>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="discuss">
+      <div class="mb-3">
+        <nz-tabset [nzType]="'card'" [(nzSelectedIndex)]="selectedIndex">
+          <nz-tab *ngFor="let tab of tabs" [nzTitle]="titleTemplate">
+            <ng-template #titleTemplate>
+              <i [class]="tab.icon"></i>{{ tab.name }}
+            </ng-template>
+          </nz-tab>
+        </nz-tabset>
+      </div>
+      <div class="header clearfix">
+        <div class="title">
+          <h1 class="titleText">{{discuss.title}}</h1>
+          <div class="open">
+            <button nz-button nzType="primary" nzSize="small">New discussion</button>
+          </div>
+        </div>
+        <div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

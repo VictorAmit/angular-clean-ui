@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar'
 import { SharedModule } from 'src/app/shared.module'
+import { ChartistModule } from 'ng-chartist'
 
 import { TopbarComponent } from './Topbar/topbar.component'
 import { TopbarBitcoinPriceComponent } from './Topbar/BitcoinPrice/bitcoin-price.component'
@@ -32,7 +33,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, FormsModule, ReactiveFormsModule, PerfectScrollbarModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule, PerfectScrollbarModule, ChartistModule],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
 })
