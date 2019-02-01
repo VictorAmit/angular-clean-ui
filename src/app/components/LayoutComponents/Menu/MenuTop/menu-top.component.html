@@ -8,8 +8,6 @@
   <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'horizontal'">
     <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuData}"></ng-container>
     <ng-template #menuTpl let-menuData>
-
-
       <ng-container *ngFor="let item of menuData">
         <li nz-menu-item (click)="toggleSettings()" *ngIf="item.key === 'settings'">
           <span>
