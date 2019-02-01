@@ -32,7 +32,6 @@ export class BreadcrumbsComponent {
 
   generateBreadcrumbs(event: any) {
     this.breadcrumbs = this.getPath(this.menuData, event).reverse()
-    console.log(this.breadcrumbs)
   }
 
   getPath(data: any[], url: string, parents = []) {
