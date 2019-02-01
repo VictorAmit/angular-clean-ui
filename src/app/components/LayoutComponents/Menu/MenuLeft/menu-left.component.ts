@@ -47,7 +47,6 @@ export class MenuLeftComponent implements OnInit {
       pathWithSelection.pop().selected = true
       _.each(pathWithSelection, (parent: any) => (parent.open = true))
     }
-    console.log(menuData.slice())
     this.menuDataActivated = menuData.slice()
   }
 
