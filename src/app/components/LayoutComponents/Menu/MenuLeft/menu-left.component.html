@@ -7,9 +7,9 @@
 <perfect-scrollbar [ngClass]="isMobileView ? 'scrollbarMobile' : 'scrollbarDesktop'">
   <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
     <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isMenuCollapsed">
-      <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuData}"></ng-container>
-      <ng-template #menuTpl let-menuData>
-        <ng-container *ngFor="let item of menuData">
+      <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuDataActivated}"></ng-container>
+      <ng-template #menuTpl let-menuDataActivated>
+        <ng-container *ngFor="let item of menuDataActivated">
           <li nz-menu-item (click)="toggleSettings()" *ngIf="item.key === 'settings'">
             <span>
               <span class="title">{{item.title}}</span>
@@ -25,13 +25,13 @@
           <ng-container *ngIf="item.divider">
             <li nz-menu-divider></li>
           </ng-container>
-          <li nz-menu-item *ngIf="!item.children && item.url && !item.target" routerLink={{item.url}} [nzDisabled]="item.disabled">
+          <li nz-menu-item *ngIf="!item.children && item.url && !item.target" routerLink={{item.url}} [nzSelected]="item.selected" [nzDisabled]="item.disabled">
             <span>
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
             </span>
           </li>
-          <li nz-submenu *ngIf="item.children">
+          <li nz-submenu *ngIf="item.children" [nzOpen]="item.open">
             <span title>
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
