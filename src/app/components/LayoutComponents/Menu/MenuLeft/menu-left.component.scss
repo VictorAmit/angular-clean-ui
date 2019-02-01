@@ -29,10 +29,11 @@
   ::ng-deep {
     .ant-menu-root {
       padding: rem(15) 0 rem(30) !important;
+      transition: all 0.3s !important;
       border: none;
       > .ant-dropdown-menu-item-divider {
         margin: 0 23px !important;
-        transition: all 0.3s;
+        transition: all 0.3s !important;
       }
     }
 
