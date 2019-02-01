@@ -14,7 +14,7 @@ export class AvatarComponent implements OnChanges {
   borderedClass: string
 
   ngOnChanges() {
-    this.sizeClass = 'cui-avatar-size-' + this.size
-    this.borderedClass = 'cui-avatar-bordered'
+    this.sizeClass = 'size' + this.size
+    this.borderedClass = 'bordered'
   }
 }

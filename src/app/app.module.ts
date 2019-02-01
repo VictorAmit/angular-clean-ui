@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NgModule } from '@angular/core'
+import { NgModule, LOCALE_ID } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 import { IconDefinition } from '@ant-design/icons-angular'
@@ -19,9 +19,18 @@ import { StoreModule } from '@ngrx/store'
 import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { reducers, metaReducers } from './store/reducers'
 
+/**
+ * Locale Registration
+ */
 import { registerLocaleData } from '@angular/common'
-import localeZh from '@angular/common/locales/en'
-registerLocaleData(localeZh)
+import { default as localeEn } from '@angular/common/locales/en'
+import { NZ_I18N, en_US as localeZorro } from 'ng-zorro-antd'
+const LOCALE_PROVIDERS = [
+  { provide: LOCALE_ID, useValue: 'en' },
+  { provide: NZ_I18N, useValue: localeZorro },
+]
+registerLocaleData(localeEn, 'en')
+
 /**
  * AntDesign Icons
  */
@@ -80,6 +89,7 @@ const firebaseConfig = {
     AppRoutingModule,
   ],
   providers: [
+    ...LOCALE_PROVIDERS,
     { provide: NZ_ICONS, useValue: icons },
     { provide: FirestoreSettingsToken, useValue: {} },
   ],
