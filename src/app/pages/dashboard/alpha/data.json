@@ -4,21 +4,51 @@
       "title": "Transactions",
       "amount": "1240",
       "chartData": {
-        "series": [[2, 11, 8, 14, 18, 20, 26]]
+        "series": [
+          [
+            2,
+            11,
+            8,
+            14,
+            18,
+            20,
+            26
+          ]
+        ]
       }
     },
     {
       "title": "Income",
       "amount": "$1,152",
       "chartData": {
-        "series": [[20, 80, 67, 120, 132, 66, 97]]
+        "series": [
+          [
+            20,
+            80,
+            67,
+            120,
+            132,
+            66,
+            97
+          ]
+        ]
       }
     },
     {
       "title": "Outcome",
       "amount": "$240.56",
       "chartData": {
-        "series": [[42, 40, 80, 67, 84, 74, 97]]
+        "series": [
+          [
+            42,
+            40,
+            80,
+            67,
+            84,
+            74,
+            97
+          ]
+        ]
       }
     }
   ],
@@ -94,7 +124,7 @@
       "footer": "To Tesla Cars, LA, USA"
     }
   ],
-  "progressCardsData" : [
+  "progressCardsData": [
     {
       "title": "Total Profit",
       "note": "Profit",

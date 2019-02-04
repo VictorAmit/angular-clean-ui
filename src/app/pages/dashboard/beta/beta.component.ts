@@ -7,28 +7,17 @@ const data: any = require('./data.json')
 @Component({
   selector: 'app-dashboard-alpha',
   templateUrl: './beta.component.html',
-  styles: [
-    `
-      [nz-carousel-content] {
-        text-align: center;
-        height: 160px;
-        line-height: 160px;
-        background: #364d79;
-        color: #fff;
-        overflow: hidden;
-      }
-
-      h3 {
-        color: #fff;
-      }
-    `,
-  ],
 })
 export class DashboardBetaComponent implements OnInit {
   taskTableData = data.taskTableData
+
+  databaseData = data.databaseTable
+  displayDatabaseData = [...this.databaseData]
+  sortNameDatabase = null
+  sortValueDatabase = null
+
   allChecked = false
   indeterminate = false
-  array = []
   rangeMarks = {
     0: '0',
     10: '10',
@@ -72,8 +61,32 @@ export class DashboardBetaComponent implements OnInit {
     ],
   }
 
+  calendarData = data.calendarData
+
   date = new Date(2012, 11, 21)
   mode = 'month'
+
+  sort(sort: { key: string; value: string }): void {
+    this.sortNameDatabase = sort.key
+    this.sortNameDatabase = sort.value
+    this.search()
+  }
+
+  search(): void {
+    if (this.sortNameDatabase && this.sortNameDatabase) {
+      this.displayDatabaseData = this.databaseData.sort((a, b) =>
+        this.sortNameDatabase === 'ascend'
+          ? a[this.sortNameDatabase] > b[this.sortNameDatabase]
+            ? 1
+            : -1
+          : b[this.sortNameDatabase] > a[this.sortNameDatabase]
+          ? 1
+          : -1,
+      )
+    } else {
+      this.displayDatabaseData = this.databaseData
+    }
+  }
 
   currentPageDataChange(
     $event: Array<{ name: string; username: number; checked: boolean; disabled: boolean }>,
@@ -101,7 +114,12 @@ export class DashboardBetaComponent implements OnInit {
     this.refreshStatus()
   }
 
-  ngOnInit() {
-    this.array = [1, 2, 3, 4]
+  ngOnInit() {}
+
+  getMonthData(date: Date): number | null {
+    if (date.getMonth() === 8) {
+      return 1394
+    }
+    return null
   }
 }

@@ -150,9 +150,7 @@
         </div>
       </div>
       <div class="card-body">
-        <nz-carousel>
-          <div nz-carousel-content *ngFor="let index of array"><h3>{{index}}</h3></div>
-        </nz-carousel>
+        <cui-slider-card></cui-slider-card>
       </div>
     </div>
     <div class="card">
@@ -267,7 +265,28 @@
         </div>
       </div>
       <div class="card-body">
-
+        <nz-table [nzData]="displayDatabaseData" [nzShowPagination]="false" class="utils__scrollTable">
+          <thead (nzSortChange)="sort($event)" nzSingleSort>
+          <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Office</th>
+            <th nzShowSort nzSortKey="age">Age</th>
+            <th>Date</th>
+            <th nzShowSort nzSortKey="salary">Salary</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of databaseData">
+            <td>{{item.name}}</td>
+            <td>{{item.position}}</td>
+            <td>{{item.office}}</td>
+            <td>{{item.age}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.salary}}</td>
+          </tr>
+          </tbody>
+        </nz-table>
       </div>
     </div>
   </div>
@@ -284,7 +303,33 @@
         </div>
       </div>
       <div class="card-body">
-        <nz-calendar></nz-calendar>
+        <nz-calendar>
+          <ul *nzDateCell="let date" class="events">
+            <ng-container [ngSwitch]="date.getDate()">
+              <ng-container *ngSwitchCase="8">
+                <li *ngFor="let item of calendarData.eight">
+                  <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                </li>
+              </ng-container>
+              <ng-container *ngSwitchCase="10">
+                <li *ngFor="let item of calendarData.ten">
+                  <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                </li>
+              </ng-container>
+              <ng-container *ngSwitchCase="11">
+                <li *ngFor="let item of calendarData.eleven">
+                  <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+                </li>
+              </ng-container>
+            </ng-container>
+          </ul>
+          <ng-container *nzMonthCell="let month">
+            <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+              <section>{{ monthData }}</section>
+              <span>Backlog number</span>
+            </div>
+          </ng-container>
+        </nz-calendar>
       </div>
     </div>
   </div>

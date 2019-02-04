@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { CommonModule } from '@angular/common'
 import { SharedModule } from 'src/app/shared.module'
 import { ChartistModule } from 'ng-chartist'
 
@@ -42,7 +43,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, FormsModule, ReactiveFormsModule, ChartistModule],
+  imports: [SharedModule, FormsModule, ReactiveFormsModule, ChartistModule, CommonModule],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS],
 })

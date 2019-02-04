@@ -1,32 +1,68 @@
 import { Component, OnInit } from '@angular/core'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
+import Chartist from 'chartist'
+
+declare var require: any
+const data: any = require('./data.json')
 
 @Component({
   selector: 'app-dashboard-crypto',
   templateUrl: './gamma.component.html',
-  styles: [
-    `
-      [nz-carousel-content] {
-        text-align: center;
-        height: 160px;
-        line-height: 160px;
-        background: #364d79;
-        color: #fff;
-        overflow: hidden;
-      }
-
-      h3 {
-        color: #fff;
-      }
-
-      .carousel-wrapper {
-        /*width: 200px;*/
-        position: relative;
-      }
-    `,
-  ],
+  styleUrls: ['./gamma.component.scss'],
 })
 export class DashboardGammaComponent implements OnInit {
-  array = [1, 2, 3, 4]
+  progressCardsData = data.progressCardsData
+  newUsersData = data.newUsersData
+  inboundBandwidthData = data.inboundBandwidthData
+  outboundBandwidthData = data.outboundBandwidthData
+  topPhotosData = data.topPhotosData
+  topPhotosGraphData = data.topPhotosGraphData
+  financeStatsData = data.financeStatsData
+  supportCasesTableData = data.supportCasesTableData
+  supportCasesPieData = data.supportCasesPieData
+
+  boundChartistOptions = {
+    lineSmooth: Chartist.Interpolation.none({
+      fillHoles: false,
+    }),
+    showPoint: true,
+    showLine: true,
+    showArea: true,
+    fullWidth: true,
+    showLabel: false,
+    axisX: {
+      showGrid: false,
+      showLabel: false,
+      offset: 0,
+    },
+    axisY: {
+      showGrid: false,
+      showLabel: false,
+      offset: 0,
+    },
+    chartPadding: 0,
+    low: 0,
+    plugins: [
+      ChartistTooltip({
+        anchorToPoint: false,
+        appendToBody: true,
+        seriesName: false,
+      }),
+    ],
+  }
+
+  supportCasesPieOptions = {
+    donut: true,
+    donutWidth: 35,
+    showLabel: false,
+    plugins: [
+      ChartistTooltip({
+        anchorToPoint: false,
+        appendToBody: true,
+        seriesName: false,
+      }),
+    ],
+  }
 
   ngOnInit() {}
 }

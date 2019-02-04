@@ -1,5 +1,14 @@
 @import 'src/assets/styles/mixins.scss';
 
+::ng-deep {
+  .cui-short-item-info-container {
+    &:first-child {
+      .item {
+        border-top: none;
+      }
+    }
+  }
+}
 .item {
   display: flex;
   flex-direction: row;
@@ -7,10 +16,6 @@
   flex-wrap: nowrap;
   border-top: 1px dashed $gray-border;
   padding-top: rem(15);
-
-  &:first-child {
-    border-top: none;
-  }
 }
 
 .large {

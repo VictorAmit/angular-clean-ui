@@ -6,6 +6,7 @@
     <h2 class="name" *ngIf="name">{{name}}</h2>
     <p class="note" *ngIf="note">{{note}}</p>
   </div>
-  <div class="actionData" *ngIf="actionTemplate" [innerHTML]="actionTemplate">
+  <div class="actionData" *ngIf="actionTemplate">
+    <ng-template [ngTemplateOutlet]="actionTemplate"></ng-template>
   </div>
 </div>
