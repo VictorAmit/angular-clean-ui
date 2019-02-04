@@ -35,7 +35,9 @@
         </nz-form-item>
         <nz-form-item>
           <nz-form-label>Content</nz-form-label>
-          <div [froalaEditor]></div>
+          <div>
+            <quill-editor [style]="{height: '200px'}"></quill-editor>
+          </div>
         </nz-form-item>
         <nz-upload
           nzType="drag"

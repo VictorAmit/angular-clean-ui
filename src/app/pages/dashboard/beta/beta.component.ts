@@ -7,11 +7,28 @@ const data: any = require('./data.json')
 @Component({
   selector: 'app-dashboard-alpha',
   templateUrl: './beta.component.html',
+  styles: [
+    `
+      [nz-carousel-content] {
+        text-align: center;
+        height: 160px;
+        line-height: 160px;
+        background: #364d79;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      h3 {
+        color: #fff;
+      }
+    `,
+  ],
 })
 export class DashboardBetaComponent implements OnInit {
   taskTableData = data.taskTableData
   allChecked = false
   indeterminate = false
+  array = []
   rangeMarks = {
     0: '0',
     10: '10',
@@ -84,5 +101,7 @@ export class DashboardBetaComponent implements OnInit {
     this.refreshStatus()
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.array = [1, 2, 3, 4]
+  }
 }

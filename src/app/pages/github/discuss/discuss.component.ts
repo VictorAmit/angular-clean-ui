@@ -1,34 +1,38 @@
 import { Component } from '@angular/core'
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
 declare var require: any
 const data: any = require('./data.json')
 
 @Component({
   selector: 'app-github-discuss',
   templateUrl: './discuss.component.html',
+  styleUrls: ['./discuss.component.scss'],
 })
 export class GithubDiscussComponent {
+  public Editor = ClassicEditor
   discuss = data.discuss
   selectedIndex = 1
   tabs = [
     {
       name: 'Home',
-      icon: 'mr-2 fa fa-home',
+      icon: 'fa fa-home',
     },
     {
       name: 'Discussion',
-      icon: 'mr-2 fa fa-comments',
+      icon: 'fa fa-comments',
     },
     {
       name: 'Profile',
-      icon: 'mr-2 fa fa-user',
+      icon: 'fa fa-user',
     },
     {
       name: 'Messages',
-      icon: 'mr-2 fa fa-envelope',
+      icon: 'fa fa-envelope',
     },
     {
       name: 'Settings',
-      icon: 'mr-2 fa fa-cog',
+      icon: 'fa fa-cog',
     },
   ]
 }
