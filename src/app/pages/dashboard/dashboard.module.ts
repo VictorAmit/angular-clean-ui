@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core'
+import { FormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { DashboardRouterModule } from './dashboard-routing.module'
 import { CleanUIModule } from 'src/app/components/CleanUIComponents/cleanui.module'
 import { ChartistModule } from 'ng-chartist'
+import { NvD3Module } from 'ng2-nvd3'
+
+import 'd3'
+import 'nvd3'
 
 // dashboard
 import { DashboardAlphaComponent } from 'src/app/pages/dashboard/alpha/alpha.component'
@@ -18,7 +23,14 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, DashboardRouterModule, CleanUIModule, ChartistModule],
+  imports: [
+    SharedModule,
+    DashboardRouterModule,
+    CleanUIModule,
+    ChartistModule,
+    NvD3Module,
+    FormsModule,
+  ],
   declarations: [...COMPONENTS],
 })
 export class DashboardModule {}

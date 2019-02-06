@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 
 declare var require: any
 const data: any = require('./data.json')
@@ -10,7 +9,6 @@ const data: any = require('./data.json')
   styleUrls: ['./discuss.component.scss'],
 })
 export class GithubDiscussComponent {
-  public Editor = ClassicEditor
   discuss = data.discuss
   selectedIndex = 1
   tabs = [

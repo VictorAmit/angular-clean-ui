@@ -306,15 +306,11 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@ckeditor/ckeditor5-angular@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-angular/-/ckeditor5-angular-1.0.1.tgz#4f7a9c17125307e2de370694b80f83eb1c1da74d"
+"@enten/ngx-sticky@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@enten/ngx-sticky/-/ngx-sticky-0.0.1.tgz#ac6134ce09874bba7545f1d761caac73b027e040"
   dependencies:
     tslib "^1.9.0"
-
-"@ckeditor/ckeditor5-build-classic@^11.2.0":
-  version "11.2.0"
-  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-classic/-/ckeditor5-build-classic-11.2.0.tgz#205ae1bd5495b2a7c9f5a4fef5241aca4118229a"
 
 "@firebase/app-types@0.3.2":
   version "0.3.2"
@@ -517,6 +513,10 @@
     semver "5.5.1"
     semver-intersect "1.4.0"
 
+"@types/d3@^3", "@types/d3@^3.5.35":
+  version "3.5.41"
+  resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.41.tgz#57f08fc79b75f0fecb0b3547abc22e46e9d660e4"
+
 "@types/jasmine@*":
   version "3.3.7"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-3.3.7.tgz#52f2bfe8d2995d4756585d2328c97fbb0fec66e3"
@@ -534,6 +534,12 @@
 "@types/node@*", "@types/node@^10.12.18":
   version "10.12.18"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.12.18.tgz#1d3ca764718915584fcd9f6344621b7672665c67"
+
+"@types/nvd3@^1.8.33":
+  version "1.8.39"
+  resolved "https://registry.yarnpkg.com/@types/nvd3/-/nvd3-1.8.39.tgz#f1991c39960818d648c686bcecf93a0f32a038bb"
+  dependencies:
+    "@types/d3" "^3"
 
 "@types/q@^0.0.32":
   version "0.0.32"
@@ -801,6 +807,15 @@ ajv@^6.1.0, ajv@^6.5.5, ajv@^6.6.1:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular2-nvd3@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/angular2-nvd3/-/angular2-nvd3-1.0.7.tgz#c8c56d8ff9c82b849ffbb6f64ef362fe24e06475"
+  dependencies:
+    "@types/d3" "^3.5.35"
+    "@types/nvd3" "^1.8.33"
+    d3 "^3.5.17"
+    nvd3 "^1.8.5"
 
 ansi-colors@^3.0.0:
   version "3.2.3"
@@ -2046,6 +2061,10 @@ custom-event@~1.0.0:
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
+
+d3@3.5.17, d3@^3.5.15, d3@^3.5.17:
+  version "3.5.17"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -4986,6 +5005,15 @@ ng-zorro-antd@^7.0.0-rc.3:
     date-fns "^1.29.0"
     tslib "^1.9.0"
 
+ng2-nvd3@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ng2-nvd3/-/ng2-nvd3-2.0.0.tgz#70db3652ba03bc874c4187b30964a26aae23f52a"
+  dependencies:
+    d3 "^3.5.15"
+    nvd3 "^1.8.5"
+    reflect-metadata "^0.1.10"
+    rxjs "5.2.0"
+
 ngx-perfect-scrollbar@^7.2.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/ngx-perfect-scrollbar/-/ngx-perfect-scrollbar-7.2.0.tgz#396ed8c1dc5c7828994649f802cab9289ad66302"
@@ -5248,6 +5276,10 @@ num2fraction@^1.2.2:
 number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
+
+nvd3@^1.8.5, nvd3@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/nvd3/-/nvd3-1.8.6.tgz#2d3eba74bf33363b5101ebf1d093c59a53ae73c4"
 
 oauth-sign@~0.9.0:
   version "0.9.0"
@@ -6192,7 +6224,7 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
-reflect-metadata@^0.1.2:
+reflect-metadata@^0.1.10, reflect-metadata@^0.1.2:
   version "0.1.13"
   resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
 
@@ -6428,6 +6460,12 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   resolved "https://registry.yarnpkg.com/run-queue/-/run-queue-1.0.3.tgz#e848396f057d223f24386924618e25694161ec47"
   dependencies:
     aproba "^1.1.1"
+
+rxjs@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-5.2.0.tgz#db537de8767c05fa73721587a29e0085307d318b"
+  dependencies:
+    symbol-observable "^1.0.1"
 
 rxjs@6.3.3, rxjs@^6.1.0, rxjs@^6.3.3, rxjs@~6.3.3:
   version "6.3.3"
@@ -7289,7 +7327,7 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
 
-symbol-observable@1.2.0, symbol-observable@^1.1.0:
+symbol-observable@1.2.0, symbol-observable@^1.0.1, symbol-observable@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
 

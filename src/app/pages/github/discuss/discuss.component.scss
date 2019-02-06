@@ -151,12 +151,6 @@
 
   .cui-github-discuss-comment-head {
     padding-top: rem(5);
-
-    ::ng-deep {
-      .ck-content {
-        height: rem(180);
-      }
-    }
   }
 
   .cui-github-discuss-comment-bottom {
