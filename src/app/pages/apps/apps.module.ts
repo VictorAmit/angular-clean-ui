@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { AppsRouterModule } from './apps-routing.module'
+import { CleanUIModule } from '../../components/CleanUIComponents/cleanui.module'
 
 // antd
 import { AppsGalleryComponent } from 'src/app/pages/apps/gallery/gallery.component'
@@ -16,7 +17,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, AppsRouterModule],
+  imports: [SharedModule, AppsRouterModule, CleanUIModule],
   declarations: [...COMPONENTS],
 })
 export class AppsModule {}
