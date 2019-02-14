@@ -8,8 +8,8 @@ import { Component, OnInit, Input } from '@angular/core'
 export class ChartCardComponent implements OnInit {
   @Input() title: string
   @Input() amount: string
-  @Input() chartOptions: object
-  @Input() chartData: object
+  @Input() chartOptions: any
+  @Input() chartData: any
 
   constructor() {}
   ngOnInit() {}
