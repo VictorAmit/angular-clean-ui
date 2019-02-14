@@ -8,7 +8,7 @@ import { LayoutsModule } from 'src/app/layouts/layouts.module'
 import { ChartsC3Component } from 'src/app/pages/charts/c3/c3.component'
 import { ChartsChartComponent } from 'src/app/pages/charts/chart/chart.component'
 import { ChartsChartistComponent } from 'src/app/pages/charts/chartist/chartist.component'
-import { ChartsPeityComponent } from 'src/app/pages/charts/peity/peity.component'
+import { ChartsNvD3Component } from 'src/app/pages/charts/nvd3/nvd3.component'
 
 const routes: Routes = [
   {
@@ -30,9 +30,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'peity',
-    component: ChartsPeityComponent,
-    data: { title: 'Charts Peity' },
+    path: 'nvd3',
+    component: ChartsNvD3Component,
+    data: { title: 'Charts nvD3' },
     canActivate: [AuthGuard],
   },
 ]

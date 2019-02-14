@@ -103,9 +103,9 @@ export const getLeftMenuData: any[] = [
         url: '/charts/chart',
       },
       {
-        title: 'Peity',
-        key: 'peity',
-        url: '/charts/peity',
+        title: 'nvD3',
+        key: 'nvd3',
+        url: '/charts/nvd3',
       },
       {
         title: 'C3',
@@ -561,9 +561,9 @@ export const getTopMenuData: any[] = [
             url: '/charts/chart',
           },
           {
-            title: 'Peity',
-            key: 'peity',
-            url: '/charts/peity',
+            title: 'nvD3',
+            key: 'nvd3',
+            url: '/charts/nvd3',
           },
           {
             title: 'C3',

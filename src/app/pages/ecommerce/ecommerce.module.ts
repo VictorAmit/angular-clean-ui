@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core'
+import { Form, FormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { EcommerceRouterModule } from './ecommerce-routing.module'
+import { CleanUIModule } from '../../components/CleanUIComponents/cleanui.module'
 
 // ecommerce
 // ecommerce
@@ -23,7 +25,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, EcommerceRouterModule],
+  imports: [SharedModule, EcommerceRouterModule, CleanUIModule, FormsModule],
   declarations: [...COMPONENTS],
 })
 export class EcommerceModule {}

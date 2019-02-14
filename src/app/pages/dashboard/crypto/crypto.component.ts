@@ -8,7 +8,7 @@ declare let d3: any
   selector: 'app-dashboard-crypto',
   templateUrl: './crypto.component.html',
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['../../../../../node_modules/nvd3/build/nv.d3.css', './crypto.component.scss'],
+  styleUrls: ['./crypto.component.scss'],
 })
 export class DashboardCryptoComponent implements OnInit {
   myOpenOrdersData = data.myOpenOrdersData
