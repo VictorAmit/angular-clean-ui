@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { ChartsRouterModule } from './charts-routing.module'
+import { ChartistModule } from 'ng-chartist'
 
 // charts
 import { ChartsC3Component } from 'src/app/pages/charts/c3/c3.component'
@@ -16,7 +17,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, ChartsRouterModule],
+  imports: [SharedModule, ChartsRouterModule, ChartistModule],
   declarations: [...COMPONENTS],
 })
 export class ChartsModule {}
