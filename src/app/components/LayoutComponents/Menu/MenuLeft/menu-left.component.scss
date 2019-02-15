@@ -35,6 +35,16 @@
         margin: 0 23px !important;
         transition: all 0.3s !important;
       }
+
+      &.ant-menu-inline-collapsed {
+        > .ant-menu-item {
+          > span {
+            .badge {
+              display: none;
+            }
+          }
+        }
+      }
     }
 
     .ant-menu-inline,
@@ -197,10 +207,12 @@
 ::ng-deep {
   .ps__thumb-y {
     width: 4px !important;
+    background: #c5cdd2 !important;
   }
 
   .ps__thumb-x {
     height: 4px !important;
+    background: #c5cdd2 !important;
   }
 
   perfect-scrollbar > .ps.ps--scrolling-y > .ps__rail-y,

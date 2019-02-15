@@ -2,7 +2,7 @@
 
 .logo {
   height: 48px;
-  width: 150px;
+  width: 200px;
   background: $menuBg-darken;
   float: left;
 }
@@ -24,42 +24,3 @@
     display: none !important;
   }
 }
-
-/*
-.menu {
-  :global(.ant-menu-item-divider) {
-    height: 36px !important;
-    margin-top: 6px !important;
-    width: 1px !important;
-    float: left;
-  }
-
-  .title {
-    padding-right: 25px;
-  }
-
-  :global(.ant-menu-dark) {
-    :global(.ant-menu-item-divider) {
-      background: $text-darken-more !important;
-    }
-
-    .icon {
-      color: $gray-darken;
-    }
-
-    .title {
-      color: $gray-darken;
-    }
-  }
-
-  :global(.ant-menu-light) {
-    .icon {
-      color: $text;
-    }
-
-    .title {
-      color: $text;
-    }
-  }
-}
-*/
