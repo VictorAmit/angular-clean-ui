@@ -60,7 +60,6 @@
   font-weight: bold;
   border-top: 1px solid $gray-border;
   padding-top: rem(15);
-  padding-right: rem(100);
   position: relative;
   a {
     display: block;
@@ -71,15 +70,14 @@
 }
 
 .descr {
-  padding-right: rem(100);
   font-style: italic;
   color: $black-lighten-more;
-  font-size: rem(13);
+  font-size: rem(12);
+  font-weight: 400;
 }
 
 .sizes {
   font-style: normal;
-  margin: rem(15) 0 rem(10);
   span {
     display: inline-block;
     margin-right: rem(5);
@@ -96,10 +94,7 @@
 
 .price {
   font-size: rem(26);
-  position: absolute;
-  top: rem(10);
-  right: 0;
-  text-align: right;
+  line-height: 1;
 }
 
 .oldPrice {
@@ -107,6 +102,8 @@
   font-weight: normal;
   text-decoration: line-through;
   color: $text;
+  margin: rem(10) 0;
+  display: inline-block;
 }
 
 .like {

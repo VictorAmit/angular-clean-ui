@@ -3,6 +3,8 @@ import { Form, FormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { EcommerceRouterModule } from './ecommerce-routing.module'
 import { CleanUIModule } from '../../components/CleanUIComponents/cleanui.module'
+import { ChartistModule } from 'ng-chartist'
+import { ChartModule } from 'angular2-chartjs'
 
 // ecommerce
 // ecommerce
@@ -25,7 +27,7 @@ const COMPONENTS = [
 ]
 
 @NgModule({
-  imports: [SharedModule, EcommerceRouterModule, CleanUIModule, FormsModule],
+  imports: [SharedModule, EcommerceRouterModule, CleanUIModule, FormsModule, ChartModule],
   declarations: [...COMPONENTS],
 })
 export class EcommerceModule {}
