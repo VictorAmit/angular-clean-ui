@@ -16,6 +16,16 @@
       nz-footer .inner {
         margin-right: 0;
       }
+
+      @media (max-width: 1445px) {
+        .utils__content {
+          padding-right: rem(30);
+        }
+
+        nz-footer .inner {
+          margin-right: rem(30);
+        }
+      }
     }
 
     &.settings__menuTop {
@@ -26,6 +36,17 @@
 
       nz-footer .inner {
         margin: 0;
+      }
+
+      @media (max-width: 1445px) {
+        .utils__content {
+          padding-left: rem(30);
+          padding-right: rem(30);
+        }
+
+        nz-footer .inner {
+          margin: 0 rem(30);
+        }
       }
     }
   }

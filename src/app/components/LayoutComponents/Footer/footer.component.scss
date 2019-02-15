@@ -11,8 +11,9 @@
   border-radius: 5px 5px 0 0;
   color: $text-darken-more;
   background: $gray-border;
+
   @media (max-width: $sm-max-width) {
-    margin: rem(-25) 0 0;
+    margin: 0 rem(10) !important;
   }
 }
 

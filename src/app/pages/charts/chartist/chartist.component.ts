@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 @Component({
   selector: 'app-charts-chartist',
@@ -21,13 +20,6 @@ export class ChartsChartistComponent {
         return index % 2 !== 0 ? !1 : value
       },
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   smilData = {
     labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
@@ -40,13 +32,6 @@ export class ChartsChartistComponent {
   }
   smilOptions = {
     low: 0,
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   smilEvents = {
     created() {},
@@ -143,13 +128,6 @@ export class ChartsChartistComponent {
     chartPadding: {
       right: 40,
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   areaData = {
     labels: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -158,13 +136,6 @@ export class ChartsChartistComponent {
   areaOptions = {
     low: 0,
     showArea: true,
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   scatterTimes = function scatter(n) {
     return Array(...new Array(n))
@@ -192,13 +163,6 @@ export class ChartsChartistComponent {
         return index % 13 === 0 ? `W${value}` : null
       },
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   scatterResponsiveOptions = [
     [
@@ -223,13 +187,6 @@ export class ChartsChartistComponent {
     axisY: {
       offset: 70,
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   biPolarLineData = {
     labels: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -251,13 +208,6 @@ export class ChartsChartistComponent {
       showLabel: false,
       showGrid: false,
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   biPolarBarData = {
     labels: ['W1', 'W2', 'W3', 'W4', 'W5', 'W6', 'W7', 'W8', 'W9', 'W10'],
@@ -271,13 +221,6 @@ export class ChartsChartistComponent {
         return index % 2 === 0 ? value : null
       },
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   stackedBarData = {
     labels: ['Q1', 'Q2', 'Q3', 'Q4'],
@@ -290,13 +233,6 @@ export class ChartsChartistComponent {
         return `${value / 1e3}k`
       },
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   overlappingBarData = {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
@@ -304,13 +240,6 @@ export class ChartsChartistComponent {
   }
   overlappingBarOptions = {
     seriesBarDistance: 10,
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   overlappingResponsiveOptions = [
     [
@@ -333,13 +262,6 @@ export class ChartsChartistComponent {
     labelInterpolationFnc(value) {
       return value[0]
     },
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
   }
   labelsPieResponsiveOptions = [
     [
@@ -364,13 +286,5 @@ export class ChartsChartistComponent {
   simplePieData = {
     series: [20, 15, 40],
   }
-  simplePieOptions = {
-    plugins: [
-      ChartistTooltip({
-        anchorToPoint: false,
-        appendToBody: true,
-        seriesName: false,
-      }),
-    ],
-  }
+  simplePieOptions = {}
 }
