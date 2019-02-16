@@ -60,6 +60,7 @@
   font-weight: bold;
   border-top: 1px solid $gray-border;
   padding-top: rem(15);
+  padding-right: rem(100);
   position: relative;
   a {
     display: block;
@@ -94,7 +95,10 @@
 
 .price {
   font-size: rem(26);
-  line-height: 1;
+  position: absolute;
+  top: rem(10);
+  right: 0;
+  text-align: right;
 }
 
 .oldPrice {
@@ -102,8 +106,6 @@
   font-weight: normal;
   text-decoration: line-through;
   color: $text;
-  margin: rem(10) 0;
-  display: inline-block;
 }
 
 .like {
