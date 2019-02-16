@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import * as Chartist from 'chartist'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 
 declare var require: any
 const data: any = require('./data.json')
@@ -42,8 +42,8 @@ export class DashboardBetaComponent implements OnInit {
       left: 0,
     },
     plugins: [
-      Chartist.plugins.tooltip({
-        currency: '$',
+      ChartistTooltip({
+        appendToBody: true,
       }),
     ],
   }
@@ -51,8 +51,8 @@ export class DashboardBetaComponent implements OnInit {
   monthChartOptions = {
     seriesBarDistance: 10,
     plugins: [
-      Chartist.plugins.tooltip({
-        currency: '$',
+      ChartistTooltip({
+        appendToBody: true,
       }),
     ],
   }

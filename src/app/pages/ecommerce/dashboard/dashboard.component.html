@@ -4,14 +4,20 @@
       <div class="col-xl-8 col-lg-12">
         <div class="mb-5">
           <nz-tabset>
-            <nz-tab nzTitle="Orders">
+            <nz-tab nzTitle="Orders" [nzForceRender]="true">
               <nz-select style="width: 120px;" [(ngModel)]="ordersSelectValue">
                 <nz-option nzValue="lastDay" nzLabel="Last Day"></nz-option>
                 <nz-option nzValue="lastWeek" nzLabel="Last Week"></nz-option>
                 <nz-option nzValue="lastMonth" nzLabel="Last Month"></nz-option>
                 <nz-option nzValue="last3Month" nzLabel="Last 3 Month"></nz-option>
               </nz-select>
-              <chart [type]="'line'" [data]="ordersGraphData" [options]="lineOptions" class="mt-5"></chart>
+              <x-chartist
+                class="ct-chart height-300"
+                [data]="ordersGraph"
+                type="Line"
+                [options]="chartOptions"
+              >
+              </x-chartist>
               <div class="row mt-5">
                 <div class="col-lg-3 col-6">
                   <div class="mb-3">
@@ -47,14 +53,20 @@
                 </div>
               </div>
             </nz-tab>
-            <nz-tab nzTitle="Amount">
+            <nz-tab nzTitle="Amount" [nzForceRender]="true">
               <nz-select style="width: 120px;" [(ngModel)]="ordersSelectValue">
                 <nz-option nzValue="lastDay" nzLabel="Last Day"></nz-option>
                 <nz-option nzValue="lastWeek" nzLabel="Last Week"></nz-option>
                 <nz-option nzValue="lastMonth" nzLabel="Last Month"></nz-option>
                 <nz-option nzValue="last3Month" nzLabel="Last 3 Month"></nz-option>
               </nz-select>
-              <chart [type]="'line'" [data]="amountGraphData" [options]="lineOptions" class="mt-5"></chart>
+              <x-chartist
+                class="ct-chart height-300"
+                [data]="ordersGraph"
+                type="Line"
+                [options]="chartOptions"
+              >
+              </x-chartist>
               <div class="row mt-5">
                 <div class="col-lg-3 col-6">
                   <div class="mb-3">

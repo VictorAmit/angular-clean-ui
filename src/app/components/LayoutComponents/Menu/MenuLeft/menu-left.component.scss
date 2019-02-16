@@ -204,7 +204,20 @@
   height: calc(100vh - 64px) !important;
 }
 
+.buyPro {
+  padding: rem(20);
+  background: #e4e9f0;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 rem(20) rem(20);
+  overflow: hidden;
+}
+
 ::ng-deep {
+  .ant-menu-inline-collapsed + .buyPro {
+    display: none;
+  }
+
   .ps__thumb-y {
     width: 4px !important;
     background: #c5cdd2 !important;

@@ -7,3 +7,16 @@
 .ant-menu-item {
   outline: none !important;
 }
+
+.ant-menu-horizontal.ant-menu-sub,
+.ant-menu-vertical.ant-menu-sub,
+.ant-menu-vertical-left.ant-menu-sub,
+.ant-menu-vertical-right.ant-menu-sub {
+  min-width: auto;
+}
+
+.ant-menu-dark.ant-menu-submenu-popup {
+  .ant-dropdown-menu-item-divider {
+    opacity: 0.2;
+  }
+}

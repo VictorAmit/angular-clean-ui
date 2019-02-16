@@ -4,6 +4,10 @@
 /////////////////////////////////////////////////////////////////////////////////////////
 /*  ANT DESIGN LAYOUT */
 
+.cdk-overlay-pane {
+  width: auto !important;
+}
+
 .ant-layout {
   min-height: 100vh;
   background: transparent;

@@ -33,9 +33,7 @@
               <span *ngIf="item.pro" class="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
             </a>
           </li>
-          <ng-container *ngIf="item.divider">
-            <li nz-menu-divider></li>
-          </ng-container>
+          <li nz-menu-divider *ngIf="item.divider"></li>
           <li
             nz-menu-item *ngIf="!item.children && item.url && !item.target" routerLink={{item.url}} [nzSelected]="item.selected" [nzDisabled]="item.disabled"
             nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed ? tooltipTpl : ''"
@@ -58,5 +56,18 @@
         </ng-container>
       </ng-template>
     </ul>
+    <div class="buyPro">
+      <p>
+        <strong>More components, more styles, more themes, and premium support!</strong>
+      </p>
+      <a
+        href="https://themeforest.net/user/mediatec_software"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-sm btn-danger"
+      >
+        Buy Pro 24$
+      </a>
+    </div>
   </div>
 </perfect-scrollbar>
