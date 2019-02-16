@@ -1,8 +1,9 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'app-blog-feed',
+  selector: 'app-blog-post',
   templateUrl: './add-blog-post.component.html',
+  styleUrls: ['./add-blog-post.component.scss'],
 })
 export class BlogAddBlogPostComponent {
   listOfOption = [

@@ -7,8 +7,8 @@
 <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
   <perfect-scrollbar [ngClass]="isMobileView ? 'scrollbarMobile' : 'scrollbarDesktop'">
     <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isMenuCollapsed">
-      <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuDataActivated}"></ng-container>
-      <ng-template #menuTpl let-menuDataActivated>
+      <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuDataActivated, level: 0}"></ng-container>
+      <ng-template #menuTpl let-menuDataActivated let-level="level">
         <ng-container *ngFor="let item of menuDataActivated">
           <ng-template #tooltipTpl>
             {{ item.title }}
@@ -38,19 +38,19 @@
             nz-menu-item *ngIf="!item.children && item.url && !item.target" routerLink={{item.url}} [nzSelected]="item.selected" [nzDisabled]="item.disabled"
             nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed ? tooltipTpl : ''"
           >
-            <span>
+            <span [ngStyle]="{'padding-left.px': level * 24}">
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
               <span *ngIf="item.pro" class="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
             </span>
           </li>
-          <li nz-submenu *ngIf="item.children" [nzOpen]="item.open">
-            <span title>
+          <li nz-submenu *ngIf="item.children" [nzOpen]="item.open" >
+            <span title [ngStyle]="{'padding-left.px': level * 24}">
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
             </span>
             <ul>
-              <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: item.children}"></ng-container>
+              <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: item.children, level: level + 1}"></ng-container>
             </ul>
           </li>
         </ng-container>

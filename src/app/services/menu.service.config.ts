@@ -343,25 +343,30 @@ export const getLeftMenuData: any[] = [
     key: 'nestedItem1',
     disabled: true,
     icon: 'icmn icmn-arrow-down2',
+    url: 'javascript: void(0);',
     children: [
       {
         title: 'Nested Item 1-1',
         key: 'nestedItem1-1',
+        url: 'javascript: void(0);',
         children: [
           {
             title: 'Nested Item 1-1-1',
             key: 'nestedItem1-1-1',
+            url: 'javascript: void(0);',
           },
           {
             title: 'Nested Items 1-1-2',
             key: 'nestedItem1-1-2',
             disabled: true,
+            url: 'javascript: void(0);',
           },
         ],
       },
       {
         title: 'Nested Items 1-2',
         key: 'nestedItem1-2',
+        url: 'javascript: void(0);',
       },
     ],
   },
@@ -370,6 +375,7 @@ export const getLeftMenuData: any[] = [
     key: 'disabledItem',
     disabled: true,
     icon: 'icmn icmn-cancel-circle',
+    url: 'javascript: void(0);',
   },
 ]
 export const getTopMenuData: any[] = [
@@ -695,25 +701,30 @@ export const getTopMenuData: any[] = [
         title: 'Nested Items',
         key: 'nestedItem1',
         disabled: true,
+        url: 'javascript: void(0);',
         children: [
           {
             title: 'Nested Item 1-1',
             key: 'nestedItem1-1',
+            url: 'javascript: void(0);',
             children: [
               {
                 title: 'Nested Item 1-1-1',
                 key: 'nestedItem1-1-1',
+                url: 'javascript: void(0);',
               },
               {
                 title: 'Nested Items 1-1-2',
                 key: 'nestedItem1-1-2',
                 disabled: true,
+                url: 'javascript: void(0);',
               },
             ],
           },
           {
             title: 'Nested Items 1-2',
             key: 'nestedItem1-2',
+            url: 'javascript: void(0);',
           },
         ],
       },
@@ -721,6 +732,7 @@ export const getTopMenuData: any[] = [
         title: 'Disabled Item',
         key: 'disabledItem',
         disabled: true,
+        url: 'javascript: void(0);',
       },
     ],
   },
