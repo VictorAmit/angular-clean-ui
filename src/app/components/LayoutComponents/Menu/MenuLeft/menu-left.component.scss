@@ -26,6 +26,48 @@
 }
 
 .navigation {
+  &.light {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 100%;
+      background: $gray-darken;
+      opacity: 0.4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    &:after {
+      left: auto;
+      right: 0;
+    }
+
+    @at-root {
+      ::ng-deep {
+        .settings__menuShadow .navigation.light {
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+      @media (max-width: 1435px) {
+        ::ng-deep {
+          .settings__fixedWidth .navigation.light {
+            &:before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
   ::ng-deep {
     .ant-menu-root {
       padding: rem(15) 0 rem(30) !important;
@@ -89,7 +131,8 @@
 
     .ant-menu-light {
       .icon {
-        opacity: 0.8;
+        color: $gray-darken;
+        @include transition-slow();
       }
 
       .ant-menu-submenu-arrow {
@@ -99,6 +142,17 @@
       .ant-menu-item:after {
         right: auto;
         left: 0;
+      }
+
+      ::ng-deep {
+        .ant-menu-item,
+        .ant-menu-submenu {
+          &:hover {
+            .icon {
+              color: $text;
+            }
+          }
+        }
       }
 
       .ant-menu-item,
@@ -139,7 +193,7 @@
         color: $gray-darken;
 
         > a,
-        span {
+        span:not(.badge) {
           color: $gray-darken;
           transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
         }
@@ -262,11 +316,5 @@
   perfect-scrollbar > .ps.ps--active-x > .ps__rail-x:hover,
   perfect-scrollbar > .ps.ps--active-x > .ps__rail-x.ps--clicking {
     height: 10px !important;
-  }
-
-  @media (min-width: 1435px) {
-    .settings__fixedWidth .sider.ant-layout-sider {
-      border-left: 1px solid $gray-border;
-    }
   }
 }

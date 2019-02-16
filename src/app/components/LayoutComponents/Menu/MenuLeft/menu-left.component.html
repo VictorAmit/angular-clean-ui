@@ -4,8 +4,8 @@
     <img *ngIf="isMenuCollapsed" src="assets/images/logo-inverse-mobile.png" alt="" />
   </div>
 </div>
-<perfect-scrollbar [ngClass]="isMobileView ? 'scrollbarMobile' : 'scrollbarDesktop'">
-  <div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
+<div [ngClass]="isLightTheme ? 'navigation light' : 'navigation'">
+  <perfect-scrollbar [ngClass]="isMobileView ? 'scrollbarMobile' : 'scrollbarDesktop'">
     <ul nz-menu [nzTheme]="isLightTheme ? 'light' : 'dark'" [nzMode]="'inline'" [nzInlineCollapsed]="isMenuCollapsed">
       <ng-container *ngTemplateOutlet="menuTpl; context: {$implicit: menuDataActivated}"></ng-container>
       <ng-template #menuTpl let-menuDataActivated>
@@ -69,5 +69,5 @@
         Buy Pro 24$
       </a>
     </div>
-  </div>
-</perfect-scrollbar>
+  </perfect-scrollbar>
+</div>

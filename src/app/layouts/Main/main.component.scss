@@ -1,7 +1,6 @@
 @import 'src/assets/styles/mixins.scss';
 
 .sider {
-  border-right: 1px solid $gray-border;
   box-sizing: content-box;
   transition: all 0.3s !important;
   ::ng-deep {
