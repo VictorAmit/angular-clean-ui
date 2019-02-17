@@ -637,9 +637,9 @@ export const getTopMenuData: any[] = [
             pro: true,
           },
           {
-            title: 'Peity',
-            key: 'peity',
-            url: '/charts/peity',
+            title: 'NVD3',
+            key: 'nvd3',
+            url: '/charts/nvd3',
             pro: true,
           },
           {
