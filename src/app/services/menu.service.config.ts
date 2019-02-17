@@ -614,7 +614,7 @@ export const getTopMenuData: any[] = [
     title: 'AntDesign',
     key: 'antComponents',
     icon: 'icmn icmn-menu',
-    url: '/antd',
+    url: '/antd/index',
   },
   {
     title: 'Components',
