@@ -16,7 +16,7 @@
           </ng-template>
           <li
             nz-menu-item (click)="toggleSettings()" *ngIf="item.key === 'settings'"
-            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed ? tooltipTpl : ''"
+            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''"
           >
             <span>
               <span class="title">{{item.title}}</span>
@@ -25,7 +25,7 @@
           </li>
           <li
             nz-menu-item *ngIf="item.url && item.target"
-            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed ? tooltipTpl : ''"
+            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''"
           >
             <a href={{item.url}} target={{item.target}}>
               <span class="title">{{item.title}}</span>
@@ -36,16 +36,16 @@
           <li nz-menu-divider *ngIf="item.divider"></li>
           <li
             nz-menu-item *ngIf="!item.children && item.url && !item.target" routerLink={{item.url}} [nzSelected]="item.selected" [nzDisabled]="item.disabled"
-            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed ? tooltipTpl : ''"
+            nz-tooltip nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''"
           >
-            <span [ngStyle]="{'padding-left.px': level * 24}">
+            <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 24}">
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
               <span *ngIf="item.pro" class="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
             </span>
           </li>
           <li nz-submenu *ngIf="item.children" [nzOpen]="item.open" >
-            <span title [ngStyle]="{'padding-left.px': level * 24}">
+            <span title [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 24}">
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
             </span>
