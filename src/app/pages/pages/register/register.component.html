@@ -8,8 +8,8 @@
       <img src="assets/images/logo-inverse.png" alt="Clean UI Admin Template">
     </a>
     <div class="styleControls">
-      <button nz-button nzType="default" class="mt-3 mt-xl-0" (click)="changeScreen()">Set {{fullScreen ? 'windowed' : 'fullscreen'}}</button>
-      <button nz-button nzType="default" class="ml-3 mt-3 mt-xl-0" (click)="changeBackground()">Change Background</button>
+      <button nz-button nzType="default" (click)="changeScreen()">Set {{fullScreen ? 'windowed' : 'fullscreen'}}</button>
+      <button nz-button nzType="default" class="ml-3" (click)="changeBackground()">Change Background</button>
     </div>
     <nav class="loginNav">
       <ul class="navItems">

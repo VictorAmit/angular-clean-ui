@@ -8,8 +8,8 @@
       <img src="assets/images/logo-inverse.png" alt="Clean UI Admin Template">
     </a>
     <div class="styleControls">
-      <button nz-button nzType="default" class="mt-3 mt-xl-0" (click)="changeScreen()">Set {{fullScreen ? 'windowed' : 'fullscreen'}}</button>
-      <button nz-button nzType="default" class="ml-3 mt-3 mt-xl-0" (click)="changeBackground()">Change Background</button>
+      <button nz-button nzType="default" (click)="changeScreen()">Set {{fullScreen ? 'windowed' : 'fullscreen'}}</button>
+      <button nz-button nzType="default" class="ml-3" (click)="changeBackground()">Change Background</button>
     </div>
     <nav class="loginNav">
       <ul class="navItems">
@@ -66,10 +66,10 @@
           </nz-form-control>
         </nz-form-item>
         <div class="form-actions">
-          <button nz-button nzType="primary" class="login-form-button">
+          <button nz-button nzType="primary" class="login-form-button mr-3">
             Sign in
           </button>
-          <span class="ml-3 register-link">
+          <span class="register-link">
             <a href="javascript: void(0);" class="text-primary utils__link--underlined">
               Register
             </a>

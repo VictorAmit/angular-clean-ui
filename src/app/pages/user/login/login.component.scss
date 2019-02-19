@@ -49,3 +49,11 @@
   position: relative;
   z-index: 2;
 }
+
+.register-link {
+  @media (max-width: $md-max-width) {
+    width: 100%;
+    display: block;
+    margin-top: rem(10);
+  }
+}

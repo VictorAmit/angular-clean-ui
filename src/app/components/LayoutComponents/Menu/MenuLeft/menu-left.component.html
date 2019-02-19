@@ -44,7 +44,7 @@
               <span *ngIf="item.pro" class="badge badge-primary badge-collapsed-hidden ml-2">PRO</span>
             </span>
           </li>
-          <li nz-submenu *ngIf="item.children" [nzOpen]="item.open" >
+          <li nz-submenu *ngIf="item.children" [nzOpen]="item.open && !isMenuCollapsed">
             <span title [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 24}">
               <span class="title">{{item.title}}</span>
               <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
