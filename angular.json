@@ -27,7 +27,9 @@
               {
                 "glob": "**/*",
                 "input": "src/assets/",
-                "ignore": ["**/styles/**/*"],
+                "ignore": [
+                  "**/styles/**/*"
+                ],
                 "output": "/assets/"
               }
             ],
@@ -43,7 +45,7 @@
             ],
             "scripts": [
               "./node_modules/c3/c3.min.js",
-              "./node_modules/d3/d3.min.js"
+              "./node_modules/d3/dist/d3.min.js"
             ]
           },
           "configurations": {
