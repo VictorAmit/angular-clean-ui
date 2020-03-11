@@ -5,7 +5,7 @@ import { Component, ViewChild, ElementRef } from '@angular/core'
   templateUrl: './live-search.component.html',
   styleUrls: ['./live-search.component.scss'],
 })
-export class TopbarLiveSearchComponent {
+export class TopBarLiveSearchComponent {
   @ViewChild('liveSearchInput', { static: false }) liveSearchInput: ElementRef
 
   showSearch: boolean = false

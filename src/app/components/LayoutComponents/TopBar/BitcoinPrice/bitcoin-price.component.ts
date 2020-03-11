@@ -5,7 +5,7 @@ import { Component } from '@angular/core'
   templateUrl: './bitcoin-price.component.html',
   styleUrls: ['./bitcoin-price.component.scss'],
 })
-export class TopbarBitcoinPriceComponent {
+export class TopBarBitcoinPriceComponent {
   chartData = {
     series: [[8, 20, 16, 10, 14, 17, 13, 25]],
   }

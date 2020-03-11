@@ -6,7 +6,7 @@ import { AuthService } from 'src/app/services/auth.service'
   templateUrl: './profile-menu.component.html',
   styleUrls: ['./profile-menu.component.scss'],
 })
-export class TopbarProfileMenuComponent {
+export class TopBarProfileMenuComponent {
   badgeCount: number = 7
   userName: string
   billingPlan: string

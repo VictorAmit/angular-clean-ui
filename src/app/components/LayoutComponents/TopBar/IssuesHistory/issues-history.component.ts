@@ -5,4 +5,4 @@ import { Component } from '@angular/core'
   templateUrl: './issues-history.component.html',
   styleUrls: ['./issues-history.component.scss'],
 })
-export class TopbarIssuesHistoryComponent {}
+export class TopBarIssuesHistoryComponent {}

@@ -5,4 +5,4 @@ import { Component } from '@angular/core'
   templateUrl: './project-management.component.html',
   styleUrls: ['./project-management.component.scss'],
 })
-export class TopbarProjectManagementComponent {}
+export class TopBarProjectManagementComponent {}
