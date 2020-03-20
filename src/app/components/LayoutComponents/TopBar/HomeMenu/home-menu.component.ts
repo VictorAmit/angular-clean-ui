@@ -5,4 +5,4 @@ import { Component } from '@angular/core'
   templateUrl: './home-menu.component.html',
   styleUrls: ['./home-menu.component.scss'],
 })
-export class TopbarHomeMenuComponent {}
+export class TopBarHomeMenuComponent {}
