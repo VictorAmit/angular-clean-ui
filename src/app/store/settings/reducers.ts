@@ -1,10 +1,11 @@
+import store from 'store'
 import * as actions from './actions'
 
 const STORED_SETTINGS = (storedSettings: object) => {
   const settings = {}
   Object.keys(storedSettings).forEach(key => {
-    const item = JSON.parse(localStorage.getItem(`app.settings.${key}`))
-    settings[key] = item === null ? storedSettings[key] : item
+    const item = store.get(`app.settings.${key}`)
+    settings[key] = typeof item !== 'undefined' ? item : storedSettings[key]
   })
   return settings
 }
@@ -12,17 +13,31 @@ const STORED_SETTINGS = (storedSettings: object) => {
 export const initialState: object = {
   // default settings, if not exist in localStorage
   ...STORED_SETTINGS({
+    authProvider: 'firebase', // firebase, jwt
+    logo: 'Clean UI Pro',
+    locale: 'en-US',
+    isSidebarOpen: false,
+    isSupportChatOpen: false,
     isMobileView: false,
-    isTabletView: false,
     isMobileMenuOpen: false,
-    isLightTheme: true,
-    isSettingsOpen: false,
-    isMenuTop: false,
     isMenuCollapsed: false,
-    isBorderless: true,
+    menuLayoutType: 'left', // left, top, nomenu
+    routerAnimation: 'slide-fadein-up', // none, slide-fadein-up, slide-fadein-right, fadein, zoom-fadein
+    menuColor: 'white', // white, dark, gray
+    theme: 'light', // light, dark
+    authPagesColor: 'white', // white, gray, image
+    primaryColor: '#4b7cf3',
+    leftMenuWidth: 256,
+    isMenuUnfixed: false,
+    isMenuShadow: false,
+    isTopbarFixed: false,
+    isGrayTopbar: false,
+    isContentMaxWidth: false,
+    isAppMaxWidth: false,
+    isGrayBackground: false,
+    isCardShadow: true,
     isSquaredBorders: false,
-    isFixedWidth: false,
-    isMenuShadow: true,
+    isBorderless: false,
   }),
 }
 

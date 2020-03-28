@@ -3,16 +3,17 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Clean UI Angular Pro</title>
+  <title>Clean UI Pro Angular | Angular Admin Template</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Mukta:400,700,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/fonts/font-icomoon/style.css">
   <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="assets/fonts/font-linearicons/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonts/font-feathericons/dist/feather.css">
   <style>
     .initial__loading {
       position: fixed;
@@ -30,6 +31,16 @@
 </head>
 
 <body>
+  <!-- start:antd live theme switch resources -->
+  <link rel="stylesheet/less" type="text/css" href="color.less" />
+  <script>
+    window.less = {
+      async: false,
+      env: 'production'
+    };
+  </script>
+  <script type="text/javascript" src="assets/less.min.js"></script>
+  <!-- end:antd live theme switch resources -->
   <app-root>
     <div class="initial__loading"></div>
   </app-root>

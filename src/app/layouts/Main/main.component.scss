@@ -1,4 +1,4 @@
-@import 'src/assets/styles/mixins.scss';
+@import 'src/app/components/kit-core/mixins.scss';
 
 .sider {
   box-sizing: content-box;
@@ -25,7 +25,7 @@
   ::ng-deep {
     .ant-layout-sider-trigger {
       color: inherit;
-      background: $gray-border !important;
+      background: $gray-1 !important;
     }
   }
 }

@@ -47,11 +47,11 @@
         <div class="row">
           <div class="col-md-6">
             <cui-user-card type="primary" avatarUrl="assets/images/avatars/1.jpg" userName="Artour Aniston"
-                           userPost="Project Manager"></cui-user-card>
+              userPost="Project Manager"></cui-user-card>
           </div>
           <div class="col-md-6">
-            <cui-user-card avatarUrl="assets/images/avatars/2.jpg" userName="Kim Mentiso"
-                           userPost="Project Manager"></cui-user-card>
+            <cui-user-card avatarUrl="assets/images/avatars/2.jpg" userName="Kim Mentiso" userPost="Project Manager">
+            </cui-user-card>
           </div>
         </div>
       </div>
@@ -66,54 +66,42 @@
         </div>
       </div>
       <div class="card-body">
-        <nz-table
-          [nzData]="taskTableData"
-          [nzShowPagination]="false"
-          class="utils__scrollTable"
-          (nzCurrentPageDataChange)="currentPageDataChange($event)"
-          (nzPageIndexChange)="refreshStatus()"
-          (nzPageSizeChange)="refreshStatus()"
-        >
+        <nz-table [nzData]="taskTableData" [nzShowPagination]="false" class="utils__scrollTable"
+          (nzCurrentPageDataChange)="currentPageDataChange($event)" (nzPageIndexChange)="refreshStatus()"
+          (nzPageSizeChange)="refreshStatus()">
           <thead>
-          <tr>
-            <th
-              nzShowCheckbox
-              [(nzChecked)]="allChecked"
-              [nzIndeterminate]="indeterminate"
-              (nzCheckedChange)="checkAll($event)"
-            ></th>
-            <th>Name</th>
-            <th>Username</th>
-            <th>Actions</th>
-          </tr>
+            <tr>
+              <th nzShowCheckbox [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate"
+                (nzCheckedChange)="checkAll($event)"></th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Actions</th>
+            </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of taskTableData">
-            <td
-              nzShowCheckbox
-              [(nzChecked)]="item.checked"
-              [nzDisabled]="item.disabled"
-              (nzCheckedChange)="refreshStatus()"
-            ></td>
-            <td><a href="javascript: void(0);">{{item.name}}</a></td>
-            <td><a href="javascript: void(0);">{{item.username}}</a></td>
-            <td>
-              <nz-dropdown>
-                <button nz-button nz-dropdown nzSize="small"><span>Action</span> <i nz-icon type="down"></i></button>
-                <ul nz-menu>
-                  <li nz-menu-item>
-                    <a>1st menu item</a>
-                  </li>
-                  <li nz-menu-item>
-                    <a>2nd menu item</a>
-                  </li>
-                  <li nz-menu-item>
-                    <a>3rd menu item</a>
-                  </li>
-                </ul>
-              </nz-dropdown>
-            </td>
-          </tr>
+            <tr *ngFor="let item of taskTableData">
+              <td nzShowCheckbox [(nzChecked)]="item.checked" [nzDisabled]="item.disabled"
+                (nzCheckedChange)="refreshStatus()"></td>
+              <td><a href="javascript: void(0);">{{item.name}}</a></td>
+              <td><a href="javascript: void(0);">{{item.username}}</a></td>
+              <td>
+                <nz-dropdown>
+                  <button nz-button nz-dropdown nzSize="small"><span>Action</span> <i nz-icon
+                      nzType="down"></i></button>
+                  <ul nz-menu>
+                    <li nz-menu-item>
+                      <a>1st menu item</a>
+                    </li>
+                    <li nz-menu-item>
+                      <a>2nd menu item</a>
+                    </li>
+                    <li nz-menu-item>
+                      <a>3rd menu item</a>
+                    </li>
+                  </ul>
+                </nz-dropdown>
+              </td>
+            </tr>
           </tbody>
         </nz-table>
       </div>
@@ -210,12 +198,7 @@
         <cui-donut color="yellow" name="Peaches"></cui-donut>
       </div>
       <div class="card-body">
-        <x-chartist
-          class="ct-chart height-300"
-          [data]="weekChartData"
-          type="Line"
-          [options]="weekChartOptions"
-        >
+        <x-chartist class="ct-chart height-300" [data]="weekChartData" type="Line" [options]="weekChartOptions">
         </x-chartist>
       </div>
     </div>
@@ -228,12 +211,7 @@
         <cui-donut type="success" name="Outcome"></cui-donut>
       </div>
       <div class="card-body">
-        <x-chartist
-          class="ct-chart height-300"
-          [data]="monthChartData"
-          type="Bar"
-          [options]="monthChartOptions"
-        >
+        <x-chartist class="ct-chart height-300" [data]="monthChartData" type="Bar" [options]="monthChartOptions">
         </x-chartist>
       </div>
     </div>
@@ -274,24 +252,24 @@
       <div class="card-body">
         <nz-table [nzData]="displayDatabaseData" [nzShowPagination]="false" class="utils__scrollTable">
           <thead (nzSortChange)="sort($event)" nzSingleSort>
-          <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Office</th>
-            <th nzShowSort nzSortKey="age">Age</th>
-            <th>Date</th>
-            <th nzShowSort nzSortKey="salary">Salary</th>
-          </tr>
+            <tr>
+              <th>Name</th>
+              <th>Position</th>
+              <th>Office</th>
+              <th nzShowSort nzSortKey="age">Age</th>
+              <th>Date</th>
+              <th nzShowSort nzSortKey="salary">Salary</th>
+            </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let item of databaseData">
-            <td>{{item.name}}</td>
-            <td>{{item.position}}</td>
-            <td>{{item.office}}</td>
-            <td>{{item.age}}</td>
-            <td>{{item.date}}</td>
-            <td>{{item.salary}}</td>
-          </tr>
+            <tr *ngFor="let item of databaseData">
+              <td>{{item.name}}</td>
+              <td>{{item.position}}</td>
+              <td>{{item.office}}</td>
+              <td>{{item.age}}</td>
+              <td>{{item.date}}</td>
+              <td>{{item.salary}}</td>
+            </tr>
           </tbody>
         </nz-table>
       </div>

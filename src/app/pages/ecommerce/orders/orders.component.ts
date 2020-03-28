@@ -1,42 +1,55 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 declare var require: any
-const data: any = require('./data.json')
+const orders: any = require('./data.json')
 
 @Component({
   selector: 'app-ecommerce-orders',
   templateUrl: './orders.component.html',
 })
-export class EcommerceOrdersComponent {
-  productsData = data.data
-  displayProductsData = [...this.productsData]
-  sortName = null
-  sortValue = null
-  listOfSearchName = []
-  searchAddress: string
+export class EcommerceOrdersComponent implements OnInit {
+  listOfSearchName: string[] = []
+  listOfSearchAddress: string[] = []
+  listOfData = orders
+  listOfDisplayData = [...this.listOfData]
+  mapOfSort: { [key: string]: any } = {
+    id: null,
+    date: null,
+    customer: null,
+    total: null,
+    tax: null,
+    shipping: null,
+    quantity: null,
+    status: null,
+  }
+  sortName: string | null = null
+  sortValue: string | null = null
 
-  sort(sort: { key: string; value: string }): void {
-    this.sortName = sort.key
-    this.sortValue = sort.value
-    this.search()
+  ngOnInit() {}
+
+  sort(sortName: string, value: string): void {
+    this.sortName = sortName
+    this.sortValue = value
+    for (const key in this.mapOfSort) {
+      if (this.mapOfSort.hasOwnProperty(key)) {
+        this.mapOfSort[key] = key === sortName ? value : null
+      }
+    }
+    this.search(this.listOfSearchName, this.listOfSearchAddress)
   }
 
-  filter(listOfSearchName: string[], searchAddress: string): void {
+  search(listOfSearchName: string[], listOfSearchAddress: string[]): void {
     this.listOfSearchName = listOfSearchName
-    this.searchAddress = searchAddress
-    this.search()
-  }
-
-  search(): void {
-    // /** filter data **/
+    this.listOfSearchAddress = listOfSearchAddress
     const filterFunc = item =>
-      (this.searchAddress ? item.address.indexOf(this.searchAddress) !== -1 : true) &&
+      (this.listOfSearchAddress.length
+        ? this.listOfSearchAddress.some(address => item.address.indexOf(address) !== -1)
+        : true) &&
       (this.listOfSearchName.length
         ? this.listOfSearchName.some(name => item.name.indexOf(name) !== -1)
         : true)
-    const data = this.productsData.filter(item => filterFunc(item))
-    /** sort data **/
-    if (this.sortName && this.sortValue) {
-      this.displayProductsData = data.sort((a, b) =>
+    const listOfData = this.listOfData.filter(item => filterFunc(item))
+    if (this.sortName !== null && this.sortValue !== null) {
+      this.listOfDisplayData = listOfData.sort((a, b) =>
         this.sortValue === 'ascend'
           ? a[this.sortName] > b[this.sortName]
             ? 1
@@ -46,7 +59,7 @@ export class EcommerceOrdersComponent {
           : -1,
       )
     } else {
-      this.displayProductsData = data
+      this.listOfDisplayData = listOfData
     }
   }
 }

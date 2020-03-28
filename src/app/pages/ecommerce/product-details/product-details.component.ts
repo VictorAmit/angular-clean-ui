@@ -9,15 +9,17 @@ const data: any = require('./data.json')
 })
 export class EcommerceProductDetailsComponent implements OnInit {
   images = data.images
-  sku = data.sku
-  name = data.name
-  rate = data.rate
-  price = data.price
-  oldPrice = data.oldPrice
-  shortDescr = data.shortDescr
-  description = data.description
-  properties = data.properties
-  colorValue = 'Red'
-
+  products = data.products
+  isFavorite = true
+  activeImgIndex = 0
+  constructor() {}
   ngOnInit() {}
+
+  setFavorite() {
+    this.isFavorite = !this.isFavorite
+  }
+
+  setImage(index) {
+    this.activeImgIndex = index
+  }
 }
