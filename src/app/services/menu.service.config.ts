@@ -391,7 +391,6 @@ export const getMenuData: any[] = [
     title: 'Nested Items',
     key: 'nestedItem1',
     icon: 'fe fe-layers',
-    disabled: true,
     children: [
       {
         title: 'Nested Item 1-1',

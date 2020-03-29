@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Router, NavigationStart } from '@angular/router'
 import { filter } from 'rxjs/operators'
 import * as _ from 'lodash'
@@ -13,9 +13,8 @@ import * as Reducers from 'src/app/store/reducers'
   styleUrls: ['./menu-top.component.scss'],
 })
 export class MenuTopComponent implements OnInit {
-  @Input() isMenuCollapsed: boolean = false
-  isLightTheme: boolean
-  isSettingsOpen: boolean
+  logo: String
+  menuColor: String
   menuData: any[]
   menuDataActivated: any[]
 
@@ -28,8 +27,8 @@ export class MenuTopComponent implements OnInit {
   ngOnInit() {
     this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
-      this.isLightTheme = state.isLightTheme
-      this.isSettingsOpen = state.isSettingsOpen
+      this.logo = state.logo
+      this.menuColor = state.menuColor
     })
     this.activateMenu(this.router.url)
     this.router.events
@@ -78,14 +77,6 @@ export class MenuTopComponent implements OnInit {
         }
       }) &&
       (found || _.map(path, property))
-    )
-  }
-
-  toggleSettings() {
-    this.store.dispatch(
-      new SettingsActions.SetStateAction({
-        isSettingsOpen: !this.isSettingsOpen,
-      }),
     )
   }
 }

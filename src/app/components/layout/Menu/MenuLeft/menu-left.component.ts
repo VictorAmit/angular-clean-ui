@@ -13,11 +13,13 @@ import * as Reducers from 'src/app/store/reducers'
   styleUrls: ['./menu-left.component.scss'],
 })
 export class MenuLeftComponent implements OnInit {
-  @Input() isMenuCollapsed: boolean = false
-  isLightTheme: boolean
-  isSidebarOpen: boolean
-  isMobileView: boolean
+  menuColor: String
+  isMenuShadow: Boolean
+  isMenuUnfixed: Boolean
+  isSidebarOpen: Boolean
+  isMobileView: Boolean
   leftMenuWidth: Number
+  isMenuCollapsed: Boolean
   logo: String
   menuData: any[]
   menuDataActivated: any[]
@@ -31,9 +33,13 @@ export class MenuLeftComponent implements OnInit {
   ngOnInit() {
     this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
-      this.isLightTheme = state.isLightTheme
+      this.menuColor = state.menuColor
+      this.isMenuShadow = state.isMenuShadow
+      this.isMenuUnfixed = state.isMenuUnfixed
+      this.isSidebarOpen = state.isSidebarOpen
       this.isMobileView = state.isMobileView
       this.leftMenuWidth = state.leftMenuWidth
+      this.isMenuCollapsed = state.isMenuCollapsed
       this.logo = state.logo
     })
     this.activateMenu(this.router.url)
@@ -90,6 +96,14 @@ export class MenuLeftComponent implements OnInit {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
         isSidebarOpen: !this.isSidebarOpen,
+      }),
+    )
+  }
+
+  onCollapse(value: any) {
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        isMenuCollapsed: value,
       }),
     )
   }
