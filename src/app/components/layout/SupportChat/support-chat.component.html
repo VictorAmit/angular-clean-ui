@@ -1,7 +1,6 @@
 <div class="chat">
-  <button type="button" (click)="toggle()"
-    class="toggleButton btn btn-rounded btn-light text-nowrap text-dark font-weight-bold font-size-18">
-    <i class="chatIcon fe fe-message-square text-blue mr-md-2"></i>
+  <button type="button" (click)="toggle()" class="toggleButton">
+    <i class="chatIcon fe fe-message-square mr-md-2"></i>
     <span class="d-none d-md-inline">Support Chat</span>
   </button>
   <div class="chatContainer" [ngClass]="isSupportChatOpen ? 'containerToggled' : ''">

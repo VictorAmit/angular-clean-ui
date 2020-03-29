@@ -5,10 +5,11 @@ import { SharedModule } from 'src/app/shared.module'
 import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
 
 import { TopbarComponent } from './Topbar/topbar.component'
-import { TopbarHomeMenuComponent } from './Topbar/HomeMenu/home-menu.component'
+import { TopbarActionsComponent } from './Topbar/Actions/actions.component'
+import { TopbarLanguageSwitcherComponent } from './Topbar/LanguageSwitcher/language-switcher.component'
 import { TopbarIssuesHistoryComponent } from './Topbar/IssuesHistory/issues-history.component'
-import { TopbarLiveSearchComponent } from './Topbar/LiveSearch/live-search.component'
-import { TopbarProfileMenuComponent } from './Topbar/ProfileMenu/profile-menu.component'
+import { TopbarSearchComponent } from './Topbar/Search/search.component'
+import { TopbarUserMenuComponent } from './Topbar/UserMenu/user-menu.component'
 import { TopbarProjectManagementComponent } from './Topbar/ProjectManagement/project-management.component'
 import { MenuLeftComponent } from './Menu/MenuLeft/menu-left.component'
 import { MenuTopComponent } from './Menu/MenuTop/menu-top.component'
@@ -19,11 +20,12 @@ import { SupportChatComponent } from './SupportChat/support-chat.component'
 
 const COMPONENTS = [
   TopbarComponent,
-  TopbarHomeMenuComponent,
   TopbarIssuesHistoryComponent,
-  TopbarLiveSearchComponent,
-  TopbarProfileMenuComponent,
+  TopbarSearchComponent,
+  TopbarUserMenuComponent,
   TopbarProjectManagementComponent,
+  TopbarActionsComponent,
+  TopbarLanguageSwitcherComponent,
   MenuLeftComponent,
   MenuTopComponent,
   FooterComponent,

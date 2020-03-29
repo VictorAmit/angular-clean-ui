@@ -2,11 +2,11 @@ import { Component } from '@angular/core'
 import { AuthService } from 'src/app/services/auth.service'
 
 @Component({
-  selector: 'cui-topbar-profile-menu',
-  templateUrl: './profile-menu.component.html',
-  styleUrls: ['./profile-menu.component.scss'],
+  selector: 'cui-topbar-user-menu',
+  templateUrl: './user-menu.component.html',
+  styleUrls: ['./user-menu.component.scss'],
 })
-export class TopbarProfileMenuComponent {
+export class TopbarUserMenuComponent {
   badgeCount: number = 7
   userName: string
   billingPlan: string
@@ -16,10 +16,10 @@ export class TopbarProfileMenuComponent {
 
   constructor(public authService: AuthService) {
     const userInfo = JSON.parse(localStorage.getItem('user'))
-    this.userName = userInfo.displayName || 'Anonymous'
+    this.userName = userInfo ? userInfo.displayName : 'Anonymous'
     this.billingPlan = 'Professional'
-    this.email = userInfo.email
-    this.phone = userInfo.phoneNumber || '-'
+    this.email = userInfo ? userInfo.email : ''
+    this.phone = userInfo ? userInfo.phoneNumber : '-'
     this.role = 'admin'
   }
 

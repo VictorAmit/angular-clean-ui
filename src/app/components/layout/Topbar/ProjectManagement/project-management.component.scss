@@ -4,15 +4,14 @@
   padding-right: 15px;
   position: relative;
   cursor: pointer;
-  display: block;
   @include transition-slow;
 
-  &:after {
-    color: $gray-1;
+  &::after {
+    opacity: 0.5;
+    color: $gray-5;
     position: absolute;
-    top: 50%;
+    top: 45%;
     right: 0;
-    margin-top: -2px;
     display: inline-block;
     width: 0;
     height: 0;
@@ -23,24 +22,42 @@
     border-right: 0.3em solid transparent;
     border-bottom: 0;
     border-left: 0.3em solid transparent;
-    @include transition-slow();
+    @include transition-slow;
   }
 
   &:hover {
-    color: $blue !important;
+    color: $blue;
 
-    &::after,
+    &::after {
+      color: $gray-6;
+    }
+
     .icon {
-      color: $gray-4;
+      color: $primary;
     }
   }
 }
+
 .icon {
-  margin-right: rem(6);
-  color: $gray-1;
-  @include transition-slow();
+  margin-right: rem(5);
+  position: relative;
+  bottom: -2px;
+  font-size: rem(17);
+  color: $gray-5;
+  @include transition-slow;
 }
 
-.menuIcon {
-  margin-right: rem(5);
+// dark theme
+:global(body.kit__dark) {
+  .dropdown {
+    color: $dark-gray-2;
+
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  .icon {
+    color: $dark-gray-2;
+  }
 }

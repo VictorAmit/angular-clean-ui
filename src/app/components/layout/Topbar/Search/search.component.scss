@@ -7,28 +7,25 @@
   width: 100%;
   height: 100%;
   background-color: $white;
-  z-index: 1200;
+  z-index: 12000;
   opacity: 0;
   visibility: hidden;
   @include transition-slow;
 }
 
-.livesearchShowed {
+.livesearchVisible {
   opacity: 1;
   visibility: visible;
 }
 
 .extInput {
   background-color: $gray-1;
-
-  @media screen and (max-width: $md-max-width) {
+  @media screen and (max-width: 620px) {
     width: 30px !important;
     padding-left: 22px !important;
-    ::ng-deep {
-      .ant-input-prefix {
-        left: 11px !important;
-        pointer-events: none;
-      }
+    :global(.ant-input-prefix) {
+      left: 11px !important;
+      pointer-events: none;
     }
   }
 }
@@ -40,7 +37,6 @@
   top: rem(30);
   right: rem(30);
   cursor: pointer;
-  outline: none !important;
   z-index: 1;
   border: none;
   background-color: transparent;
@@ -52,15 +48,10 @@
 }
 
 .wrapper {
-  padding-top: rem(14);
+  padding-top: rem(60);
   padding-left: rem(65);
   padding-right: rem(15);
   line-height: 1.7;
-
-  @media screen and (max-width: $sm-max-width) {
-    padding-left: rem(30);
-    padding-right: rem(30);
-  }
 
   @media screen and (max-width: $sm-max-width) {
     padding-left: rem(20);
@@ -106,31 +97,6 @@
 
   &:last-child {
     margin-right: 0;
-  }
-}
-
-.optionCheckbox {
-  ::ng-deep {
-    .ant-checkbox-wrapper {
-      color: $text;
-
-      .ant-checkbox {
-        top: -0.19em;
-      }
-
-      .ant-checkbox-inner {
-        border-color: $gray-4;
-      }
-
-      .ant-checkbox-checked {
-        .ant-checkbox-inner {
-          background-color: $gray-4;
-        }
-        &:after {
-          border: 1px solid $gray-4;
-        }
-      }
-    }
   }
 }
 
@@ -185,5 +151,25 @@
 }
 
 .resultSource {
-  color: $gray-1;
+  color: $text;
+}
+
+// dark theme
+:global(body.kit__dark) {
+  .extInput {
+    input {
+      background-color: $dark-gray-4;
+    }
+    :global(.anticon) {
+      color: $dark-gray-3 !important;
+    }
+  }
+
+  .livesearch {
+    background-color: $dark-gray-6;
+  }
+
+  .resultThumb {
+    background-color: $dark-gray-4;
+  }
 }

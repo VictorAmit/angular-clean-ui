@@ -1,10 +1,24 @@
 import { Component, OnInit } from '@angular/core'
+import { TranslateService } from '@ngx-translate/core'
 import qs from 'qs'
 import { Router, NavigationEnd, ActivatedRoute, NavigationStart } from '@angular/router'
 import { Title } from '@angular/platform-browser'
 import { filter, map, mergeMap } from 'rxjs/operators'
-import { Store } from '@ngrx/store'
+import { select, Store } from '@ngrx/store'
 import * as SettingsActions from 'src/app/store/settings/actions'
+import * as Reducers from 'src/app/store/reducers'
+
+import english from './locales/en-US'
+import french from './locales/fr-FR'
+import russian from './locales/ru-RU'
+import chinese from './locales/zh-CN'
+
+const locales = {
+  'en-US': english,
+  'fr-FR': french,
+  'ru-RU': russian,
+  'zh-CN': chinese,
+}
 
 @Component({
   selector: 'app-root',
@@ -19,7 +33,17 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private store: Store<any>,
-  ) {}
+    translate: TranslateService,
+  ) {
+    Object.keys(locales).forEach(locale => {
+      translate.setTranslation(locale, locales[locale])
+    })
+    translate.setDefaultLang('en-US')
+    // localization listener
+    this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
+      translate.use(state.locale)
+    })
+  }
 
   ngOnInit() {
     // set page title from router data variable

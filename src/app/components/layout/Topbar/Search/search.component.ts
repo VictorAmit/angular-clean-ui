@@ -1,14 +1,15 @@
 import { Component, ViewChild, ElementRef } from '@angular/core'
 
 @Component({
-  selector: 'cui-topbar-live-search',
-  templateUrl: './live-search.component.html',
-  styleUrls: ['./live-search.component.scss'],
+  selector: 'cui-topbar-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
 })
-export class TopbarLiveSearchComponent {
+export class TopbarSearchComponent {
   @ViewChild('liveSearchInput', { static: false }) liveSearchInput: ElementRef
 
   showSearch: boolean = false
+  searchText: string = ''
 
   constructor() {
     document.addEventListener('keydown', this.handleKeyDown.bind(this), false)

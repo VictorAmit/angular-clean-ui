@@ -5,6 +5,7 @@
   position: relative;
   cursor: pointer;
   @include transition-slow;
+  color: $gray-5;
 
   &::after {
     opacity: 0.5;
@@ -31,20 +32,7 @@
     &::after {
       color: $gray-6;
     }
-
-    .icon {
-      color: $primary;
-    }
   }
-}
-
-.icon {
-  margin-right: rem(5);
-  position: relative;
-  bottom: -2px;
-  font-size: rem(17);
-  color: $gray-5;
-  @include transition-slow;
 }
 
 // dark theme
@@ -55,9 +43,5 @@
     &:hover {
       color: $primary;
     }
-  }
-
-  .icon {
-    color: $dark-gray-2;
   }
 }

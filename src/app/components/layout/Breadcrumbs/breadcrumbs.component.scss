@@ -1,13 +1,11 @@
 @import 'src/app/components/kit-core/mixins.scss';
 
 .breadcrumbs {
-  padding: rem(10) rem(20);
-  background-color: $white;
-  border-bottom: 1px solid $border;
+  padding: rem(20) rem(30) 0;
+  font-size: rem(17);
 }
 
-.path {
-  font-size: rem(18);
+.current {
   color: $black;
 }
 
@@ -17,5 +15,23 @@
   &:after {
     display: inline-block;
     content: '·';
+    color: $gray-5;
+  }
+}
+
+// dark theme
+:host-context(body.kit__dark) {
+  .breadcrumbs {
+    color: $dark-gray-1;
+  }
+
+  .current {
+    color: $white;
+  }
+
+  .arrow {
+    &:after {
+      color: $dark-gray-1;
+    }
   }
 }
