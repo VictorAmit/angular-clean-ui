@@ -9,7 +9,7 @@ import { RegisterComponent } from 'src/app/pages/auth/register/register.componen
 import { LockscreenComponent } from 'src/app/pages/auth/lockscreen/lockscreen.component'
 import { ForgotPasswordComponent } from 'src/app/pages/auth/forgot-password/forgot-password.component'
 import { Error500Component } from 'src/app/pages/auth/500/500.component'
-import { Error404Component } from 'src/app/pages/auth/404/404.component'
+// import { Error404Component } from 'src/app/pages/auth/404/404.component'
 
 const routes: Routes = [
   {
@@ -32,11 +32,11 @@ const routes: Routes = [
     component: ForgotPasswordComponent,
     data: { title: 'Forgot Password' },
   },
-  {
-    path: '404',
-    component: Error404Component,
-    data: { title: 'Error 404' },
-  },
+  // {
+  //   path: '404',
+  //   component: Error404Component,
+  //   data: { title: 'Error 404' },
+  // },
   {
     path: '500',
     component: Error500Component,

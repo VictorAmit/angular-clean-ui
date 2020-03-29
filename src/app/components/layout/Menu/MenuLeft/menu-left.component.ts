@@ -17,6 +17,8 @@ export class MenuLeftComponent implements OnInit {
   isLightTheme: boolean
   isSidebarOpen: boolean
   isMobileView: boolean
+  leftMenuWidth: Number
+  logo: String
   menuData: any[]
   menuDataActivated: any[]
 
@@ -27,10 +29,12 @@ export class MenuLeftComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.menuService.getLeftMenuData().subscribe(menuData => (this.menuData = menuData))
+    this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
       this.isMobileView = state.isMobileView
+      this.leftMenuWidth = state.leftMenuWidth
+      this.logo = state.logo
     })
     this.activateMenu(this.router.url)
     this.router.events

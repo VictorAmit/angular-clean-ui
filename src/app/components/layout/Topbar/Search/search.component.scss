@@ -155,14 +155,13 @@
 }
 
 // dark theme
-:global(body.kit__dark) {
+:host-context(body.kit__dark) {
   .extInput {
-    input {
-      background-color: $dark-gray-4;
-    }
-    :global(.anticon) {
-      color: $dark-gray-3 !important;
-    }
+    background-color: $dark-gray-4;
+  }
+
+  .extInputIcon {
+    color: $dark-gray-3 !important;
   }
 
   .livesearch {

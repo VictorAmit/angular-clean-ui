@@ -22,7 +22,7 @@ export const initialState: object = {
     isMobileMenuOpen: false,
     isMenuCollapsed: false,
     menuLayoutType: 'left', // left, top, nomenu
-    routerAnimation: 'slide-fadein-up', // none, slide-fadein-up, slide-fadein-right, fadein, zoom-fadein
+    routerAnimation: 'slideFadeinUp', // none, slideFadeinUp, slideFadeinRight, Fadein, zoomFadein
     menuColor: 'white', // white, dark, gray
     theme: 'light', // light, dark
     authPagesColor: 'white', // white, gray, image

@@ -1,5 +1,6 @@
 export default {
   'topBar.issuesHistory': '发布历史',
+  'topBar.projectManagement': '项目管理',
   'topBar.typeToSearch': '搜索...',
   'topBar.findPages': '查找页面...',
   'topBar.actions': '动作',

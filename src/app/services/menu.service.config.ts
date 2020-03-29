@@ -1,739 +1,423 @@
-export const getLeftMenuData: any[] = [
+export const getMenuData: any[] = [
   {
-    title: 'Settings',
-    key: 'settings',
-    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
+    category: true,
+    title: 'Dashboards',
   },
   {
-    title: 'Documentation',
-    key: 'documentation',
-    url: 'https://docs.cleanuitemplate.com',
-    target: '_blank',
-    icon: 'icmn icmn-books',
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'Dashboard Alpha',
-    key: 'dashboardAlpha',
-    url: '/dashboard/alpha',
-    icon: 'icmn icmn-home',
-  },
-  {
-    title: 'Dashboard Beta',
-    key: 'dashboardBeta',
-    url: '/dashboard/beta',
-    icon: 'icmn icmn-home',
-    pro: true,
-  },
-  {
-    title: 'Dashboard Crypto',
-    key: 'dashboardCrypto',
-    url: '/dashboard/crypto',
-    icon: 'icmn icmn-home',
-    pro: true,
-  },
-  {
-    title: 'Dashboard Gamma',
-    key: 'dashboardGamma',
-    url: '/dashboard/gamma',
-    icon: 'icmn icmn-home',
-    pro: true,
-  },
-  {
-    title: 'Dashboard Docs',
-    key: 'dashboardDocs',
-    url: '/dashboard/docs',
-    icon: 'icmn icmn-home',
-    pro: true,
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'AntDesign Components',
-    key: 'antComponents',
-    icon: 'icmn icmn-menu',
-    url: '/antd/index',
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'Default Pages',
-    key: 'defaultPages',
-    icon: 'icmn icmn-file-text',
-    children: [
-      {
-        key: 'loginAlpha',
-        title: 'Login Alpha',
-        url: '/pages/login-alpha',
-        pro: true,
-      },
-      {
-        key: 'loginBeta',
-        title: 'Login Beta',
-        url: '/pages/login-beta',
-        pro: true,
-      },
-      {
-        key: 'register',
-        title: 'Register',
-        url: '/pages/register',
-        pro: true,
-      },
-      {
-        key: 'lockscreen',
-        title: 'Lockscreen',
-        url: '/pages/lockscreen',
-        pro: true,
-      },
-      {
-        key: 'pricingTable',
-        title: 'Pricing Tables',
-        url: '/pages/pricing-table',
-        pro: true,
-      },
-      {
-        key: 'invoice',
-        title: 'Invoice',
-        url: '/pages/invoice',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    key: 'charts',
-    icon: 'icmn icmn-stats-bars',
-    children: [
-      {
-        title: 'Chartist',
-        key: 'chartist',
-        url: '/charts/chartist',
-      },
-      {
-        title: 'Chart',
-        key: 'chart',
-        url: '/charts/chart',
-        pro: true,
-      },
-      {
-        title: 'NVD3',
-        key: 'nvd3',
-        url: '/charts/nvd3',
-        pro: true,
-      },
-      {
-        title: 'C3',
-        key: 'c3',
-        url: '/charts/c3',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'Mail Templates',
-    key: 'mailTemplates',
-    url: '/layout/mail-templates',
-    icon: 'icmn icmn-envelop',
-    pro: true,
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'Apps',
-    key: 'apps',
-    icon: 'icmn icmn-database',
-    children: [
-      {
-        title: 'Messaging',
-        key: 'messaging',
-        url: '/apps/messaging',
-        pro: true,
-      },
-      {
-        title: 'Mail',
-        key: 'mail',
-        url: '/apps/mail',
-        pro: true,
-      },
-      {
-        title: 'Profile',
-        key: 'profile',
-        url: '/apps/profile',
-        pro: true,
-      },
-      {
-        title: 'Gallery',
-        key: 'gallery',
-        url: '/apps/gallery',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'Ecommerce',
-    key: 'ecommerce',
-    icon: 'icmn icmn-cart',
-    children: [
-      {
-        title: 'Dashboard',
-        key: 'dashboard',
-        url: '/ecommerce/dashboard',
-        pro: true,
-      },
-      {
-        title: 'Products Catalog',
-        key: 'productsCatalog',
-        url: '/ecommerce/products-catalog',
-        pro: true,
-      },
-      {
-        title: 'Products Details',
-        key: 'productsDetails',
-        url: '/ecommerce/product-details',
-        pro: true,
-      },
-      {
-        title: 'Products Edit',
-        key: 'productsEdit',
-        url: '/ecommerce/product-edit',
-        pro: true,
-      },
-      {
-        title: 'Products List',
-        key: 'productsList',
-        url: '/ecommerce/products-list',
-        pro: true,
-      },
-      {
-        title: 'Orders',
-        key: 'orders',
-        url: '/ecommerce/orders',
-        pro: true,
-      },
-      {
-        title: 'Cart',
-        key: 'cart',
-        url: '/ecommerce/cart',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'Blog',
-    key: 'blog',
-    icon: 'icmn icmn-wordpress',
-    children: [
-      {
-        title: 'Feed',
-        key: 'blogFeed',
-        url: '/blog/feed',
-        pro: true,
-      },
-      {
-        title: 'Post',
-        key: 'blogPost',
-        url: '/blog/post',
-        pro: true,
-      },
-      {
-        title: 'Add Post',
-        key: 'blogAddPost',
-        url: '/blog/add-blog-post',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'YouTube',
-    key: 'youtube',
-    icon: 'icmn icmn-youtube',
-    children: [
-      {
-        title: 'Feed',
-        key: 'youtubeFeed',
-        url: '/youtube/feed',
-        pro: true,
-      },
-      {
-        title: 'View',
-        key: 'youtubeView',
-        url: '/youtube/view',
-        pro: true,
-      },
-    ],
-  },
-  {
-    title: 'GitHub',
-    key: 'github',
-    icon: 'icmn icmn-github',
-    children: [
-      {
-        title: 'Explore',
-        key: 'githubExplore',
-        url: '/github/explore',
-        pro: true,
-      },
-      {
-        title: 'Discuss',
-        key: 'githubDiscuss',
-        url: '/github/discuss',
-        pro: true,
-      },
-    ],
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'Icons',
-    key: 'icons',
-    icon: 'icmn icmn-star-full',
-    children: [
-      {
-        title: 'FontAwesome',
-        key: 'fontAwesome',
-        url: '/icons/fontawesome',
-      },
-      {
-        title: 'Linear',
-        key: 'linear',
-        url: '/icons/linear',
-      },
-      {
-        title: 'Icomoon',
-        key: 'icoMoon',
-        url: '/icons/icomoon',
-      },
-    ],
-  },
-  {
-    title: 'Bootstrap Grid',
-    key: 'bootstrap',
-    url: '/layout/bootstrap',
-    icon: 'icmn icmn-html-five',
-  },
-  {
-    title: 'Bootstrap Card',
-    key: 'card',
-    url: '/layout/card',
-    icon: 'icmn icmn-stack',
-  },
-  {
-    title: 'Typography',
-    key: 'typography',
-    url: '/layout/typography',
-    icon: 'icmn icmn-font-size',
-  },
-  {
-    title: 'Utilities',
-    key: 'utilities',
-    url: '/layout/utilities',
-    icon: 'icmn icmn-magic-wand',
-  },
-  {
-    divider: true,
-  },
-  {
-    title: 'Nested Items',
-    key: 'nestedItem1',
-    disabled: true,
-    icon: 'icmn icmn-arrow-down2',
-    url: 'javascript: void(0);',
-    children: [
-      {
-        title: 'Nested Item 1-1',
-        key: 'nestedItem1-1',
-        url: 'javascript: void(0);',
-        children: [
-          {
-            title: 'Nested Item 1-1-1',
-            key: 'nestedItem1-1-1',
-            url: 'javascript: void(0);',
-          },
-          {
-            title: 'Nested Items 1-1-2',
-            key: 'nestedItem1-1-2',
-            disabled: true,
-            url: 'javascript: void(0);',
-          },
-        ],
-      },
-      {
-        title: 'Nested Items 1-2',
-        key: 'nestedItem1-2',
-        url: 'javascript: void(0);',
-      },
-    ],
-  },
-  {
-    title: 'Disabled Item',
-    key: 'disabledItem',
-    disabled: true,
-    icon: 'icmn icmn-cancel-circle',
-    url: 'javascript: void(0);',
-  },
-]
-export const getTopMenuData: any[] = [
-  {
-    title: 'Settings',
-    key: 'settings',
-    icon: 'icmn icmn-cog utils__spin-delayed--pseudo-selector',
-  },
-  {
-    title: 'Docs',
-    key: 'documentation',
-    url: 'https://docs.cleanuitemplate.com',
-    target: '_blank',
-    icon: 'icmn icmn-books',
-  },
-  {
-    title: 'Pages',
-    key: 'pages',
-    icon: 'icmn icmn-stack',
+    title: 'Dashboards',
+    key: 'dashboards',
+    icon: 'fe fe-home',
+    roles: ['admin'],
+    count: 4,
     children: [
       {
         title: 'Dashboard Alpha',
-        key: 'dashboardAlpha',
+        key: 'dashboard',
         url: '/dashboard/alpha',
       },
       {
         title: 'Dashboard Beta',
         key: 'dashboardBeta',
         url: '/dashboard/beta',
-        pro: true,
-      },
-      {
-        title: 'Dashboard Crypto',
-        key: 'dashboardCrypto',
-        url: '/dashboard/crypto',
-        pro: true,
       },
       {
         title: 'Dashboard Gamma',
         key: 'dashboardGamma',
         url: '/dashboard/gamma',
-        pro: true,
       },
       {
-        title: 'Dashboard Docs',
-        key: 'dashboardDocs',
-        url: '/dashboard/docs',
-        pro: true,
-      },
-      {
-        divider: true,
-      },
-      {
-        title: 'Default Pages',
-        key: 'defaultPages',
-        children: [
-          {
-            key: 'loginAlpha',
-            title: 'Login Alpha',
-            url: '/pages/login-alpha',
-            pro: true,
-          },
-          {
-            key: 'loginBeta',
-            title: 'Login Beta',
-            url: '/pages/login-beta',
-            pro: true,
-          },
-          {
-            key: 'register',
-            title: 'Register',
-            url: '/pages/register',
-            pro: true,
-          },
-          {
-            key: 'lockscreen',
-            title: 'Lockscreen',
-            url: '/pages/lockscreen',
-            pro: true,
-          },
-          {
-            key: 'pricingTable',
-            title: 'Pricing Tables',
-            url: '/pages/pricing-table',
-            pro: true,
-          },
-          {
-            key: 'invoice',
-            title: 'Invoice',
-            url: '/pages/invoice',
-            pro: true,
-          },
-        ],
-      },
-      {
-        title: 'Ecommerce',
-        key: 'ecommerce',
-        children: [
-          {
-            title: 'Dashboard',
-            key: 'dashboard',
-            url: '/ecommerce/dashboard',
-            pro: true,
-          },
-          {
-            title: 'Products Catalog',
-            key: 'productsCatalog',
-            url: '/ecommerce/products-catalog',
-            pro: true,
-          },
-          {
-            title: 'Products Details',
-            key: 'productsDetails',
-            url: '/ecommerce/product-details',
-            pro: true,
-          },
-          {
-            title: 'Products Edit',
-            key: 'productsEdit',
-            url: '/ecommerce/product-edit',
-            pro: true,
-          },
-          {
-            title: 'Products List',
-            key: 'productsList',
-            url: '/ecommerce/products-list',
-            pro: true,
-          },
-          {
-            title: 'Orders',
-            key: 'orders',
-            url: '/ecommerce/orders',
-            pro: true,
-          },
-          {
-            title: 'Cart',
-            key: 'cart',
-            url: '/ecommerce/cart',
-            pro: true,
-          },
-        ],
-      },
-      {
-        title: 'Apps',
-        key: 'apps',
-        children: [
-          {
-            title: 'Messaging',
-            key: 'messaging',
-            url: '/apps/messaging',
-            pro: true,
-          },
-          {
-            title: 'Mail',
-            key: 'mail',
-            url: '/apps/mail',
-            pro: true,
-          },
-          {
-            title: 'Profile',
-            key: 'profile',
-            url: '/apps/profile',
-            pro: true,
-          },
-          {
-            title: 'Gallery',
-            key: 'gallery',
-            url: '/apps/gallery',
-            pro: true,
-          },
-        ],
-      },
-      {
-        title: 'Blog',
-        key: 'blog',
-        children: [
-          {
-            title: 'Feed',
-            key: 'blogFeed',
-            url: '/blog/feed',
-            pro: true,
-          },
-          {
-            title: 'Post',
-            key: 'blogPost',
-            url: '/blog/post',
-            pro: true,
-          },
-          {
-            title: 'Add Post',
-            key: 'blogAddPost',
-            url: '/blog/add-blog-post',
-            pro: true,
-          },
-        ],
-      },
-      {
-        title: 'YouTube',
-        key: 'youtube',
-        children: [
-          {
-            title: 'Feed',
-            key: 'youtubeFeed',
-            url: '/youtube/feed',
-            pro: true,
-          },
-          {
-            title: 'View',
-            key: 'youtubeView',
-            url: '/youtube/view',
-            pro: true,
-          },
-        ],
-      },
-      {
-        title: 'GitHub',
-        key: 'github',
-        children: [
-          {
-            title: 'Explore',
-            key: 'githubExplore',
-            url: '/github/explore',
-            pro: true,
-          },
-          {
-            title: 'Discuss',
-            key: 'githubDiscuss',
-            url: '/github/discuss',
-            pro: true,
-          },
-        ],
+        title: 'Crypto Terminal',
+        key: 'dashboardCrypto',
+        url: '/dashboard/crypto',
       },
     ],
   },
   {
-    title: 'AntDesign',
-    key: 'antComponents',
-    icon: 'icmn icmn-menu',
-    url: '/antd/index',
+    category: true,
+    title: 'Apps & Pages',
   },
   {
-    title: 'Components',
-    key: 'pagesBlocks',
-    icon: 'icmn icmn-stack',
+    title: 'Apps',
+    key: 'apps',
+    icon: 'fe fe-database',
     children: [
       {
-        title: 'Charts',
-        key: 'charts',
-        children: [
-          {
-            title: 'Chartist',
-            key: 'chartist',
-            url: '/charts/chartist',
-          },
-          {
-            title: 'Chart',
-            key: 'chart',
-            url: '/charts/chart',
-            pro: true,
-          },
-          {
-            title: 'NVD3',
-            key: 'nvd3',
-            url: '/charts/nvd3',
-            pro: true,
-          },
-          {
-            title: 'C3',
-            key: 'c3',
-            url: '/charts/c3',
-            pro: true,
-          },
-        ],
+        title: 'Profile',
+        key: 'appsProfile',
+        url: '/apps/profile',
       },
       {
-        title: 'Mail Templates',
-        key: 'mailTemplates',
-        url: '/layout/mail-templates',
-        pro: true,
+        title: 'Calendar',
+        key: 'appsCalendar',
+        url: '/apps/calendar',
       },
       {
-        title: 'Icons',
-        key: 'icons',
-        children: [
-          {
-            title: 'FontAwesome',
-            key: 'fontAwesome',
-            url: '/icons/fontawesome',
-          },
-          {
-            title: 'Linear',
-            key: 'linear',
-            url: '/icons/linear',
-          },
-          {
-            title: 'Icomoon',
-            key: 'icoMoon',
-            url: '/icons/icomoon',
-          },
-        ],
+        title: 'Gallery',
+        key: 'appsGallery',
+        url: '/apps/gallery',
       },
       {
-        title: 'Bootstrap Grid',
-        key: 'bootstrap',
-        url: '/layout/bootstrap',
+        title: 'Messaging',
+        key: 'appsCart',
+        url: '/apps/messaging',
       },
       {
-        title: 'Bootstrap Card',
-        key: 'card',
-        url: '/layout/card',
-      },
-      {
-        title: 'Typography',
-        key: 'typography',
-        url: '/layout/typography',
-      },
-      {
-        title: 'Utilities',
-        key: 'utilities',
-        url: '/layout/utilities',
-      },
-      {
-        title: 'Nested Items',
-        key: 'nestedItem1',
-        disabled: true,
-        url: 'javascript: void(0);',
-        children: [
-          {
-            title: 'Nested Item 1-1',
-            key: 'nestedItem1-1',
-            url: 'javascript: void(0);',
-            children: [
-              {
-                title: 'Nested Item 1-1-1',
-                key: 'nestedItem1-1-1',
-                url: 'javascript: void(0);',
-              },
-              {
-                title: 'Nested Items 1-1-2',
-                key: 'nestedItem1-1-2',
-                disabled: true,
-                url: 'javascript: void(0);',
-              },
-            ],
-          },
-          {
-            title: 'Nested Items 1-2',
-            key: 'nestedItem1-2',
-            url: 'javascript: void(0);',
-          },
-        ],
-      },
-      {
-        title: 'Disabled Item',
-        key: 'disabledItem',
-        disabled: true,
-        url: 'javascript: void(0);',
+        title: 'Mail',
+        key: 'appsMail',
+        url: '/apps/mail',
       },
     ],
+  },
+  {
+    title: 'Extra Apps',
+    key: 'extraApps',
+    icon: 'fe fe-hard-drive',
+    children: [
+      {
+        title: 'Github Explore',
+        key: 'extraAppsGithubExplore',
+        url: '/apps/github-explore',
+      },
+      {
+        title: 'Github Discuss',
+        key: 'extraAppsGithubDiscuss',
+        url: '/apps/github-discuss',
+      },
+      {
+        title: 'Digitalocean Droplets',
+        key: 'extraAppsDigitaloceanDroplets',
+        url: '/apps/digitalocean-droplets',
+      },
+      {
+        title: 'Digitalocean Create',
+        key: 'extraAppsDigitaloceanCreate',
+        url: '/apps/digitalocean-create',
+      },
+      {
+        title: 'Google Analytics',
+        key: 'extraAppsGoogleAnalytis',
+        url: '/apps/google-analytics',
+      },
+      {
+        title: 'Wordpress Post',
+        key: 'extraAppsWordpressPost',
+        url: '/apps/wordpress-post',
+      },
+      {
+        title: 'Wordpress Posts',
+        key: 'extraAppsWordpressPosts',
+        url: '/apps/wordpress-posts',
+      },
+      {
+        title: 'Wordpress Add',
+        key: 'extraAppsWordpressAdd',
+        url: '/apps/wordpress-add',
+      },
+      {
+        title: 'Todoist List',
+        key: 'extraAppsTodoistList',
+        url: '/apps/todoist-list',
+      },
+      {
+        title: 'Jira Dashboard',
+        key: 'extraAppsJiraDashboard',
+        url: '/apps/jira-dashboard',
+      },
+      {
+        title: 'Jira Agile Board',
+        key: 'extraAppsJiraAgileBoard',
+        url: '/apps/jira-agile-board',
+      },
+      {
+        title: 'Helpdesk Dashboard',
+        key: 'extraAppsHelpdeskDashboard',
+        url: '/apps/helpdesk-dashboard',
+      },
+    ],
+  },
+  {
+    title: 'Ecommerce',
+    key: 'ecommerce',
+    icon: 'fe fe-shopping-cart',
+    children: [
+      {
+        title: 'Dashboard',
+        key: 'ecommerceDashboard',
+        url: '/ecommerce/dashboard',
+      },
+      {
+        title: 'Orders',
+        key: 'ecommerceOrders',
+        url: '/ecommerce/orders',
+      },
+      {
+        title: 'Propduct Catalog',
+        key: 'ecommerceProductCatalog',
+        url: '/ecommerce/product-catalog',
+      },
+      {
+        title: 'Product Details',
+        key: 'ecommerceProductDetails',
+        url: '/ecommerce/product-details',
+      },
+      {
+        title: 'Cart',
+        key: 'ecommerceCart',
+        url: '/ecommerce/cart',
+      },
+    ],
+  },
+  {
+    title: 'Auth Pages',
+    key: 'auth',
+    icon: 'fe fe-user',
+    children: [
+      {
+        title: 'Login',
+        key: 'authLogin',
+        url: '/auth/login',
+      },
+      {
+        title: 'Forgot Password',
+        key: 'authForgotPassword',
+        url: '/auth/forgot-password',
+      },
+      {
+        title: 'Register',
+        key: 'authRegister',
+        url: '/auth/register',
+      },
+      {
+        title: 'Lockscreen',
+        key: 'authLockscreen',
+        url: '/auth/lockscreen',
+      },
+      {
+        title: 'Page 404',
+        key: 'auth404',
+        url: '/auth/404',
+      },
+      {
+        title: 'Page 500',
+        key: 'auth500',
+        url: '/auth/500',
+      },
+    ],
+  },
+  {
+    category: true,
+    title: 'UI Kits',
+  },
+  {
+    title: 'Ant Design',
+    key: 'antDesign',
+    icon: 'fe fe-bookmark',
+    url: '/ui-kits/antd',
+  },
+  {
+    title: 'Bootstrap',
+    key: 'bootstrap',
+    icon: 'fe fe-bookmark',
+    url: '/ui-kits/bootstrap',
+  },
+  {
+    category: true,
+    title: 'Components',
+  },
+  {
+    title: 'Widgets',
+    key: 'widgets',
+    icon: 'fe fe-image',
+    count: 47,
+    children: [
+      {
+        title: 'General',
+        key: 'widgetsGeneral',
+        url: '/widgets/general',
+      },
+      {
+        title: 'Lists',
+        key: 'widgetsLists',
+        url: '/widgets/lists',
+      },
+      {
+        title: 'Tables',
+        key: 'widgetsTables',
+        url: '/widgets/tables',
+      },
+      {
+        title: 'Charts',
+        key: 'widgetsCharts',
+        url: '/widgets/charts',
+      },
+    ],
+  },
+  {
+    title: 'Cards',
+    key: 'cards',
+    icon: 'fe fe-credit-card',
+    children: [
+      {
+        title: 'Basic Cards',
+        key: 'cardsBasicCards',
+        url: '/cards/basic-cards',
+      },
+      {
+        title: 'Tabbed Cards',
+        key: 'cardsTabbedCards',
+        url: '/cards/tabbed-cards',
+      },
+    ],
+  },
+  {
+    title: 'Tables',
+    key: 'tables',
+    icon: 'fe fe-grid',
+    children: [
+      {
+        title: 'Ant Design',
+        key: 'tablesAntd',
+        url: '/tables/antd',
+      },
+      {
+        title: 'Bootstrap',
+        key: 'tablesBootstrap',
+        url: '/tables/bootstrap',
+      },
+    ],
+  },
+  {
+    title: 'Charts',
+    key: 'charts',
+    icon: 'fe fe-pie-chart',
+    children: [
+      {
+        title: 'Chartist.js',
+        key: 'chartsChartistjs',
+        url: '/charts/chartistjs',
+      },
+      {
+        title: 'Chart.js',
+        key: 'chartsChartjs',
+        url: '/charts/chartjs',
+      },
+      {
+        title: 'C3',
+        key: 'chartsC3',
+        url: '/charts/c3',
+      },
+    ],
+  },
+  {
+    title: 'Icons',
+    key: 'icons',
+    icon: 'fe fe-star',
+    children: [
+      {
+        title: 'Feather Icons',
+        key: 'iconsFeatherIcons',
+        url: '/icons/feather-icons',
+      },
+      {
+        title: 'Fontawesome',
+        key: 'iconsFontawesome',
+        url: '/icons/fontawesome',
+      },
+      {
+        title: 'Linearicons Free',
+        key: 'iconsLineariconsFree',
+        url: '/icons/linearicons-free',
+      },
+      {
+        title: 'Icomoon Free',
+        key: 'iconsIcomoonFree',
+        url: '/icons/icomoon-free',
+      },
+    ],
+  },
+  {
+    category: true,
+    title: 'Advanced',
+  },
+  {
+    title: 'Form Examples',
+    key: 'formExamples',
+    icon: 'fe fe-menu',
+    url: '/advanced/form-examples',
+  },
+  {
+    title: 'Email Templates',
+    key: 'emailTemplates',
+    icon: 'fe fe-mail',
+    url: '/advanced/email-templates',
+  },
+  {
+    title: 'Pricing Tables',
+    key: 'pricingTables',
+    icon: 'fe fe-command',
+    url: '/advanced/pricing-tables',
+  },
+  {
+    title: 'Invoice',
+    key: 'invoice',
+    icon: 'fe fe-file-text',
+    url: '/advanced/invoice',
+  },
+  {
+    title: 'Utilities',
+    key: 'utilities',
+    icon: 'fe fe-inbox',
+    url: '/advanced/utilities',
+  },
+  {
+    title: 'Grid',
+    key: 'grid',
+    icon: 'fe fe-grid',
+    url: '/advanced/grid',
+  },
+  {
+    title: 'Typography',
+    key: 'typography',
+    icon: 'fe fe-type',
+    url: '/advanced/typography',
+  },
+  {
+    title: 'Colors',
+    key: 'colors',
+    icon: 'fe fe-feather',
+    url: '/advanced/colors',
+  },
+  {
+    title: 'Nested Items',
+    key: 'nestedItem1',
+    icon: 'fe fe-layers',
+    disabled: true,
+    children: [
+      {
+        title: 'Nested Item 1-1',
+        key: 'nestedItem1-1',
+        children: [
+          {
+            title: 'Nested Item 1-1-1',
+            key: 'nestedItem1-1-1',
+          },
+          {
+            title: 'Nested Items 1-1-2',
+            key: 'nestedItem1-1-2',
+            disabled: true,
+          },
+        ],
+      },
+      {
+        title: 'Nested Items 1-2',
+        key: 'nestedItem1-2',
+      },
+    ],
+  },
+  {
+    title: 'Disabled Item',
+    key: 'disabledItem',
+    icon: 'fe fe-slash',
+    disabled: true,
   },
 ]

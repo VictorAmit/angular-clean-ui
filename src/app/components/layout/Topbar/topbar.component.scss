@@ -17,7 +17,7 @@
 }
 
 // dark theme
-:global(body.kit__dark) {
+:host-context(body.kit__dark) {
   .topbar {
     background: $dark-gray-6;
     color: $dark-gray-1;

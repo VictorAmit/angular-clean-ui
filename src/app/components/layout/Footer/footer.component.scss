@@ -35,7 +35,7 @@
 }
 
 // dark theme
-:global(body.kit__dark) {
+:host-context(body.kit__dark) {
   .footer {
     color: $dark-gray-1;
   }
@@ -45,6 +45,10 @@
   }
 
   .logo {
+    color: $dark-gray-1;
+    &:hover {
+      color: $primary;
+    }
     span {
       background: $dark-gray-1;
     }

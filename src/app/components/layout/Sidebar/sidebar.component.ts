@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
 import { select, Store } from '@ngrx/store'
+import store from 'store'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
@@ -11,19 +12,18 @@ import AntDesignLightTheme from 'src/app/components/kit-vendors/antd/themes/them
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent {
   isSidebarOpen: boolean
   isMenuCollapsed: boolean
   isMenuShadow: boolean
   isMenuUnfixed: boolean
   menuLayoutType: string
-  menuType: string
   menuColor: string
   flyoutMenuColor: string
   systemLayoutColor: string
   isTopbarFixed: boolean
   isFooterDark: boolean
-  isContentNoMaxWidth: boolean
+  isContentMaxWidth: boolean
   isAppMaxWidth: boolean
   isGrayBackground: boolean
   isGrayTopbar: boolean
@@ -32,6 +32,14 @@ export class SidebarComponent implements OnInit {
   isBorderless: boolean
   routerAnimation: string
   locale: string
+  leftMenuWidth: Number
+  logo: string
+  authPagesColor: string
+  theme: string
+  primaryColor: string
+
+  defaultColor = '#4b7cf3'
+  window: any = window as any
 
   constructor(private store: Store<any>) {
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
@@ -40,13 +48,12 @@ export class SidebarComponent implements OnInit {
       this.isMenuShadow = state.isMenuShadow
       this.isMenuUnfixed = state.isMenuUnfixed
       this.menuLayoutType = state.menuLayoutType
-      this.menuType = state.menuType
       this.menuColor = state.menuColor
       this.flyoutMenuColor = state.flyoutMenuColor
       this.systemLayoutColor = state.systemLayoutColor
       this.isTopbarFixed = state.isTopbarFixed
       this.isFooterDark = state.isFooterDark
-      this.isContentNoMaxWidth = state.isContentNoMaxWidth
+      this.isContentMaxWidth = state.isContentMaxWidth
       this.isAppMaxWidth = state.isAppMaxWidth
       this.isGrayBackground = state.isGrayBackground
       this.isGrayTopbar = state.isGrayTopbar
@@ -55,17 +62,12 @@ export class SidebarComponent implements OnInit {
       this.isBorderless = state.isBorderless
       this.routerAnimation = state.routerAnimation
       this.locale = state.locale
+      this.leftMenuWidth = state.leftMenuWidth
+      this.logo = state.logo
+      this.authPagesColor = state.authPagesColor
+      this.theme = state.theme
+      this.primaryColor = state.primaryColor
     })
-  }
-
-  ngOnInit() {
-    const mode = window.localStorage.getItem('kit.theme')
-    if (mode === 'dark') {
-      document.querySelector('body').classList.add('kit__dark')
-      ;(<any>window).less.modifyVars(AntDesignDarkTheme)
-    } else {
-      ;(<any>window).less.modifyVars(AntDesignLightTheme)
-    }
   }
 
   toggle() {
@@ -84,13 +86,64 @@ export class SidebarComponent implements OnInit {
     )
   }
 
-  selectMenuType(e) {
-    console.log(e)
-    const { value } = e.target
+  setWidth(value: number) {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
-        menuType: value,
+        leftMenuWidth: value,
       }),
     )
+  }
+
+  switchDarkTheme() {
+    const currentTheme = this.theme
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
+    const toggleTheme = () => {
+      if (nextTheme === 'light') {
+        document.querySelector('body').classList.remove('kit__dark')
+        this.window.less.modifyVars(AntDesignLightTheme)
+      } else {
+        document.querySelector('body').classList.add('kit__dark')
+        this.window.less.modifyVars(AntDesignDarkTheme)
+        this.store.dispatch(
+          new SettingsActions.SetStateAction({
+            menuColor: 'dark',
+          }),
+        )
+        store.set('app.settings.menuColor', 'dark')
+      }
+    }
+    toggleTheme()
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        theme: nextTheme,
+      }),
+    )
+    store.set('app.settings.theme', nextTheme)
+  }
+
+  setPrimaryColor(e) {
+    const color = e.target ? e.target.value : e
+    const addStyles = () => {
+      const styleElement = document.querySelector('#primaryColor')
+      if (styleElement) {
+        styleElement.remove()
+      }
+      const body = document.querySelector('body')
+      const styleEl = document.createElement('style')
+      const css = document.createTextNode(`:root { --kit-color-primary: ${color};}`)
+      styleEl.setAttribute('id', 'primaryColor')
+      styleEl.appendChild(css)
+      body.appendChild(styleEl)
+    }
+    addStyles()
+    this.store.dispatch(
+      new SettingsActions.SetStateAction({
+        primaryColor: color,
+      }),
+    )
+  }
+
+  resetColor() {
+    this.setPrimaryColor(this.defaultColor)
   }
 }

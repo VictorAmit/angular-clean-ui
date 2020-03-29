@@ -9,7 +9,7 @@ import { RegisterComponent } from './register/register.component'
 import { LockscreenComponent } from './lockscreen/lockscreen.component'
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component'
 import { Error500Component } from './500/500.component'
-import { Error404Component } from './404/404.component'
+// import { Error404Component } from './404/404.component'
 
 const COMPONENTS = [
   LoginComponent,
@@ -17,7 +17,7 @@ const COMPONENTS = [
   LockscreenComponent,
   ForgotPasswordComponent,
   Error500Component,
-  Error404Component,
+  // Error404Component,
 ]
 
 @NgModule({

@@ -7,11 +7,13 @@
           <strong>Theme Settings</strong>
         </h5>
         <div class="cui__utils__line" style="margin-top: 25px; margin-bottom: 30px"></div>
-        <div>
-          <p class="text-muted mb-5">
-            This component gives possibility to construct custom blocks with any widgets,
-            components and elements inside, like this theme settings
-          </p>
+        <div class="cui__sidebar__type">
+          <div class="cui__sidebar__type__title">
+            <span>Menu Layout</span>
+          </div>
+          <div class="cui__sidebar__type__items">
+            <input nz-input [ngModel]="logo" (ngModelChange)="settingChange($event, 'logo')" />
+          </div>
         </div>
         <div class="cui__sidebar__type">
           <div class="cui__sidebar__type__title">
@@ -25,40 +27,12 @@
                     <label nz-radio nzValue="left">Left Menu</label>
                   </div>
                   <div class="mb-2">
-                    <label nz-radio nzValue="top-dark">Top Dark</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="mb-2">
                     <label nz-radio nzValue="top">Top Menu</label>
                   </div>
+                </div>
+                <div class="col-6">
                   <div class="mb-2">
                     <label nz-radio nzValue="nomenu">No menu</label>
-                  </div>
-                </div>
-              </div>
-            </nz-radio-group>
-          </div>
-        </div>
-        <div class="cui__sidebar__type">
-          <div class="cui__sidebar__type__title">
-            <span>Left Menu Type</span>
-          </div>
-          <div class="cui__sidebar__type__items">
-            <nz-radio-group [(ngModel)]="menuType" (ngModelChange)="settingChange($event, 'menuType')"
-              [nzDisabled]="menuLayoutType !== 'left'">
-              <div class="row">
-                <div class="col-6">
-                  <div class="mb-2">
-                    <label nz-radio nzValue="default">Default</label>
-                  </div>
-                  <div class="mb-2">
-                    <label nz-radio nzValue="flyout">Flyout</label>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="mb-2">
-                    <label nz-radio nzValue="compact">Compact</label>
                   </div>
                 </div>
               </div>
@@ -93,105 +67,101 @@
             </nz-select>
           </div>
         </div>
+        <div class="cui__sidebar__type mb-2">
+          <div class="cui__sidebar__type__title">
+            <span>Left Menu Width</span>
+          </div>
+          <div class="cui__sidebar__type__items">
+            <nz-slider [ngModel]="leftMenuWidth" (ngModelChange)="setWidth($event)" [nzMin]="256" [nzMax]="330">
+            </nz-slider>
+          </div>
+        </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Toggled left menu</div>
+          <div class="cui__sidebar__label">Left Menu: Collapsed</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isMenuCollapsed" (ngModelChange)="settingChange($event, 'isMenuCollapsed')"
               [nzDisabled]="menuLayoutType !== 'left'"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Unfixed left menu</div>
+          <div class="cui__sidebar__label">Left Menu: Unfixed</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isMenuUnfixed" (ngModelChange)="settingChange($event, 'isMenuUnfixed')"
               [nzDisabled]="menuLayoutType !== 'left'"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Fixed topbar</div>
+          <div class="cui__sidebar__label">Left Menu: Shadow</div>
+          <div class="cui__sidebar__container">
+            <nz-switch [(ngModel)]="isMenuShadow" (ngModelChange)="settingChange($event, 'isMenuShadow')"
+              [nzDisabled]="menuLayoutType !== 'left'"></nz-switch>
+          </div>
+        </div>
+        <div class="cui__sidebar__item">
+          <div class="cui__sidebar__label">Menu: Color</div>
+          <div class="cui__sidebar__container">
+            <ng-container
+              *ngTemplateOutlet="colorTpl; context: {$implicit: 'menuColor', colors: ['white', 'gray', 'dark'], active: menuColor}">
+            </ng-container>
+          </div>
+        </div>
+        <div class="cui__sidebar__item">
+          <div class="cui__sidebar__label">Auth: Background</div>
+          <div class="cui__sidebar__container">
+            <ng-container
+              *ngTemplateOutlet="colorTpl; context: {$implicit: 'authPagesColor', colors: ['white', 'gray', 'image'], active: authPagesColor}">
+            </ng-container>
+          </div>
+        </div>
+        <div class="cui__sidebar__item">
+          <div class="cui__sidebar__label">Topbar: Fixed</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isTopbarFixed" (ngModelChange)="settingChange($event, 'isTopbarFixed')"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Dark Footer</div>
+          <div class="cui__sidebar__label">Topbar: Gray Background</div>
           <div class="cui__sidebar__container">
-            <nz-switch [(ngModel)]="isFooterDark" (ngModelChange)="settingChange($event, 'isFooterDark')"></nz-switch>
+            <nz-switch [(ngModel)]="isGrayTopbar" (ngModelChange)="settingChange($event, 'isGrayTopbar')"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Menu color</div>
+          <div class="cui__sidebar__label">App: Content Max-Width</div>
           <div class="cui__sidebar__container">
-            <ng-container
-              *ngTemplateOutlet="colorTpl; context: {$implicit: 'menuColor', colors: ['white', 'gray', 'blue', 'dark'], active: menuColor}">
-            </ng-container>
-          </div>
-        </div>
-        <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Flyout menu</div>
-          <div class="cui__sidebar__container">
-            <ng-container
-              *ngTemplateOutlet="colorTpl; context: {$implicit: 'flyoutMenuColor', colors: ['white', 'gray', 'blue', 'dark'], active: flyoutMenuColor}">
-            </ng-container>
-          </div>
-        </div>
-        <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Login color</div>
-          <div class="cui__sidebar__container">
-            <ng-container
-              *ngTemplateOutlet="colorTpl; context: {$implicit: 'systemLayoutColor', colors: ['white', 'gray', 'blue', 'dark', 'image'], active: systemLayoutColor}">
-            </ng-container>
-          </div>
-        </div>
-        <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Content no max-width</div>
-          <div class="cui__sidebar__container">
-            <nz-switch [(ngModel)]="isContentNoMaxWidth" (ngModelChange)="settingChange($event, 'isContentNoMaxWidth')">
+            <nz-switch [(ngModel)]="isContentMaxWidth" (ngModelChange)="settingChange($event, 'isContentMaxWidth')">
             </nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">App max-width</div>
+          <div class="cui__sidebar__label">App: Max-Width</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isAppMaxWidth" (ngModelChange)="settingChange($event, 'isAppMaxWidth')"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Gray background</div>
+          <div class="cui__sidebar__label">App: Gray Background</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isGrayBackground" (ngModelChange)="settingChange($event, 'isGrayBackground')">
             </nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Gray topbar</div>
-          <div class="cui__sidebar__container">
-            <nz-switch [(ngModel)]="isGrayTopbar" (ngModelChange)="settingChange($event, 'isGrayTopbar')"></nz-switch>
-          </div>
-        </div>
-        <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Squared card borders</div>
+          <div class="cui__sidebar__label">Cards: Squared Borders</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isSquaredBorders" (ngModelChange)="settingChange($event, 'isSquaredBorders')">
             </nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Card shadow</div>
+          <div class="cui__sidebar__label">Cards: Shadow</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isCardShadow" (ngModelChange)="settingChange($event, 'isCardShadow')"></nz-switch>
           </div>
         </div>
         <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Borderless cards</div>
+          <div class="cui__sidebar__label">Cards: Borderless</div>
           <div class="cui__sidebar__container">
             <nz-switch [(ngModel)]="isBorderless" (ngModelChange)="settingChange($event, 'isBorderless')"></nz-switch>
-          </div>
-        </div>
-        <div class="cui__sidebar__item">
-          <div class="cui__sidebar__label">Menu shadow</div>
-          <div class="cui__sidebar__container">
-            <nz-switch [(ngModel)]="isMenuShadow" (ngModelChange)="settingChange($event, 'isMenuShadow')"></nz-switch>
           </div>
         </div>
       </div>
@@ -201,12 +171,18 @@
     nzTooltipPlacement="left" nz-tooltip class="cui__sidebar__toggleButton">
     <i class="fe fe-settings"></i>
   </a>
-  <a href="javascript: void(0);" style="bottom: calc(50% + 60px)" (click)="toggle()"
+  <a href="javascript: void(0);" style="bottom: calc(50% + 60px)" (click)="switchDarkTheme()"
     nzTooltipTitle="Switch Dark / Light Theme" nzTooltipPlacement="left" nz-tooltip class="cui__sidebar__toggleButton">
-    <i class="fe fe-moon"></i>
+    <i *ngIf="theme === 'light'" class="fe fe-moon"></i>
+    <i *ngIf="theme !== 'light'" class="fe fe-sun"></i>
   </a>
-  <a href="javascript: void(0);" style="bottom: calc(50%)" (click)="toggle()" nzTooltipTitle="Set Primary Color"
-    nzTooltipPlacement="left" nz-tooltip class="cui__sidebar__toggleButton">
+  <a href="javascript: void(0);" style="bottom: calc(50%)" nzTooltipTitle="Set Primary Color" nzTooltipPlacement="left"
+    nz-tooltip class="cui__sidebar__toggleButton color" [ngClass]="{
+      reset: primaryColor === defaultColor}">
+    <button type="button" tabindex="0" (click)="resetColor()">
+      <i class="fe fe-x-circle"></i>
+    </button>
+    <input type="color" id="colorPicker" (change)="setPrimaryColor($event)" [ngModel]="primaryColor" />
     <i class="fe fe-package"></i>
   </a>
   <a href="https://docs.cleanuitemplate.com" target="_blank" rel="noopener noreferrer" style="bottom: calc(50% - 60px)"

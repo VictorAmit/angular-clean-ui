@@ -6,7 +6,8 @@
   cursor: pointer;
 
   &::after {
-    color: $gray-4;
+    opacity: 0.5;
+    color: $gray-5;
     position: absolute;
     top: 50%;
     right: 0;
@@ -28,15 +29,18 @@
     color: $blue;
 
     &::after {
-      color: $gray-5;
+      color: $gray-6;
     }
   }
 }
 
 .avatar {
-  background-color: $border;
+  background-color: $gray-2 !important;
 }
 
-.menuIcon {
-  margin-right: rem(5);
+// dark theme
+:host-context(body.kit__dark) {
+  .avatar {
+    background: $dark-gray-4 !important;
+  }
 }

@@ -26,7 +26,7 @@ export class MenuTopComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.menuService.getTopMenuData().subscribe(menuData => (this.menuData = menuData))
+    this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.isLightTheme = state.isLightTheme
       this.isSettingsOpen = state.isSettingsOpen

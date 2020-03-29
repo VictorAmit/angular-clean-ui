@@ -5,8 +5,12 @@ import { Router, NavigationEnd, ActivatedRoute, NavigationStart } from '@angular
 import { Title } from '@angular/platform-browser'
 import { filter, map, mergeMap } from 'rxjs/operators'
 import { select, Store } from '@ngrx/store'
+import store from 'store'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
+
+import AntDesignDarkTheme from 'src/app/components/kit-vendors/antd/themes/themeDark'
+import AntDesignLightTheme from 'src/app/components/kit-vendors/antd/themes/themeLight'
 
 import english from './locales/en-US'
 import french from './locales/fr-FR'
@@ -28,6 +32,8 @@ const locales = {
   `,
 })
 export class AppComponent implements OnInit {
+  window: any = window as any
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -127,5 +133,43 @@ export class AppComponent implements OnInit {
     window.addEventListener('resize', () => {
       detectViewPort()
     })
+
+    // set primary color on app load
+    const primaryColor = () => {
+      const color = store.get('app.settings.primaryColor')
+      if (color) {
+        const addStyles = () => {
+          const styleElement = document.querySelector('#primaryColor')
+          if (styleElement) {
+            styleElement.remove()
+          }
+          const body = document.querySelector('body')
+          const styleEl = document.createElement('style')
+          const css = document.createTextNode(`:root { --kit-color-primary: ${color};}`)
+          styleEl.setAttribute('id', 'primaryColor')
+          styleEl.appendChild(css)
+          body.appendChild(styleEl)
+        }
+        addStyles()
+        this.store.dispatch(
+          new SettingsActions.SetStateAction({
+            primaryColor: color,
+          }),
+        )
+      }
+    }
+    primaryColor()
+
+    // init theme
+    const initTheme = () => {
+      const theme = store.get('app.settings.theme')
+      if (theme === 'dark') {
+        document.querySelector('body').classList.add('kit__dark')
+        this.window.less.modifyVars(AntDesignDarkTheme)
+      } else {
+        this.window.less.modifyVars(AntDesignLightTheme)
+      }
+    }
+    initTheme()
   }
 }
