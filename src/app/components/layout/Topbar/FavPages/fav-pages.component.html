@@ -1,12 +1,13 @@
 <div>
   <ng-container *ngFor="let item of favs">
     <a [routerLink]="item.url" class="mr-2 item">
-      <i class="mr-2 fe icon" [ngClass]="[item.icon]"></i>
+      <i class="mr-2 fe icon" [ngClass]="[item.icon]" nz-tooltip [nzTooltipTitle]="item.title"
+        nzTooltipPlacement="bottom"></i>
     </a>
   </ng-container>
   <span class="dropdown">
     <a nz-dropdown nzTrigger="click" class="dropdown" [nzDropdownMenu]="menu">
-      <i class="icon fe fe-star"></i>
+      <i class="icon fe fe-star" nz-tooltip nzTooltipTitle="Bookmarks" nzTooltipPlacement="bottom"></i>
     </a>
     <nz-dropdown-menu #menu="nzDropdownMenu">
       <div class="card cui__utils__shadow width-350">
