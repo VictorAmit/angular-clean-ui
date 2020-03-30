@@ -99,9 +99,7 @@
         </div>
       </div>
       <div class="card-body">
-        <nz-table [nzData]="taskTableData" [nzShowPagination]="false" class="utils__scrollTable"
-          (nzCurrentPageDataChange)="currentPageDataChange($event)" (nzPageIndexChange)="refreshStatus()"
-          (nzPageSizeChange)="refreshStatus()">
+        <nz-table [nzData]="taskTableData" [nzShowPagination]="false">
           <thead>
             <tr>
               <th nzShowCheckbox [(nzChecked)]="allChecked" [nzIndeterminate]="indeterminate"

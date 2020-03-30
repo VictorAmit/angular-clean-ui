@@ -11,6 +11,7 @@ import { TopbarIssuesHistoryComponent } from './Topbar/IssuesHistory/issues-hist
 import { TopbarSearchComponent } from './Topbar/Search/search.component'
 import { TopbarUserMenuComponent } from './Topbar/UserMenu/user-menu.component'
 import { TopbarProjectManagementComponent } from './Topbar/ProjectManagement/project-management.component'
+import { TopbarFavPagesComponent } from './Topbar/FavPages/fav-pages.component'
 import { MenuLeftComponent } from './Menu/MenuLeft/menu-left.component'
 import { MenuTopComponent } from './Menu/MenuTop/menu-top.component'
 import { FooterComponent } from './Footer/footer.component'
@@ -32,6 +33,7 @@ const COMPONENTS = [
   BreadcrumbsComponent,
   SidebarComponent,
   SupportChatComponent,
+  TopbarFavPagesComponent,
 ]
 
 @NgModule({
