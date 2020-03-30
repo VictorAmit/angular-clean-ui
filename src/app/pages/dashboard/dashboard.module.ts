@@ -13,11 +13,15 @@ import { DashboardBetaComponent } from 'src/app/pages/dashboard/beta/beta.compon
 import { DashboardCryptoComponent } from 'src/app/pages/dashboard/crypto/crypto.component'
 import { DashboardGammaComponent } from 'src/app/pages/dashboard/gamma/gamma.component'
 
+// acl
+import { ACLComponent } from 'src/app/components/layout/ACL/acl.component'
+
 const COMPONENTS = [
   DashboardAlphaComponent,
   DashboardBetaComponent,
   DashboardCryptoComponent,
   DashboardGammaComponent,
+  ACLComponent,
 ]
 
 @NgModule({
