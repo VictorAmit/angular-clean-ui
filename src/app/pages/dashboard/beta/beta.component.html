@@ -2,66 +2,99 @@
   <div class="col-xl-6 col-lg-12">
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Account Information</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Account information
         </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-xl-12">
-            <cui-profile-head-card></cui-profile-head-card>
+            <kit-general-19></kit-general-19>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Work Progress</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Account information
         </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-xl-12">
-            <cui-progress-group></cui-progress-group>
+            <div>
+              <strong>{{progressGroup.first.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.first.description}}</p>
+              <div class="mb-3">
+                <nz-progress [nzPercent]="progressGroup.first.progress" [nzStatus]="progressGroup.first.status">
+                </nz-progress>
+              </div>
+              <strong>{{progressGroup.second.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.second.description}}</p>
+              <div class="mb-3">
+                <nz-progress [nzPercent]="progressGroup.second.progress" [nzStatus]="progressGroup.second.status">
+                </nz-progress>
+              </div>
+              <strong>{{progressGroup.third.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.third.description}}</p>
+              <div class="mb-3">
+                <nz-progress [nzPercent]="progressGroup.third.progress" [nzStatus]="progressGroup.third.status">
+                </nz-progress>
+              </div>
+              <strong>{{progressGroup.fourth.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.fourth.description}}</p>
+              <div class="mb-3">
+                <nz-progress [nzPercent]="progressGroup.fourth.progress" [nzStatus]="progressGroup.fourth.status">
+                </nz-progress>
+              </div>
+              <strong>{{progressGroup.fives.name}}</strong>
+              <p class="text-muted mb-1">{{progressGroup.fives.description}}</p>
+              <div class="mb-3">
+                <nz-progress [nzPercent]="progressGroup.fives.progress" [nzStatus]="progressGroup.fives.status">
+                </nz-progress>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Employees</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Account information
         </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-md-6">
-            <cui-user-card type="primary" avatarUrl="assets/images/avatars/1.jpg" userName="Artour Aniston"
-              userPost="Project Manager"></cui-user-card>
+            <div class="card bg-light border-0 mb-0">
+              <kit-general-23></kit-general-23>
+            </div>
           </div>
           <div class="col-md-6">
-            <cui-user-card avatarUrl="assets/images/avatars/2.jpg" userName="Kim Mentiso" userPost="Project Manager">
-            </cui-user-card>
+            <div class="card border-0 mb-0">
+              <kit-general-23v1></kit-general-23v1>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Task table</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Account information
         </div>
       </div>
@@ -108,20 +141,22 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Information Cards</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Account information
         </div>
       </div>
       <div class="card-body">
-        <div class="row">
-          <div class="col-md-6">
-            <cui-info-card form="interactive" icon="database" type="danger"></cui-info-card>
+        <div class="card bg-primary border-0 mb-4">
+          <div class="card-body">
+            <kit-general-24></kit-general-24>
           </div>
-          <div class="col-md-6">
-            <cui-info-card form="interactive" icon="database" btnType="success" type="success"></cui-info-card>
+        </div>
+        <div class="card bg-light border-0 mb-0">
+          <div class="card-body">
+            <kit-general-24v1></kit-general-24v1>
           </div>
         </div>
       </div>
@@ -130,52 +165,52 @@
   <div class="col-xl-6 col-lg-12">
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Server Info</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Server Info informastion
         </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-lg-6">
-            <cui-slider-card></cui-slider-card>
+            <kit-general-20></kit-general-20>
           </div>
           <div class="col-lg-6">
-            <cui-slider-card></cui-slider-card>
+            <kit-general-20v1></kit-general-20v1>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Server Statistics</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Server Info information
         </div>
       </div>
       <div class="card-body">
         <div class="row">
           <div class="col-lg-6">
-            <cui-info-card form="stats" icon="database" type="primary"></cui-info-card>
-            <cui-info-card form="stats" icon="users" type="empty"></cui-info-card>
+            <kit-general-21></kit-general-21>
+            <kit-general-21v1></kit-general-21v1>
           </div>
           <div class="col-lg-6">
-            <cui-info-card form="stats" icon="bullhorn" type="success"></cui-info-card>
-            <cui-info-card form="stats" icon="price-tags" type="empty"></cui-info-card>
+            <kit-general-21v2></kit-general-21v2>
+            <kit-general-21v3></kit-general-21v3>
           </div>
         </div>
       </div>
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Server Configuration</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Server Info information
         </div>
       </div>
@@ -190,12 +225,21 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Week Revenue Statistics, Billions</strong>
         </div>
-        <cui-donut type="primary" name="Nuts"></cui-donut>
-        <cui-donut type="success" name="Apples"></cui-donut>
-        <cui-donut color="yellow" name="Peaches"></cui-donut>
+        <span class="mr-2">
+          <span class="kit__utils__donut kit__utils__donut--primary"></span>
+          Nuts
+        </span>
+        <span class="mr-2">
+          <span class="kit__utils__donut kit__utils__donut--success"></span>
+          Apples
+        </span>
+        <span class="mr-2">
+          <span class="kit__utils__donut kit__utils__donut--yellow"></span>
+          Peaches
+        </span>
       </div>
       <div class="card-body">
         <x-chartist class="ct-chart height-300" [data]="weekChartData" type="Line" [options]="weekChartOptions">
@@ -204,11 +248,17 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Month Site Visits Growth, %</strong>
         </div>
-        <cui-donut type="primary" name="Income"></cui-donut>
-        <cui-donut type="success" name="Outcome"></cui-donut>
+        <span class="mr-2">
+          <span class="kit__utils__donut kit__utils__donut--primary"></span>
+          Income
+        </span>
+        <span class="mr-2">
+          <span class="kit__utils__donut kit__utils__donut--success"></span>
+          Outcome
+        </span>
       </div>
       <div class="card-body">
         <x-chartist class="ct-chart height-300" [data]="monthChartData" type="Bar" [options]="monthChartOptions">
@@ -217,15 +267,15 @@
     </div>
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Chat</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Server Info information
         </div>
       </div>
       <div class="card-body">
-        <cui-chat></cui-chat>
+        <kit-general-14></kit-general-14>
       </div>
     </div>
   </div>
@@ -233,23 +283,10 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="card-header">
-        <div class="row">
-          <div class="col-lg-3">
-            <cui-info-card form="bordered" icon="home" type="danger"></cui-info-card>
-          </div>
-          <div class="col-lg-3">
-            <cui-info-card form="bordered" icon="key" type="primary"></cui-info-card>
-          </div>
-          <div class="col-lg-3">
-            <cui-info-card form="bordered" icon="play2" type="warning"></cui-info-card>
-          </div>
-          <div class="col-lg-3">
-            <cui-info-card form="bordered" icon="database" type="success"></cui-info-card>
-          </div>
-        </div>
-      </div>
       <div class="card-body">
+        <div class="mb-4">
+          <kit-general-22></kit-general-22>
+        </div>
         <nz-table [nzData]="displayDatabaseData" [nzShowPagination]="false" class="utils__scrollTable">
           <thead (nzSortChange)="sort($event)" nzSingleSort>
             <tr>
@@ -280,10 +317,10 @@
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Calendar</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class="text-muted">
           Block with important Calendar information
         </div>
       </div>

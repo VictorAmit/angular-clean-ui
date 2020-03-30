@@ -28,45 +28,41 @@ const routes: Routes = [
         loadChildren: 'src/app/pages/dashboard/dashboard.module#DashboardModule',
       },
       // {
-      //   path: 'icons',
-      //   loadChildren: 'src/app/pages/icons/icons.module#IconsModule',
-      // },
-      // {
-      //   path: 'charts',
-      //   loadChildren: 'src/app/pages/charts/charts.module#ChartsModule',
-      // },
-      // {
-      //   path: 'cards',
-      //   loadChildren: 'src/app/pages/cards/cards.module#CardsModule',
-      // },
-      // {
-      //   path: 'advanced',
-      //   loadChildren: 'src/app/pages/advanced/advanced.module#AdvancedModule',
-      // },
-      // {
-      //   path: 'widgets',
-      //   loadChildren: 'src/app/pages/widgets/widgets.module#WidgetsModule',
-      // },
-      // {
       //   path: 'ecommerce',
       //   loadChildren: 'src/app/pages/ecommerce/ecommerce.module#EcommerceModule',
       // },
-      // {
-      //   path: 'apps',
-      //   loadChildren: 'src/app/pages/apps/apps.module#AppsModule',
-      // },
-      // {
-      //   path: 'extra-apps',
-      //   loadChildren: 'src/app/pages/extra-apps/extra-apps.module#ExtraAppsModule',
-      // },
-      // {
-      //   path: 'tables',
-      //   loadChildren: 'src/app/pages/tables/tables.module#TablesModule',
-      // },
-      // {
-      //   path: 'ui-kits',
-      //   loadChildren: 'src/app/pages/ui-kits/ui-kits.module#UIKitsModule',
-      // },
+      {
+        path: 'apps',
+        loadChildren: 'src/app/pages/apps/apps.module#AppsModule',
+      },
+      {
+        path: 'icons',
+        loadChildren: 'src/app/pages/icons/icons.module#IconsModule',
+      },
+      {
+        path: 'charts',
+        loadChildren: 'src/app/pages/charts/charts.module#ChartsModule',
+      },
+      {
+        path: 'cards',
+        loadChildren: 'src/app/pages/cards/cards.module#CardsModule',
+      },
+      {
+        path: 'advanced',
+        loadChildren: 'src/app/pages/advanced/advanced.module#AdvancedModule',
+      },
+      {
+        path: 'widgets',
+        loadChildren: 'src/app/pages/widgets/widgets.module#WidgetsModule',
+      },
+      {
+        path: 'tables',
+        loadChildren: 'src/app/pages/tables/tables.module#TablesModule',
+      },
+      {
+        path: 'ui-kits',
+        loadChildren: 'src/app/pages/ui-kits/ui-kits.module#UIKitsModule',
+      },
     ],
   },
   {

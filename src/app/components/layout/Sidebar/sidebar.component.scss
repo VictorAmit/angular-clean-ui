@@ -244,7 +244,7 @@
 }
 
 // dark theme
-:global(body.kit__dark) {
+:host-context(body.kit__dark) {
   .cui__sidebar {
     background: $dark-gray-6;
 
