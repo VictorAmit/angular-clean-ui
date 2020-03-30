@@ -27,10 +27,10 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: 'src/app/pages/dashboard/dashboard.module#DashboardModule',
       },
-      // {
-      //   path: 'ecommerce',
-      //   loadChildren: 'src/app/pages/ecommerce/ecommerce.module#EcommerceModule',
-      // },
+      {
+        path: 'ecommerce',
+        loadChildren: 'src/app/pages/ecommerce/ecommerce.module#EcommerceModule',
+      },
       {
         path: 'apps',
         loadChildren: 'src/app/pages/apps/apps.module#AppsModule',
