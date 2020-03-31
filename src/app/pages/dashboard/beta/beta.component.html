@@ -116,9 +116,9 @@
               <td><a href="javascript: void(0);">{{item.name}}</a></td>
               <td><a href="javascript: void(0);">{{item.username}}</a></td>
               <td>
-                <nz-dropdown>
-                  <button nz-button nz-dropdown nzSize="small"><span>Action</span> <i nz-icon
-                      nzType="down"></i></button>
+                <button [nzDropdownMenu]="menu" nz-button nz-dropdown nzSize="small"><span>Action</span> <i nz-icon
+                    nzType="down"></i></button>
+                <nz-dropdown-menu #menu="nzDropdownMenu">
                   <ul nz-menu>
                     <li nz-menu-item>
                       <a>1st menu item</a>
@@ -130,7 +130,7 @@
                       <a>3rd menu item</a>
                     </li>
                   </ul>
-                </nz-dropdown>
+                </nz-dropdown-menu>
               </td>
             </tr>
           </tbody>

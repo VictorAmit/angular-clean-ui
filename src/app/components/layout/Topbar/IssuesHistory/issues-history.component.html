@@ -1,10 +1,10 @@
-<nz-dropdown [nzTrigger]="'click'">
-  <a nz-dropdown class="dropdown">
-    <i class="icon fe fe-folder"></i>
-    <span class="d-none d-xl-inline">
-      {{ 'topBar.issuesHistory' | translate }}
-    </span>
-  </a>
+<a nz-dropdown class="dropdown" [nzDropdownMenu]="menu" [nzTrigger]="'click'">
+  <i class="icon fe fe-folder"></i>
+  <span class="d-none d-xl-inline">
+    {{ 'topBar.issuesHistory' | translate }}
+  </span>
+</a>
+<nz-dropdown-menu #menu="nzDropdownMenu">
   <ul nz-menu>
     <li nz-menu-item>
       <a href="javascript: void(0);">Current search</a>
@@ -59,4 +59,4 @@
       </a>
     </li>
   </ul>
-</nz-dropdown>
+</nz-dropdown-menu>
