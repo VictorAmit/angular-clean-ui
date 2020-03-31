@@ -8,14 +8,32 @@ const data: any = require('./data.json')
   styleUrls: ['./mail.component.scss'],
 })
 export class AppsMailComponent implements OnInit {
-  mailData = data.mailData
-  mailCategories = data.mailData.mailCategories
-  activeCategoryIndex = 0
-  mail = data.mailData.inbox
-
-  changeMailData(key) {
-    this.mail = data.mailData[key]
+  isAllDisplayDataChecked = false
+  isIndeterminate = false
+  listOfDisplayData = data
+  listOfAllData = data
+  mapOfCheckedId = {}
+  constructor() {}
+  ngOnInit() {}
+  currentPageDataChange($event): void {
+    this.listOfDisplayData = $event
+    this.refreshStatus()
   }
 
-  ngOnInit() {}
+  refreshStatus(): void {
+    this.isAllDisplayDataChecked = this.listOfDisplayData
+      .filter(item => !item.disabled)
+      .every(item => this.mapOfCheckedId[item.id])
+    this.isIndeterminate =
+      this.listOfDisplayData
+        .filter(item => !item.disabled)
+        .some(item => this.mapOfCheckedId[item.id]) && !this.isAllDisplayDataChecked
+  }
+
+  checkAll(value): void {
+    this.listOfDisplayData
+      .filter(item => !item.disabled)
+      .forEach(item => (this.mapOfCheckedId[item.id] = value))
+    this.refreshStatus()
+  }
 }

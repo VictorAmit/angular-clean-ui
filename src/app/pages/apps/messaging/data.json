@@ -1,101 +1,41 @@
-{
-  "chatsOwner": "Chris Evans",
-  "chats": [
-    {
-      "companionName": "Chris Obama",
-      "companionImg": "assets/images/avatars/1.jpg",
-      "chatMessages": [{
-        "username": "Chris Obama",
-        "content": "<p>Hello World!</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Chris Evans",
-        "content": "<p>Hello World!</p>",
-        "img": "assets/images/avatars/4.jpg"
-      }, {
-        "username": "Chris Obama",
-        "content": "<p>Lorem Ipsum is simply dummy text of the printing</p><img  src=\"assets/images/photos/4.jpeg\"/><img  src=\"assets/images/photos/3.jpeg\"/><img  src=\"assets/images/photos/2.jpeg\"/>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Chris Obama",
-        "content": "<p>Ok. Thanks!</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Chris Evans",
-        "content": "<p>It's looks great</p>",
-        "img": "assets/images/avatars/4.jpg"
-      }, {
-        "username": "Chris Obama",
-        "content": "<p>That's awesome!</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }
-      ]
-    },
-    {
-      "companionName": "Diana May",
-      "companionImg": "assets/images/avatars/2.jpg",
-      "chatMessages": [{
-        "username": "Chris Evans",
-        "content": "<p>Hello World!</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Diana May",
-        "content": "<p>Love it!</p>",
-        "img": "assets/images/avatars/2.jpg"
-      }, {
-        "username": "Chris Evans",
-        "img": "assets/images/avatars/1.jpg",
-        "content": "<p>Lorem ipsum dolor sit amet, nibh ipsum. Cum class sem inceptos incidunt sed sed. Tempus wisi enim id, arcu sed lectus aliquam, nulla vitae est bibendum molestie elit risus.</p>"
-      }, {
-        "username": "Chris Evans",
-        "content": "<p>So</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Chris Evans",
-        "content": "<p>Chilltime is going to be an app for you to view videos with friends</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Chris Evans",
-        "content": "<p>You can sign-up now to try out our private beta!</p>",
-        "img": "assets/images/avatars/1.jpg"
-      }, {
-        "username": "Diana May",
-        "content": "<p>Definitely! Sounds great!</p>",
-        "img": "assets/images/avatars/2.jpg"
-      }]
-    },
-    {
-      "companionName": "Olga Venka",
-      "companionImg": "assets/images/avatars/3.jpg",
-      "chatMessages": [{
-        "username": "Chris Evans",
-        "content": "<p>Hello World!</p>",
-        "img": "assets/images/avatars/1.jpg"
+[
+  {
+    "name": "Hellen Maggie",
+    "avatar": "assets/images/avatars/3.jpg",
+    "unread": 1,
+    "position": "Administrator",
+    "dialog": [
+      {
+        "owner": "you",
+        "time": "5 min ago",
+        "content": "Hi! Anyone here? I want to know how I can buy Air UI?"
       },
-        {
-          "username": "Olga Venka",
-          "content": "<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy</p>",
-          "img": "assets/images/avatars/3.jpg"
-        },
-        {
-          "username": "Chris Evans",
-          "content": "<p>Good stuff!</p>",
-          "img": "assets/images/avatars/1.jpg"
-        }
-      ]
-    },
-    {
-      "companionName": "Nick Cave",
-      "companionImg": "assets/images/avatars/4.jpg",
-      "chatMessages": [{
-        "username": "Nick Cave",
-        "content": "<p>Hello World!</p>",
-        "img": "assets/images/avatars/4.jpg"
+      {
+        "owner": "hellen",
+        "time": "5 min ago",
+        "content": "Please call us + 100 295 000"
       }
-      ]
-    }
-
-  ]
-}
-
-
+    ]
+  },
+  {
+    "name": "Dean Beckham",
+    "avatar": "assets/images/avatars/1.jpg",
+    "unread": 2,
+    "position": "Moderator",
+    "dialog": []
+  },
+  {
+    "name": "Mike Stake",
+    "avatar": "assets/images/avatars/4.jpg",
+    "unread": 0,
+    "position": "Agent",
+    "dialog": []
+  },
+  {
+    "name": "Janie Lawrence",
+    "avatar": "assets/images/avatars/5.jpg",
+    "unread": 0,
+    "position": "Agent",
+    "dialog": []
+  }
+]

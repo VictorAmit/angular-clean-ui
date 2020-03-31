@@ -1,34 +1,27 @@
 <div class="card">
-  <div class="card-header clearfix">
-    <div class="utils__title pull-left">
-      <strong>Photo Gallery</strong>
-    </div>
-    <div class="pull-right">
-      <nz-upload
-        nzAction="https://jsonplaceholder.typicode.com/posts/"
-      >
-        <button nz-button nzType="primary">
-          <i nz-icon type="upload"></i><span>Upload</span>
-        </button>
-      </nz-upload>
-    </div>
-  </div>
   <div class="card-body">
-    <div class="cui-gallery">
-      <div
-        class="cui-gallery-item"
-        *ngFor="let image of galleryData"
-        [ngStyle]="{'background-image': 'url(' + image.path + ')'}"
-        [ngClass]="[image.editable ? 'cui-gallery-with-controls' : '']"
-      >
-        <div
-          *ngIf="image.editable"
-          class="cui-gallery-item-controls"
-        >
-          <nz-button-group>
-            <button nz-button><i nz-icon type="edit" theme="outline"></i></button>
-            <button nz-button><i nz-icon type="delete" theme="outline"></i></button>
-          </nz-button-group>
+    <div class="d-flex flex-wrap mb-4">
+      <label nz-checkbox>Models</label>
+      <label nz-checkbox>Fashion</label>
+      <label nz-checkbox>Cars</label>
+      <label nz-checkbox>Wallpapers</label>
+    </div>
+    <div class="items">
+      <div class="item" *ngFor="let item of data">
+        <div class="itemContent">
+          <div class="itemControl">
+            <div class="itemControlContainer">
+              <nz-button-group>
+                <button nz-button nzType="primary"><i nz-icon nzType="edit"></i></button>
+                <button nz-button nzType="primary"><i nz-icon nzType="delete"></i></button>
+              </nz-button-group>
+            </div>
+          </div>
+          <img [src]="item.path" alt="Image">
+        </div>
+        <div class="text-gray-6">
+          <div>{{item.name}}</div>
+          <div>{{item.size}}</div>
         </div>
       </div>
     </div>

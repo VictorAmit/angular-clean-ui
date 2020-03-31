@@ -1,19 +1,68 @@
-<div class="utils__title utils__title--flat mb-3">
-  <strong class="text-uppercase font-size-16">Last Week Statistics</strong>
+<cui-acl [roles]="['manager']">
+  <div>Hidden element for all roles expect 'manager' role</div>
+  <div>Next ACL component will redirect all roles except 'admin' role to 'dashboard/beta'</div>
+</cui-acl>
+<div class="cui__utils__heading mb-3">
+  <strong class="text-uppercase font-size-16">Today Statistics</strong>
 </div>
 <div class="row">
-  <div class="col-xl-4" *ngFor="let chartCard of chartCardData">
-    <cui-chart-card [title]="chartCard.title" [amount]="chartCard.amount" [chartOptions]="chartCardGraphOptions" [chartData]="chartCard.chartData"></cui-chart-card>
+  <div class="col-xl-4">
+    <div class="card">
+      <kit-chart-11></kit-chart-11>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card">
+      <kit-chart-11v1></kit-chart-11v1>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card">
+      <kit-chart-11v2></kit-chart-11v2>
+    </div>
+  </div>
+</div>
+<div class="cui__utils__heading">
+  <strong>Last Month Statistics</strong>
+</div>
+<div class="row">
+  <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <kit-chart-4></kit-chart-4>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <kit-chart-4v1></kit-chart-4v1>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <kit-chart-4v2></kit-chart-4v2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-3 col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <kit-chart-4v3></kit-chart-4v3>
+      </div>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
       <div class="card-header">
-        <div class="utils__title">
+        <div class="cui__utils__heading mb-0">
           <strong>Recently Referrals</strong>
         </div>
-        <div class="utils__titleDescription">
+        <div class=" text-muted">
           Block with important Recently Referrals information
         </div>
       </div>
@@ -44,35 +93,78 @@
     </div>
   </div>
 </div>
-<div class="utils__title utils__title--flat mb-3">
+<div class="cui__utils__heading mb-3">
   <strong class="text-uppercase font-size-16">Your Cards (3)</strong>
   <button nz-button nz-type="default" class="ml-3">View All</button>
 </div>
 <div class="row">
-  <div class="col-lg-4" *ngFor="let paymentCard of paymentCardsData">
-    <cui-payment-card [icon]="paymentCard.icon" [name]="paymentCard.name" [number]="paymentCard.number" [type]="paymentCard.type" [footer]="paymentCard.footer" [sum]="paymentCard.sum"></cui-payment-card>
+  <div class="col-lg-4">
+    <div class="card">
+      <kit-general-17></kit-general-17>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <kit-general-17v1></kit-general-17v1>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <kit-general-17v2></kit-general-17v2>
+    </div>
   </div>
 </div>
-<div class="utils__title utils__title--flat mb-3">
+<div class="cui__utils__heading mb-3">
   <strong class="text-uppercase font-size-16">Your Accounts (6)</strong>
   <button nz-button nz-type="default" class="ml-3">View All</button>
 </div>
 <div class="row">
-  <div class="col-lg-6" *ngFor="let paymentAccount of paymentAccountsData">
-    <cui-payment-account [icon]="paymentAccount.icon" [number]="paymentAccount.number" [sum]="paymentAccount.sum" [footer]="paymentAccount.footer"></cui-payment-account>
+  <div class="col-lg-6">
+    <div class="card">
+      <kit-general-18></kit-general-18>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <kit-general-18v1></kit-general-18v1>
+    </div>
   </div>
 </div>
-<div class="utils__title utils__title--flat mb-3">
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <kit-general-18v1></kit-general-18v1>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card">
+      <kit-general-18></kit-general-18>
+    </div>
+  </div>
+</div>
+<div class="cui__utils__heading mb-3">
   <strong class="text-uppercase font-size-16">Recent transactions (167)</strong>
   <button nz-button nz-type="default" class="ml-3">View All</button>
 </div>
 <div class="row">
   <div class="col-lg-12">
-    <cui-payment-transaction *ngFor="let paymentTransaction of paymentTransactionsData" [income]="paymentTransaction.income" [amount]="paymentTransaction.amount" [footer]="paymentTransaction.footer" [info]="paymentTransaction.info"></cui-payment-transaction>
+    <div class="card">
+      <kit-general-6></kit-general-6>
+    </div>
+    <div class="card">
+      <kit-general-6v1></kit-general-6v1>
+    </div>
+    <div class="card">
+      <kit-general-6></kit-general-6>
+    </div>
+    <div class="card">
+      <kit-general-6v1></kit-general-6v1>
+    </div>
   </div>
 </div>
 <div class="row">
   <div class="col-lg-12 text-center">
-    <button nz-button nzType="primary" nzLoading class="width-200 mb-5"><i nz-icon type="poweroff"></i>Load more ...</button>
+    <button nz-button nzType="primary" nzLoading class="width-200 mb-5"><i nz-icon nzType="poweroff"></i>Load more
+      ...</button>
   </div>
 </div>

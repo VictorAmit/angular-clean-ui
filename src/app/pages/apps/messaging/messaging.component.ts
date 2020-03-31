@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 declare var require: any
 const data: any = require('./data.json')
 
@@ -7,17 +7,22 @@ const data: any = require('./data.json')
   templateUrl: './messaging.component.html',
   styleUrls: ['./messaging.component.scss'],
 })
-export class AppsMessagingComponent {
-  chatOwner = data.chatsOwner
-  chats = data.chats
-  activeChatIndex = 0
-  selectedChatData = this.chats[0]
+export class AppsMessagingComponent implements OnInit {
+  dialogs = data
+  activeIndex = 0
+  name = this.dialogs[this.activeIndex].name
+  position = this.dialogs[this.activeIndex].position
+  dialog = this.dialogs[this.activeIndex].dialog
+  avatar = this.dialogs[this.activeIndex].avatar
 
-  changeChatData(companionName) {
-    this.selectedChatData = this.chats.find(function(item) {
-      if (companionName === item.companionName) {
-        return item
-      }
-    })
+  constructor() {}
+  ngOnInit() {}
+
+  changeDialog(index) {
+    this.activeIndex = index
+    this.name = this.dialogs[index].name
+    this.position = this.dialogs[index].position
+    this.dialog = this.dialogs[index].dialog
+    this.avatar = this.dialogs[index].avatar
   }
 }

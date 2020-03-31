@@ -1,11 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core'
-import * as c3 from 'c3'
+import c3 from 'c3'
 
 @Component({
   selector: 'app-charts-c3',
   templateUrl: './c3.component.html',
 })
-export class ChartsC3Component {
+export class ChartsC3Component implements AfterViewInit {
   ngAfterViewInit() {
     const colors = {
       primary: '#01a8fe',

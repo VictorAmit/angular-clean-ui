@@ -10,6 +10,7 @@ const data: any = require('./data.json')
 })
 export class DashboardBetaComponent implements OnInit {
   taskTableData = data.taskTableData
+  progressGroup = data.progressGroup
 
   databaseData = data.databaseTable
   displayDatabaseData = [...this.databaseData]

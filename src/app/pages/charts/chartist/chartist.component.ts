@@ -137,10 +137,7 @@ export class ChartsChartistComponent {
     low: 0,
     showArea: true,
   }
-  scatterTimes = function scatter(n) {
-    return Array(...new Array(n))
-  }
-  scatterData = this.scatterTimes(52)
+  scatterData = Array(...new Array(52))
     .map(Math.random)
     .reduce(
       (scatter, rnd, index) => {
@@ -153,7 +150,7 @@ export class ChartsChartistComponent {
       },
       {
         labels: [],
-        series: this.scatterTimes(4).map(() => []),
+        series: Array(...new Array(4)).map(() => []),
       },
     )
   scatterOptions = {

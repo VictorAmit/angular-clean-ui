@@ -1,38 +1,37 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { AuthService } from 'src/app/services/auth.service'
-import { AuthGuard } from 'src/app/components/LayoutComponents/Guard/auth.guard'
-import { LayoutsModule } from 'src/app/layouts/layouts.module'
 
 // icons
 import { IconsFontawesomeComponent } from 'src/app/pages/icons/fontawesome/fontawesome.component'
-import { IconsIcomoonComponent } from 'src/app/pages/icons/icomoon/icomoon.component'
-import { IconsLinearComponent } from 'src/app/pages/icons/linear/linear.component'
+import { IconsIcomoonComponent } from 'src/app/pages/icons/icomoon-free/icomoon.component'
+import { IconsLinearComponent } from 'src/app/pages/icons/linearicons-free/linear.component'
+import { IconsFeatherComponent } from 'src/app/pages/icons/feather-icons/feather.component'
 
 const routes: Routes = [
   {
     path: 'fontawesome',
     component: IconsFontawesomeComponent,
-    data: { title: 'Antd' },
-    canActivate: [AuthGuard],
+    data: { title: 'Icons / Fontawesome' },
   },
   {
-    path: 'icomoon',
+    path: 'icomoon-free',
     component: IconsIcomoonComponent,
-    data: { title: 'Antd' },
-    canActivate: [AuthGuard],
+    data: { title: 'Icons / Icomoon Free' },
   },
   {
-    path: 'linear',
+    path: 'linearicons-free',
     component: IconsLinearComponent,
-    data: { title: 'Antd' },
-    canActivate: [AuthGuard],
+    data: { title: 'Icons / Linearicons Free' },
+  },
+  {
+    path: 'feather-icons',
+    component: IconsFeatherComponent,
+    data: { title: 'Icons / Feather Icons' },
   },
 ]
 
 @NgModule({
-  imports: [LayoutsModule, RouterModule.forChild(routes)],
-  providers: [AuthService],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class IconsRouterModule {}

@@ -1,17 +1,29 @@
 {
-    "extends": "../tslint.json",
-    "rules": {
-        "directive-selector": [
-            true,
-            "attribute",
-            ["app", "cui", "layout"],
-            "camelCase"
-        ],
-        "component-selector": [
-            true,
-            "element",
-            ["app", "cui", "layout"],
-            "kebab-case"
-        ]
-    }
+  "extends": "../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      [
+        "app",
+        "cui",
+        "layout",
+        "air",
+        "kit"
+      ],
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      [
+        "app",
+        "cui",
+        "layout",
+        "air",
+        "kit"
+      ],
+      "kebab-case"
+    ]
+  }
 }

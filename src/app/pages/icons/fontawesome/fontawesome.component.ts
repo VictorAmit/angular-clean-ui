@@ -7,5 +7,5 @@ const data: any = require('./data.json')
   templateUrl: './fontawesome.component.html',
 })
 export class IconsFontawesomeComponent {
-  iconsData = data.iconsData
+  icons = data
 }

@@ -1,110 +1,101 @@
 <div class="row">
   <div class="col-xl-12">
-    <div class="utils__title utils__title--flat mb-3">
-      <strong class="text-uppercase font-size-16">Progress Information</strong>
-    </div>
     <div class="row">
-      <div class="col-lg-6" *ngFor="let item of progressCardsData">
-        <cui-progress-card [title]="item.title" [note]="item.note" [currentValue]="item.currentValue"
-                           [percent]="item.percent" [dataColor]="item.dataColor"></cui-progress-card>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <kit-chart-12></kit-chart-12>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-body">
+            <kit-chart-12v1></kit-chart-12v1>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-xl-4">
+    <div class="card">
+      <kit-general-13v1></kit-general-13v1>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <kit-general-5v1></kit-general-5v1>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
+    <div class="card">
+      <div class="card-header border-0 pb-0">
+        <div class="cui__utils__heading mb-0">
+          <strong>RECENT INVITES</strong>
+        </div>
+      </div>
+      <div class="card-body">
+        <kit-list-10></kit-list-10>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <kit-general-2></kit-general-2>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <kit-general-2v1></kit-general-2v1>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <kit-general-2v2></kit-general-2v2>
+      </div>
+    </div>
+  </div>
+  <div class="col-xl-4">
     <div class="row">
       <div class="col-xl-12">
-        <div class="card overflow-hidden">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
-              <strong class="text-uppercase font-size-16">Inbound Bandwidth</strong>
+        <div class="card">
+          <div class="card-header border-0 pb-0">
+            <div class="cui__utils__heading mb-0">
+              <strong>Inbound Bandwidth</strong>
             </div>
           </div>
           <div class="card-body">
-            <span class="font-size-36 font-weight-bold text-primary">236</span>
+            <strong class="font-size-36 text-dark">246Gb</strong>
           </div>
-          <x-chartist
-            class="ct-chart height-200"
-            [data]="inboundBandwidthData"
-            type="Line"
-            [options]="boundChartistOptions"
-          >
+          <x-chartist class="ct-chart height-250" [data]="inboundBandwidthData" type="Line"
+            [options]="boundChartistOptions">
           </x-chartist>
         </div>
       </div>
       <div class="col-xl-12">
-        <div class="graphCard card overflow-hidden">
-          <div class="card-header">
-            <div class="utils__title utils__title--flat">
-              <strong class="text-uppercase font-size-16">Outbound Bandwidth</strong>
+        <div class="graphCard card">
+          <div class="card-header border-0 pb-0">
+            <div class="cui__utils__heading mb-0">
+              <strong>Outbound Bandwidth</strong>
             </div>
           </div>
           <div class="card-body">
-            <span class="font-size-36 font-weight-bold text-success">52</span>
+            <strong class="font-size-36 text-dark">52Gb</strong>
           </div>
-          <div class="utils__chartist utils__chartist--success">
-            <x-chartist
-              class="ct-chart height-200"
-              [data]="outboundBandwidthData"
-              type="Line"
-              [options]="boundChartistOptions"
-            >
-            </x-chartist>
-          </div>
+          <x-chartist class="ct-chart height-250" [data]="outboundBandwidthData" type="Line"
+            [options]="boundChartistOptions">
+          </x-chartist>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card--fullHeight overflow-hidden">
-      <div class="card-header">
-        <div class="utils__title utils__title--flat">
-          <strong class="text-uppercase font-size-16">Top photos</strong>
-        </div>
-      </div>
-      <div class="card-body">
-        <cui-short-item-info *ngFor="let item of topPhotosData" [img]="item.img" [name]="item.name" [note]="item.note"
-                             [actionTemplate]="actionTemplate" class="cui-short-item-info-container">
-          <ng-template #actionTemplate>
-            <span [ngStyle]="{ 'color': item.actionDataColor }">{{item.actionData}}</span>
-          </ng-template>
-        </cui-short-item-info>
-      </div>
-      <x-chartist
-        class="height-300"
-        [data]="topPhotosGraphData"
-        type="Line"
-        [options]="boundChartistOptions"
-      >
-      </x-chartist>
-    </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card--fullHeight overflow-hidden">
-      <div class="card-header">
-        <div class="utils__title utils__title--flat">
-          <strong class="text-uppercase font-size-16">New Users</strong>
-        </div>
-      </div>
-      <div class="card-body">
-        <cui-short-item-info *ngFor="let item of newUsersData" [img]="item.img" [name]="item.name" [note]="item.note"
-                             [actionTemplate]="actionTemplate" class="cui-short-item-info-container">
-          <ng-template #actionTemplate>
-            <a href="javascript: void(0);" class="btn btn-sm btn-outline-default">
-              Follow
-            </a>
-          </ng-template>
-        </cui-short-item-info>
       </div>
     </div>
   </div>
 </div>
 <div class="row">
   <div class="col-lg-6">
-    <div class="card card--fullHeight">
-      <div class="card-header">
-        <div class="utils__title utils__title--flat">
+    <div class="card">
+      <div class="card-header border-0 pb-0">
+        <div class="cui__utils__heading mb-0">
           <strong class="text-uppercase font-size-16">Support cases</strong>
         </div>
       </div>
@@ -123,7 +114,8 @@
                   <tr *ngFor="let item of supportCasesTableData">
                     <td>{{item.type}}</td>
                     <td>
-                      <span class="font-weight-bold" [ngClass]="[item.amount === 'Negative' ? 'text-danger' : 'text-primary']">{{item.amount}}</span>
+                      <span class="font-weight-bold"
+                        [ngClass]="[item.amount === 'Negative' ? 'text-danger' : 'text-primary']">{{item.amount}}</span>
                     </td>
                   </tr>
                 </tbody>
@@ -131,23 +123,26 @@
             </div>
           </div>
           <div class="col-xl-6">
-            <x-chartist
-              class="cui-gamma-dashboard-chart-pie height-200"
-              [data]="supportCasesPieData"
-              type="Pie"
-              [options]="supportCasesPieOptions"
-            >
-            </x-chartist>
-            <div class="text-center mt-2">
-              <span class="mr-2 mt-1 d-inline-block">
-                <cui-donut type="success" name="Ready"></cui-donut>
-              </span>
-              <span class="mr-2 mt-1 d-inline-block">
-                <cui-donut type="primary" name="In progress"></cui-donut>
-              </span>
-              <span class="mr-2 mt-1 d-inline-block">
-                <cui-donut type="danger" name="Defected"></cui-donut>
-              </span>
+            <div class="h-100 d-flex flex-column justify-content-center align-items-center">
+              <div class="mb-4">
+                <x-chartist class="cui-gamma-dashboard-chart-pie height-200" [data]="supportCasesPieData" type="Pie"
+                  [options]="supportCasesPieOptions">
+                </x-chartist>
+              </div>
+              <div class="text-center mb-4">
+                <span class="mr-2">
+                  <span class="kit__utils__donut kit__utils__donut--success"></span>
+                  Ready
+                </span>
+                <span class="mr-2">
+                  <span class="kit__utils__donut kit__utils__donut--primary"></span>
+                  In Progress
+                </span>
+                <span class="mr-2">
+                  <span class="kit__utils__donut kit__utils__donut--danger"></span>
+                  Defected
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -155,23 +150,15 @@
     </div>
   </div>
   <div class="col-lg-6">
-    <div class="card card--fullHeight">
-      <div class="card-header">
-        <div class="utils__title utils__title--flat">
+    <div class="card">
+      <div class="card-header border-0 pb-0">
+        <div class="cui__utils__heading mb-0">
           <strong class="text-uppercase font-size-16">Finance Stats</strong>
         </div>
       </div>
       <div class="card-body">
-        <cui-short-item-info *ngFor="let item of financeStatsData" [name]="item.name" [note]="item.note" size="large"
-                             [actionTemplate]="actionTemplate" class="cui-short-item-info-container">
-          <ng-template #actionTemplate>
-            <span [ngStyle]="{ 'color': item.actionDataColor }">{{item.actionData}}</span>
-          </ng-template>
-        </cui-short-item-info>
+        <kit-list-11></kit-list-11>
       </div>
     </div>
   </div>
 </div>
-
-
-
