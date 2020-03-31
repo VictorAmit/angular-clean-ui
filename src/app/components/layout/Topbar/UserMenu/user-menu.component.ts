@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { AuthService } from 'src/app/services/auth.service'
+import { AuthService } from 'src/app/services/firebase.auth.service'
 
 @Component({
   selector: 'cui-topbar-user-menu',

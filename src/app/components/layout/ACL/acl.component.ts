@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
-import { AuthService } from 'src/app/services/auth.service'
+import { AuthService } from 'src/app/services/firebase.auth.service'
 
 @Component({
   selector: 'cui-acl',

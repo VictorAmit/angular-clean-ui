@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { AuthService } from 'src/app/services/auth.service'
+import { AuthService } from 'src/app/services/firebase.auth.service'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 
 // system pages
