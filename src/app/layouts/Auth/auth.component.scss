@@ -1,184 +1,105 @@
 @import 'src/app/components/kit-core/mixins.scss';
 
-.login {
+.authContainer {
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100vh;
-  background-color: $gray-1;
-  background-size: cover;
-  transition: background-image 0.4s linear;
-
-  @media (max-width: $sm-max-width) {
-    ::ng-deep {
-      .login-heading {
-        display: none;
-      }
-    }
-  }
-
-  &.light {
-    ::ng-deep {
-      .login-heading {
-        color: $white;
-      }
-    }
-
-    .navItems li a {
-      color: $white;
-      &:hover,
-      &:focus {
-        border-bottom: 1px solid rgba($white, 0.4);
-      }
-      &.active {
-        border-bottom: 1px solid $white;
-      }
-    }
-
-    .footer {
-      color: $white;
-      li a {
-        color: $white;
-      }
-    }
-  }
-}
-
-.header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: rem(50);
-  align-self: flex-start;
-  width: 100%;
-  padding: rem(40);
-
-  @media (max-width: $md-max-width) {
-    padding: rem(40) rem(20) rem(40);
-  }
-
-  @media screen and (max-width: $sm-max-width) {
-    flex-direction: column;
-    flex-wrap: nowrap;
-    flex-shrink: 0;
-    margin-bottom: 0;
-  }
-}
-
-.logo {
-  max-height: rem(40);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   flex-shrink: 0;
 
-  img {
-    max-height: rem(40);
+  &.white {
+    background: $white;
+  }
+
+  &.gray {
+    background: $gray-1;
   }
 }
 
-.loginNav {
-  padding-top: rem(10);
-  padding-bottom: rem(10);
-
-  @media screen and (max-width: $sm-max-width) {
-    display: none;
-  }
+.containerInner {
+  max-width: 32rem;
+  width: 100%;
 }
 
-.navItems {
-  list-style: none;
-  font-size: rem(16);
+.topbar {
+  height: rem(64);
+  border-bottom: 1px solid $border;
+  background: $white;
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  padding-left: 0;
-  margin-bottom: 0;
-
-  @media screen and (max-width: $sm-max-width) {
-    margin-top: rem(10);
-  }
-
-  li {
-    text-transform: uppercase;
-    margin-left: rem(10);
-    margin-right: rem(10);
-    margin-top: rem(5);
-    margin-bottom: rem(5);
-    flex-grow: 1;
-    text-align: center;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    a {
-      color: $text;
-      font-weight: 700;
-
-      &:hover,
-      &:focus {
-        border-bottom: 1px solid rgba($text, 0.4);
-      }
-
-      &.active {
-        border-bottom: 1px solid $text;
-      }
-    }
-  }
-}
-
-.styleControls {
-  margin-right: auto;
-  margin-left: rem(20);
-
-  @media screen and (max-width: $md-max-width) {
-    order: 1;
-    width: 100%;
-    margin-left: 0;
-    margin-top: rem(10);
-  }
-
-  @media screen and (max-width: $sm-max-width) {
-    display: none;
-  }
-}
-
-.content {
-  align-self: middle;
-}
-
-.footer {
-  align-self: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(28);
   width: 100%;
-  color: $text;
-  padding: rem(40);
 
-  @media (max-width: $md-max-width) {
-    padding: rem(40) rem(20) rem(40);
+  &.topbarGray {
+    background: $gray-1;
+  }
+}
+
+.logoContainer {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 rem(28) 0 0;
+
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: rem(24);
+    white-space: nowrap;
+    width: 100%;
+  }
+  .name {
+    font-size: rem(20);
+    font-weight: 700;
+    color: $black;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+    display: block;
+  }
+  .descr {
+    margin-left: rem(13);
+    padding-left: rem(13);
+    height: rem(38);
+    line-height: rem(38);
+    border-left: 1px solid $gray-2;
+    font-size: rem(14);
+  }
+}
+
+.footerNav {
+  li {
+    margin: rem(5) rem(14);
+  }
+}
+
+// dark theme
+:host-context(body.kit__dark) {
+  .authContainer {
+    background: transparent !important;
   }
 
-  @media (max-width: $sm-max-width) {
-    padding: rem(40) rem(20) rem(20);
+  .topbar {
+    background: $dark-gray-5 !important;
+    border-bottom: 1px solid $dark-gray-4 !important;
   }
 
-  ul {
-    margin-bottom: 0;
-    li {
-      margin-right: rem(6.5);
-      text-transform: uppercase;
-      &:last-child {
-        margin-right: 0 !important;
-      }
-      a {
-        color: $text;
-        opacity: 0.7;
-        line-height: 1.4;
-        display: inline-block;
-        margin-right: rem(10);
-        &:hover {
-          opacity: 1;
-        }
-      }
+  .logoContainer {
+    .name {
+      color: $white;
+    }
+    .descr {
+      color: $dark-gray-2;
+      border-left: 1px solid $dark-gray-4;
     }
   }
 }

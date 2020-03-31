@@ -11,23 +11,25 @@ import { slideFadeinUp, slideFadeinRight, zoomFadein, fadein } from '../router-a
   animations: [slideFadeinUp, slideFadeinRight, zoomFadein, fadein],
 })
 export class LayoutAuthComponent {
-  backgroundNumber = 1
-  backgroundEnabled = false
-  routerAnimation: string
+  logo: String
+  isGrayTopbar: Boolean
+  isCardShadow: Boolean
+  isSquaredBorders: Boolean
+  isBorderless: Boolean
+  authPagesColor: String
+  routerAnimation: String
 
   constructor(private store: Store<any>) {
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
+      this.logo = state.logo
+      this.isGrayTopbar = state.isGrayTopbar
+      this.isCardShadow = state.isCardShadow
+      this.isSquaredBorders = state.isSquaredBorders
+      this.isBorderless = state.isBorderless
+      this.authPagesColor = state.authPagesColor
+      this.routerAnimation = state.routerAnimation
       this.routerAnimation = state.routerAnimation
     })
-  }
-
-  changeBackground(): void {
-    this.backgroundEnabled = true
-    this.backgroundNumber === 5 ? (this.backgroundNumber = 1) : (this.backgroundNumber += 1)
-  }
-
-  toggleBackground(): void {
-    this.backgroundEnabled = !this.backgroundEnabled
   }
 
   routeAnimation(outlet: RouterOutlet, animation: string) {

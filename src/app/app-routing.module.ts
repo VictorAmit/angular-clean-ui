@@ -77,9 +77,15 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: Error404Component,
-    canActivate: [AuthGuard],
-    data: { title: 'Not Found' },
+    component: LayoutAuthComponent,
+    children: [
+      {
+        path: '',
+        component: Error404Component,
+        canActivate: [AuthGuard],
+        data: { title: 'Not Found' },
+      },
+    ],
   },
 ]
 

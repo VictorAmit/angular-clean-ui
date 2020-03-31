@@ -1,42 +1,46 @@
 <nz-layout>
   <nz-content>
-    <div [ngClass]="{'login': true, 'light': backgroundEnabled}"
-      [ngStyle]="{backgroundImage: backgroundEnabled ? 'url(\'assets/images/photos/' + backgroundNumber + '.jpeg\')' : 'none'}">
-      <header class="header">
-        <a href="javascript: void(0);" class="logo">
-          <img *ngIf="!backgroundEnabled" src="assets/images/logo.png" alt="Clean UI Admin Template">
-          <img *ngIf="backgroundEnabled" src="assets/images/logo-inverse.png" alt="Clean UI Admin Template">
-        </a>
-        <div class="styleControls">
-          <button nz-button nzType="default" class="mr-3" (click)="changeBackground()">Change Background</button>
-          <button nz-button nzType="default" (click)="toggleBackground()">Toggle Background</button>
+    <cui-sidebar></cui-sidebar>
+    <cui-support-chat></cui-support-chat>
+    <div class="authContainer" [ngClass]="{
+        'cui__layout__squaredBorders': isSquaredBorders,
+        'cui__layout__cardsShadow': isCardShadow,
+        'cui__layout__borderless': isBorderless,
+        'white': authPagesColor === 'white',
+        'gray': authPagesColor === 'gray'
+
+      }" [ngStyle]="{backgroundImage: authPagesColor === 'image' ? 'url(resources/images/content/photos/7.jpg)' : ''}">
+      <div class="topbar" [ngClass]="{
+        'topbarGray': isGrayTopbar
+      }">
+        <div class="logoContainer">
+          <div class="logo">
+            <img src="assets/images/logo.svg" class="mr-2" alt="Clean UI" />
+            <div class="name">{{ logo }}</div>
+            <div *ngIf="logo === 'Clean UI Pro'" class="descr">Angular</div>
+          </div>
         </div>
-        <nav class="loginNav">
-          <ul class="navItems">
-            <li><a href="javascript: void(0);">&larr; Back</a></li>
-            <li><a class="active" href="javascript: void(0);">Login</a></li>
-            <li><a href="javascript: void(0);">About</a></li>
-            <li><a href="javascript: void(0);">Support</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div class="content">
+        <div class="d-none d-sm-block">
+          <span class="mr-2">Don't have an account?</span>
+          <a routerLink="/auth/register" class="font-size-16 kit__utils__link">
+            Sign up
+          </a>
+        </div>
+      </div>
+      <div class="containerInner">
         <div [@slideFadeinUp]="routeAnimation(outlet, 'slideFadeinUp')"
           [@slideFadeinRight]="routeAnimation(outlet, 'slideFadeinRight')"
           [@zoomFadein]="routeAnimation(outlet, 'zoomFadein')" [@fadein]="routeAnimation(outlet, 'fadein')">
           <router-outlet #outlet="outlet"></router-outlet>
         </div>
       </div>
-      <div class="footer text-center">
-        <ul class="list-unstyled list-inline mb-3">
+      <div class="mt-auto pb-5 pt-5">
+        <ul class="footerNav list-unstyled d-flex mb-0 flex-wrap justify-content-center">
           <li class="list-inline-item">
             <a href="javascript: void(0);">Terms of Use</a>
           </li>
           <li class="active list-inline-item">
             <a href="javascript: void(0);">Compliance</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="javascript: void(0);">Confidential Information</a>
           </li>
           <li class="list-inline-item">
             <a href="javascript: void(0);">Support</a>
@@ -45,7 +49,12 @@
             <a href="javascript: void(0);">Contacts</a>
           </li>
         </ul>
-        <p>&copy; 2019 Mediatec. All rights reserved.</p>
+        <div class="text-center">
+          Copyright © 2017-2020 Mdtk Soft |
+          <a href="https://www.mediatec.org/privacy" target="_blank" rel="noopener noreferrer">
+            Privacy Policy
+          </a>
+        </div>
       </div>
     </div>
   </nz-content>

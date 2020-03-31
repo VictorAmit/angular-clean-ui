@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { select, Store } from '@ngrx/store'
+import * as Reducers from 'src/app/store/reducers'
 import { AuthService } from 'src/app/services/firebase.auth.service'
 
 @Component({
@@ -9,11 +11,16 @@ import { AuthService } from 'src/app/services/firebase.auth.service'
 })
 export class LoginComponent {
   form: FormGroup
+  logo: String
+  authProvider: string = 'firebase'
 
-  constructor(private fb: FormBuilder, public authService: AuthService) {
+  constructor(private fb: FormBuilder, public authService: AuthService, private store: Store<any>) {
     this.form = fb.group({
       email: ['admin@mediatec.org', [Validators.required, Validators.minLength(4)]],
       password: ['mediatec', [Validators.required]],
+    })
+    this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
+      this.logo = state.logo
     })
   }
 
