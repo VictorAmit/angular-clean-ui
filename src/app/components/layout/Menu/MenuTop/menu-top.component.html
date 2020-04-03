@@ -63,99 +63,101 @@
         </span>
         <ul>
           <ng-container *ngFor="let item of menuDataActivated">
-            <!-- disabled item -->
-            <li nz-menu-item *ngIf="item.disabled" [nzSelected]="item.selected" [nzDisabled]="true" nz-tooltip
-              nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
-              <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
-                <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                <span class="title">{{item.title}}</span>
-                <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
-              </span>
-            </li>
-            <!-- main item -->
-            <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}} [nzSelected]="item.selected"
-              [nzDisabled]="item.disabled" nz-tooltip nzPlacement="right"
-              [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
-              <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
-                <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                <span class="title">{{item.title}}</span>
-                <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
-              </span>
-            </li>
-            <!-- submenu item with recursive template -->
-            <li nz-submenu *ngIf="item.children">
-              <span title>
-                <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                <span class="title">{{item.title}}</span>
-              </span>
-              <ul>
-                <ng-container *ngFor="let item of item.children">
-                  <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
-                    [nzSelected]="item.selected" [nzDisabled]="item.disabled">
-                    <span>
-                      <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                      <span class="title">{{item.title}}</span>
-                      <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
-                    </span>
-                    <!-- level 1-->
-                  <li nz-submenu *ngIf="item.children">
-                    <span title>
-                      <span class="title">{{item.title}}</span>
-                      <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                    </span>
-                    <ul>
-                      <ng-container *ngFor="let item of item.children">
-                        <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
-                          [nzSelected]="item.selected" [nzDisabled]="item.disabled">
-                          <span>
-                            <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                            <span class="title">{{item.title}}</span>
-                            <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
-                          </span>
-                          <!-- level 2 -->
-                        <li nz-submenu *ngIf="item.children">
-                          <span title>
-                            <span class="title">{{item.title}}</span>
-                            <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                          </span>
-                          <ul>
-                            <ng-container *ngFor="let item of item.children">
-                              <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
-                                [nzSelected]="item.selected" [nzDisabled]="item.disabled">
-                                <span>
-                                  <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                                  <span class="title">{{item.title}}</span>
-                                  <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
-                                </span>
-                                <!-- level 3 -->
-                              <li nz-submenu *ngIf="item.children">
-                                <span title>
-                                  <span class="title">{{item.title}}</span>
-                                  <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                                </span>
-                                <ul>
-                                  <ng-container *ngFor="let item of item.children">
-                                    <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
-                                      [nzSelected]="item.selected" [nzDisabled]="item.disabled">
-                                      <span>
-                                        <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
-                                        <span class="title">{{item.title}}</span>
-                                        <span *ngIf="item.count"
-                                          class="badge badge-success ml-2">{{ item.count }}</span>
-                                      </span>
-                                    </li>
-                                  </ng-container>
-                                </ul>
-                              </li>
-                            </ng-container>
-                          </ul>
-                        </li>
-                      </ng-container>
-                    </ul>
-                  </li>
-                </ng-container>
-              </ul>
-            </li>
+            <ng-container *ngIf="!item.roles || item.roles.includes(role)">
+              <!-- disabled item -->
+              <li nz-menu-item *ngIf="item.disabled" [nzSelected]="item.selected" [nzDisabled]="true" nz-tooltip
+                nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
+                <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
+                  <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                  <span class="title">{{item.title}}</span>
+                  <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
+                </span>
+              </li>
+              <!-- main item -->
+              <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}} [nzSelected]="item.selected"
+                [nzDisabled]="item.disabled" nz-tooltip nzPlacement="right"
+                [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
+                <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
+                  <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                  <span class="title">{{item.title}}</span>
+                  <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
+                </span>
+              </li>
+              <!-- submenu item with recursive template -->
+              <li nz-submenu *ngIf="item.children">
+                <span title>
+                  <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                  <span class="title">{{item.title}}</span>
+                </span>
+                <ul>
+                  <ng-container *ngFor="let item of item.children">
+                    <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
+                      [nzSelected]="item.selected" [nzDisabled]="item.disabled">
+                      <span>
+                        <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                        <span class="title">{{item.title}}</span>
+                        <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
+                      </span>
+                      <!-- level 1-->
+                    <li nz-submenu *ngIf="item.children">
+                      <span title>
+                        <span class="title">{{item.title}}</span>
+                        <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                      </span>
+                      <ul>
+                        <ng-container *ngFor="let item of item.children">
+                          <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
+                            [nzSelected]="item.selected" [nzDisabled]="item.disabled">
+                            <span>
+                              <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                              <span class="title">{{item.title}}</span>
+                              <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
+                            </span>
+                            <!-- level 2 -->
+                          <li nz-submenu *ngIf="item.children">
+                            <span title>
+                              <span class="title">{{item.title}}</span>
+                              <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                            </span>
+                            <ul>
+                              <ng-container *ngFor="let item of item.children">
+                                <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
+                                  [nzSelected]="item.selected" [nzDisabled]="item.disabled">
+                                  <span>
+                                    <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                                    <span class="title">{{item.title}}</span>
+                                    <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
+                                  </span>
+                                  <!-- level 3 -->
+                                <li nz-submenu *ngIf="item.children">
+                                  <span title>
+                                    <span class="title">{{item.title}}</span>
+                                    <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                                  </span>
+                                  <ul>
+                                    <ng-container *ngFor="let item of item.children">
+                                      <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}}
+                                        [nzSelected]="item.selected" [nzDisabled]="item.disabled">
+                                        <span>
+                                          <i *ngIf="item.icon" [ngClass]="[item.icon, 'icon']"></i>
+                                          <span class="title">{{item.title}}</span>
+                                          <span *ngIf="item.count"
+                                            class="badge badge-success ml-2">{{ item.count }}</span>
+                                        </span>
+                                      </li>
+                                    </ng-container>
+                                  </ul>
+                                </li>
+                              </ng-container>
+                            </ul>
+                          </li>
+                        </ng-container>
+                      </ul>
+                    </li>
+                  </ng-container>
+                </ul>
+              </li>
+            </ng-container>
           </ng-container>
         </ul>
       </li>

@@ -23,12 +23,12 @@ export class MenuLeftComponent implements OnInit {
   logo: String
   menuData: any[]
   menuDataActivated: any[]
+  role: String
 
-  constructor(
-    private menuService: MenuService,
-    private store: Store<any>,
-    private router: Router,
-  ) {}
+  constructor(private menuService: MenuService, private store: Store<any>, private router: Router) {
+    const userInfo = JSON.parse(localStorage.getItem('user'))
+    this.role = userInfo ? userInfo.role : null
+  }
 
   ngOnInit() {
     this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))

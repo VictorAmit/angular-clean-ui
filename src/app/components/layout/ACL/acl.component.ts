@@ -18,7 +18,6 @@ export class ACLComponent implements OnInit {
 
   ngOnInit() {
     const user = JSON.parse(localStorage.getItem('user'))
-    user.role = 'admin' // TODO: FAKE FIREBASE ROLE, YOU SHOULD ADD IT TO FIREBASE USER MDOEL
     this.authorized = this.roles.includes(user.role)
   }
 }
