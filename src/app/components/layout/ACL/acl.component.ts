@@ -4,7 +4,6 @@ import { AuthService } from 'src/app/services/firebase.auth.service'
 
 @Component({
   selector: 'cui-acl',
-  templateUrl: './acl.component.html',
   template: `
     <ng-content *ngIf="authorized"></ng-content>
   `,
