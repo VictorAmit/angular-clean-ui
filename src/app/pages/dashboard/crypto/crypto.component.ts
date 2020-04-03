@@ -23,17 +23,22 @@ export class DashboardCryptoComponent implements OnInit {
   orderBookBuy = data.orderBookBuy
   orderBookSell = data.orderBookSell
 
-  actionType = 'buy'
-  orderType = 'limit'
-  timeInForce = 'good'
-  openOrdersLoaded = false
-  openOrdersLoading = false
-  orderHistoryLoaded = false
-  orderHistoryLoading = false
+  actionType: String = 'buy'
+  orderType: String = 'limit'
+  timeInForce: String = 'good'
+  openOrdersLoaded: Boolean = false
+  openOrdersLoading: Boolean = false
+  orderHistoryLoaded: Boolean = false
+  orderHistoryLoading: Boolean = false
 
-  selectedItem = 'btc'
+  selectedItem: String = 'btc'
 
-  chartOptions = {}
+  chartOptions: any = {
+    series: {},
+    xaxis: {},
+    yaxis: {},
+    title: {},
+  }
 
   constructor() {
     this.chartOptions = {
