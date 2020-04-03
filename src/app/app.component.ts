@@ -84,9 +84,21 @@ export class AppComponent implements OnInit {
           const keys = Object.keys(queryParams)
           if (keys.length) {
             keys.forEach(key => {
+              let value
+              switch (queryParams[key]) {
+                case 'false':
+                  value = false
+                  break
+                case 'true':
+                  value = true
+                  break
+                default:
+                  value = queryParams[key]
+                  break
+              }
               this.store.dispatch(
                 new SettingsActions.SetStateAction({
-                  [key]: queryParams[key] === 'true',
+                  [key]: value,
                 }),
               )
             })
