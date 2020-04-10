@@ -18,8 +18,6 @@ interface User {
   providedIn: 'root',
 })
 export class AuthService {
-  userData: any
-
   constructor(
     public afs: AngularFirestore,
     public afAuth: AngularFireAuth,
@@ -28,7 +26,9 @@ export class AuthService {
   ) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        localStorage.setItem('user', JSON.stringify(user))
+        const _user = JSON.parse(JSON.stringify(user))
+        // TODO: add role to backend user model and remove this fake role
+        localStorage.setItem('user', JSON.stringify({ ..._user, role: 'admin' }))
       } else {
         localStorage.setItem('user', null)
       }
