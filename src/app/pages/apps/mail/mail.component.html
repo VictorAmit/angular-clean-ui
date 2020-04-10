@@ -46,7 +46,7 @@
         </div>
         <div class="card-body">
           <nz-table #mailTable [nzScroll]="{x: '100%'}" [nzShowPagination]="false" [nzData]="listOfAllData"
-            (nzCurrentPageDataChange)="currentPageDataChange($event)" class="kit__utils__scrollTable mb-4">
+            (nzCurrentPageDataChange)="currentPageDataChange($event)" class="kit__utils__table mb-4">
             <thead>
               <tr>
                 <th nzShowCheckbox [(nzChecked)]="isAllDisplayDataChecked" [nzIndeterminate]="isIndeterminate"

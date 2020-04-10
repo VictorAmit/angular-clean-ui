@@ -38,43 +38,43 @@
       </div>
     </div>
   </div>
-  <nz-table class="air__utils__scrollTable mb-4" #invoiceTable [nzShowPagination]="false" [nzData]="listOfAllData"
-            (nzCurrentPageDataChange)="currentPageDataChange($event)">
+  <nz-table class="kit__utils__table mb-4" #invoiceTable [nzShowPagination]="false" [nzData]="listOfAllData"
+    (nzCurrentPageDataChange)="currentPageDataChange($event)">
     <thead>
-    <tr>
-      <th nzShowCheckbox [(nzChecked)]="isAllDisplayDataChecked" [nzIndeterminate]="isIndeterminate"
+      <tr>
+        <th nzShowCheckbox [(nzChecked)]="isAllDisplayDataChecked" [nzIndeterminate]="isIndeterminate"
           (nzCheckedChange)="checkAll($event)"></th>
-      <th>Product</th>
-      <th>Location</th>
-      <th>Description</th>
-      <th class="text-right">Quantity</th>
-      <th class="text-right">Unit Cost</th>
-      <th class="text-right">Summary</th>
-    </tr>
+        <th>Product</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th class="text-right">Quantity</th>
+        <th class="text-right">Unit Cost</th>
+        <th class="text-right">Summary</th>
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let data of invoiceTable.data">
-      <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.id]" [nzDisabled]="data.disabled"
+      <tr *ngFor="let data of invoiceTable.data">
+        <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.id]" [nzDisabled]="data.disabled"
           (nzCheckedChange)="refreshStatus()"></td>
-      <td>
-        {{data.product}}
-      </td>
-      <td>
-        <a href="javascript: void(0);" class="text-blue">
-          {{data.location}}
-        </a>
-      </td>
-      <td>{{data.description}}</td>
-      <td>
-        <div class="font-weight-bold text-dark text-right">{{data.quantity}}</div>
-      </td>
-      <td>
-        <div class="font-weight-bold text-dark text-right">{{data.cost}}</div>
-      </td>
-      <td>
-        <div class="font-weight-bold text-dark text-right">{{data.overall}}</div>
-      </td>
-    </tr>
+        <td>
+          {{data.product}}
+        </td>
+        <td>
+          <a href="javascript: void(0);" class="text-blue">
+            {{data.location}}
+          </a>
+        </td>
+        <td>{{data.description}}</td>
+        <td>
+          <div class="font-weight-bold text-dark text-right">{{data.quantity}}</div>
+        </td>
+        <td>
+          <div class="font-weight-bold text-dark text-right">{{data.cost}}</div>
+        </td>
+        <td>
+          <div class="font-weight-bold text-dark text-right">{{data.overall}}</div>
+        </td>
+      </tr>
     </tbody>
   </nz-table>
   <div class="text-right font-size-18 text-dark p-4 rounded bg-light">

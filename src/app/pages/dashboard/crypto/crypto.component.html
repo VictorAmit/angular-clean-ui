@@ -185,7 +185,7 @@
         <div class="cui-crypto-dashboard-order">
           <div class="cui-crypto-dashboard-order-left">
             <div class="cui-crypto-dashboard-table text-nowrap">
-              <nz-table #orderBookSellTable nzSize="small" [nzData]="orderBookSell" class="utils__scrollTable"
+              <nz-table #orderBookSellTable nzSize="small" [nzData]="orderBookSell" class="kit__utils__table"
                 [nzScroll]="{x: '100%'}">
                 <thead>
                   <tr>
@@ -337,7 +337,7 @@
           </div>
           <div class="cui-crypto-dashboard-order-right">
             <div class="cui-crypto-dashboard-table text-nowrap">
-              <nz-table #orderBookBuyTable [nzData]="orderBookBuy" nzSize="small" class="utils__scrollTable">
+              <nz-table #orderBookBuyTable [nzData]="orderBookBuy" nzSize="small" class="kit__utils__table">
                 <thead>
                   <tr>
                     <th></th>
@@ -374,7 +374,7 @@
     <div class="card">
       <div class="card-body">
         <div class="cui-crypto-dashboard-table text-nowrap">
-          <nz-table #marketHistoryTable nzSize="small" [nzData]="marketHistoryData" class="utils__scrollTable">
+          <nz-table #marketHistoryTable nzSize="small" [nzData]="marketHistoryData" class="kit__utils__table">
             <thead>
               <tr>
                 <th>Date</th>
@@ -409,7 +409,7 @@
           </nz-spin>
         </a>
         <nz-table *ngIf="openOrdersLoaded" #openOrdersTable nzSize="small" [nzData]="myOpenOrdersData"
-          class="utils__scrollTable">
+          class="kit__utils__table">
           <thead>
             <tr>
               <th>Order Date</th>
@@ -449,7 +449,7 @@
           </nz-spin>
         </a>
         <nz-table *ngIf="orderHistoryLoaded" #historyOrdersTable nzSize="small" [nzData]="myOpenOrdersData"
-          class="utils__scrollTable">
+          class="kit__utils__table">
           <thead>
             <tr>
               <th>Order Date</th>
