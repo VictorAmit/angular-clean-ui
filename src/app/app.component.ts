@@ -33,6 +33,8 @@ const locales = {
 })
 export class AppComponent implements OnInit {
   window: any = window as any
+  _locale: String
+  _theme: String
 
   constructor(
     private router: Router,
@@ -45,9 +47,17 @@ export class AppComponent implements OnInit {
       translate.setTranslation(locale, locales[locale])
     })
     translate.setDefaultLang('en-US')
-    // localization listener
+
+    // localization && theme listener
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
-      translate.use(state.locale)
+      if (this._locale !== state.locale) {
+        translate.use(state.locale)
+      }
+      if (this._theme !== state.theme) {
+        this.setTheme(state.theme)
+      }
+      this._locale = state.locale
+      this._theme = state.theme
     })
   }
 
@@ -171,17 +181,26 @@ export class AppComponent implements OnInit {
       }
     }
     primaryColor()
+  }
 
-    // init theme
-    const initTheme = () => {
-      const theme = store.get('app.settings.theme')
-      if (theme === 'dark') {
-        document.querySelector('body').classList.add('kit__dark')
-        this.window.less.modifyVars(AntDesignDarkTheme)
-      } else {
-        this.window.less.modifyVars(AntDesignLightTheme)
-      }
+  setTheme = theme => {
+    if (theme === 'light') {
+      document.querySelector('body').classList.remove('kit__dark')
+      this.window.less.modifyVars(AntDesignLightTheme)
+      this.store.dispatch(
+        new SettingsActions.SetStateAction({
+          menuColor: 'light',
+        }),
+      )
     }
-    initTheme()
+    if (theme === 'dark') {
+      document.querySelector('body').classList.add('kit__dark')
+      this.window.less.modifyVars(AntDesignDarkTheme)
+      this.store.dispatch(
+        new SettingsActions.SetStateAction({
+          menuColor: 'dark',
+        }),
+      )
+    }
   }
 }

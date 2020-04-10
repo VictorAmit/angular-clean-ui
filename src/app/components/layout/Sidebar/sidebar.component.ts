@@ -94,31 +94,12 @@ export class SidebarComponent {
     )
   }
 
-  switchDarkTheme() {
-    const currentTheme = this.theme
-    const nextTheme = currentTheme === 'light' ? 'dark' : 'light'
-    const toggleTheme = () => {
-      if (nextTheme === 'light') {
-        document.querySelector('body').classList.remove('kit__dark')
-        this.window.less.modifyVars(AntDesignLightTheme)
-      } else {
-        document.querySelector('body').classList.add('kit__dark')
-        this.window.less.modifyVars(AntDesignDarkTheme)
-        this.store.dispatch(
-          new SettingsActions.SetStateAction({
-            menuColor: 'dark',
-          }),
-        )
-        store.set('app.settings.menuColor', 'dark')
-      }
-    }
-    toggleTheme()
+  setTheme(nextTheme) {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
         theme: nextTheme,
       }),
     )
-    store.set('app.settings.theme', nextTheme)
   }
 
   setPrimaryColor(e) {
