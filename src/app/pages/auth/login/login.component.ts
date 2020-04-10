@@ -17,7 +17,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, public authService: AuthService, private store: Store<any>) {
     this.form = fb.group({
       email: ['admin@mediatec.org', [Validators.required, Validators.minLength(4)]],
-      password: ['mediatec', [Validators.required]],
+      password: ['cleanui', [Validators.required]],
     })
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.logo = state.logo
