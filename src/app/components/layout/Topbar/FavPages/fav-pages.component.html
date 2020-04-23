@@ -1,7 +1,7 @@
 <div>
   <ng-container *ngFor="let item of favs">
-    <a [routerLink]="item.url" class="mr-2 item">
-      <i class="mr-2 fe icon" [ngClass]="[item.icon]" nz-tooltip [nzTooltipTitle]="item.title"
+    <a [routerLink]="item.url" class="mr-3 item">
+      <i class="fe icon" [ngClass]="[item.icon]" nz-tooltip [nzTooltipTitle]="item.title"
         nzTooltipPlacement="bottom"></i>
     </a>
   </ng-container>

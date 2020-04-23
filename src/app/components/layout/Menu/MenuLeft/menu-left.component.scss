@@ -13,6 +13,7 @@
   transition: none;
   display: block;
   min-height: 100%;
+  font-size: rem(15);
 
   .menuOuter {
     position: fixed;
@@ -94,6 +95,10 @@
     background: transparent;
     border-right: none;
     color: $text;
+
+    .title {
+      font-size: rem(15);
+    }
 
     ::ng-deep {
       .ant-menu-submenu > .ant-menu {

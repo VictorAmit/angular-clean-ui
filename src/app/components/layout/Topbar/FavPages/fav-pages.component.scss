@@ -62,7 +62,7 @@
 }
 
 // dark theme
-:host-context(body.kit__dark) {
+::ng-deep body.kit__dark {
   .icon {
     color: $dark-gray-2;
 
