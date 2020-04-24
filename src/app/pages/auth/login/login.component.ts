@@ -5,7 +5,7 @@ import * as Reducers from 'src/app/store/reducers'
 import { AuthService } from 'src/app/services/firebase.auth.service'
 
 @Component({
-  selector: 'air-system-login',
+  selector: 'cui-system-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })

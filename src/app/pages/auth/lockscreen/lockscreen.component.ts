@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'air-system-lockscreen',
+  selector: 'cui-system-lockscreen',
   templateUrl: './lockscreen.component.html',
   styleUrls: ['./lockscreen.component.scss'],
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'air-system-register',
+  selector: 'cui-system-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
