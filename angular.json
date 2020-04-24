@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "aot": true,
             "customWebpackConfig": {
               "path": "./extra-webpack.config.js",
               "replaceDuplicatePlugins": true
@@ -87,6 +88,7 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
+            "aot": true,
             "browserTarget": "cleanui:build"
           },
           "configurations": {
