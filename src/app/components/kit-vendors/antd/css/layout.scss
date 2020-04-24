@@ -6,10 +6,14 @@ body {
     min-height: 100vh;
     min-width: 0;
     background: none;
+
+    &.ant-layout-has-sider {
+      flex-direction: row;
+    }
   }
 
   .ant-layout-header {
-    padding: 0;
+    padding: 0 !important;
     line-height: normal;
     height: auto;
     background: none;

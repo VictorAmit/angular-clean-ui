@@ -12,7 +12,7 @@ import { NgProgressRouterModule } from '@ngx-progressbar/router'
 import { NgProgressHttpModule } from '@ngx-progressbar/http'
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireAuthModule } from '@angular/fire/auth'
-import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'
+// import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -81,9 +81,9 @@ const firebaseConfig = {
     /**
      * Firebase Modules
      */
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
+    // AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireAuthModule,
+    // AngularFirestoreModule,
 
     /**
      * Routing Module
@@ -93,7 +93,7 @@ const firebaseConfig = {
   providers: [
     ...LOCALE_PROVIDERS,
     { provide: NZ_ICONS, useValue: icons },
-    { provide: FirestoreSettingsToken, useValue: {} },
+    // { provide: FirestoreSettingsToken, useValue: {} },
   ],
   bootstrap: [AppComponent],
 })

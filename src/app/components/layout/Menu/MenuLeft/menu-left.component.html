@@ -32,7 +32,7 @@
               <li nz-menu-group [nzTitle]="item.title" *ngIf="item.category"></li>
               <!-- disabled item -->
               <li nz-menu-item *ngIf="item.disabled" [nzSelected]="item.selected" [nzDisabled]="true" nz-tooltip
-                nzPlacement="right" [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
+                nzTooltipPlacement="right" [nzTooltipTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
                 <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
                   <span class="title">{{item.title}}</span>
                   <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>
@@ -41,8 +41,8 @@
               </li>
               <!-- main item -->
               <li nz-menu-item *ngIf="!item.children && item.url" routerLink={{item.url}} [nzSelected]="item.selected"
-                [nzDisabled]="item.disabled" nz-tooltip nzPlacement="right"
-                [nzTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
+                [nzDisabled]="item.disabled" nz-tooltip nzTooltipPlacement="right"
+                [nzTooltipTitle]="isMenuCollapsed && level === 0 ? tooltipTpl : ''">
                 <span [ngStyle]="{'padding-left.px': isMenuCollapsed ? '0' : level * 15}">
                   <span class="title">{{item.title}}</span>
                   <span *ngIf="item.count" class="badge badge-success ml-2">{{ item.count }}</span>

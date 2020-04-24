@@ -20,9 +20,22 @@
 
 .extInput {
   background-color: $gray-1;
+  position: relative;
+
+  input {
+    background: none;
+  }
+
   @media screen and (max-width: 620px) {
-    width: 30px !important;
-    padding-left: 22px !important;
+    width: 40px !important;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+    }
     :global(.ant-input-prefix) {
       left: 11px !important;
       pointer-events: none;

@@ -9,9 +9,6 @@ import store from 'store'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
-import AntDesignDarkTheme from 'src/app/components/kit-vendors/antd/themes/themeDark'
-import AntDesignLightTheme from 'src/app/components/kit-vendors/antd/themes/themeLight'
-
 import english from './locales/en-US'
 import french from './locales/fr-FR'
 import russian from './locales/ru-RU'
@@ -32,7 +29,6 @@ const locales = {
   `,
 })
 export class AppComponent implements OnInit {
-  window: any = window as any
   _locale: String
   _theme: String
 
@@ -186,7 +182,6 @@ export class AppComponent implements OnInit {
   setTheme = theme => {
     if (theme === 'light') {
       document.querySelector('body').classList.remove('kit__dark')
-      this.window.less.modifyVars(AntDesignLightTheme)
       this.store.dispatch(
         new SettingsActions.SetStateAction({
           menuColor: 'light',
@@ -195,7 +190,6 @@ export class AppComponent implements OnInit {
     }
     if (theme === 'dark') {
       document.querySelector('body').classList.add('kit__dark')
-      this.window.less.modifyVars(AntDesignDarkTheme)
       this.store.dispatch(
         new SettingsActions.SetStateAction({
           menuColor: 'dark',

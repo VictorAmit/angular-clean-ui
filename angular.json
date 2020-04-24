@@ -15,13 +15,9 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "aot": true,
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "replaceDuplicatePlugins": true
-            },
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -44,6 +40,9 @@
               "./node_modules/quill/dist/quill.bubble.css",
               "./node_modules/quill/dist/quill.snow.css",
               "./node_modules/c3/c3.min.css",
+              "src/app/components/kit-vendors/antd/themes/light/index.less",
+              "src/app/components/kit-vendors/antd/themes/dark/index.less",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/global.scss"
             ],
             "scripts": [
@@ -86,7 +85,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "aot": true,
             "browserTarget": "cleanui:build"

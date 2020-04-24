@@ -4,9 +4,6 @@ import store from 'store'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
-import AntDesignDarkTheme from 'src/app/components/kit-vendors/antd/themes/themeDark'
-import AntDesignLightTheme from 'src/app/components/kit-vendors/antd/themes/themeLight'
-
 @Component({
   selector: 'cui-sidebar',
   templateUrl: './sidebar.component.html',
