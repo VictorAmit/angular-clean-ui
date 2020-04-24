@@ -7,7 +7,7 @@ import { NzTreeComponent } from 'ng-zorro-antd/tree'
   templateUrl: './tree.component.html',
 })
 export class KitAntdTreeExampleComponent implements OnInit, AfterViewInit {
-  @ViewChild('nzTreeComponent', { static: false }) nzTreeComponent: NzTreeComponent
+  @ViewChild('nzTreeComponent') nzTreeComponent: NzTreeComponent
   defaultCheckedKeys = ['10020']
   defaultSelectedKeys = ['10010']
   defaultExpandedKeys = ['100', '1001']
