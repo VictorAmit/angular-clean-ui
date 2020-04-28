@@ -6,10 +6,6 @@ body {
     min-height: 100vh;
     min-width: 0;
     background: none;
-
-    &.ant-layout-has-sider {
-      flex-direction: row;
-    }
   }
 
   .ant-layout-header {
@@ -20,12 +16,12 @@ body {
   }
 
   .ant-layout-footer {
-    padding: 0;
+    padding: 0 !important;
     background: none;
   }
 
   .ant-layout.ant-layout-has-sider > .ant-layout,
   .ant-layout.ant-layout-has-sider > .ant-layout-content {
-    overflow-x: initial;
+    overflow-x: initial !important;
   }
 }

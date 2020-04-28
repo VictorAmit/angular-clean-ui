@@ -24,7 +24,7 @@ export const initialState: object = {
     menuLayoutType: 'left', // left, top, nomenu
     routerAnimation: 'slideFadeinUp', // none, slideFadeinUp, slideFadeinRight, Fadein, zoomFadein
     menuColor: 'white', // white, dark, gray
-    theme: 'light', // light, dark
+    theme: 'default', // default, dark
     authPagesColor: 'white', // white, gray, image
     primaryColor: '#4b7cf3',
     leftMenuWidth: 256,

@@ -180,8 +180,8 @@ export class AppComponent implements OnInit {
   }
 
   setTheme = theme => {
-    if (theme === 'light') {
-      document.querySelector('body').classList.remove('kit__dark')
+    document.querySelector('body').setAttribute('data-kit-theme', theme)
+    if (theme === 'default') {
       this.store.dispatch(
         new SettingsActions.SetStateAction({
           menuColor: 'light',
@@ -189,7 +189,6 @@ export class AppComponent implements OnInit {
       )
     }
     if (theme === 'dark') {
-      document.querySelector('body').classList.add('kit__dark')
       this.store.dispatch(
         new SettingsActions.SetStateAction({
           menuColor: 'dark',

@@ -18,8 +18,7 @@ export class TopbarLanguageSwitcherComponent {
     })
   }
 
-  changeLanguage(event: any) {
-    const locale = event.el.attributes.key.nodeValue
+  changeLanguage(locale: any) {
     this.store.dispatch(
       new SettingsActions.SetStateAction({
         locale,
