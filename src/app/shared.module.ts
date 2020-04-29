@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router'
 import { TranslateModule } from '@ngx-translate/core'
 
 // acl
-import { ACLComponent } from 'src/app/components/layout/ACL/acl.component'
+import { ACLComponent } from 'src/app/components/cui-layout/ACL/acl.component'
 
 // antd components module
 import { AntdModule } from 'src/app/antd.module'
