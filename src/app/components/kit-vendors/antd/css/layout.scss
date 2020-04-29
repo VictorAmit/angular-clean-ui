@@ -3,21 +3,21 @@
 
 body {
   .ant-layout {
-    min-height: 100vh;
+    min-height: 100vh !important;
     min-width: 0;
-    background: none;
+    background: transparent;
   }
 
   .ant-layout-header {
     padding: 0 !important;
     line-height: normal;
     height: auto;
-    background: none;
+    background: transparent;
   }
 
   .ant-layout-footer {
     padding: 0 !important;
-    background: none;
+    background: transparent;
   }
 
   .ant-layout.ant-layout-has-sider > .ant-layout,
