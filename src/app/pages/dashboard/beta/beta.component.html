@@ -286,14 +286,14 @@
           <kit-general-22></kit-general-22>
         </div>
         <nz-table [nzData]="displayDatabaseData" [nzShowPagination]="false" class="kit__utils__table">
-          <thead (nzSortChange)="sort($event)" nzSingleSort>
+          <thead (nzSortChange)="sort($event)">
             <tr>
               <th>Name</th>
               <th>Position</th>
               <th>Office</th>
-              <th nzShowSort nzSortKey="age">Age</th>
+              <th nzShowSort nzColumnKey="age">Age</th>
               <th>Date</th>
-              <th nzShowSort nzSortKey="salary">Salary</th>
+              <th nzShowSort nzColumnKey="salary">Salary</th>
             </tr>
           </thead>
           <tbody>

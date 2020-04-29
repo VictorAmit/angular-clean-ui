@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core'
-import { auth } from 'firebase/app'
 import { AngularFireAuth } from '@angular/fire/auth'
 import { AngularFirestore } from '@angular/fire/firestore'
 import { Router } from '@angular/router'
@@ -37,7 +36,7 @@ export class AuthService {
 
   async SignIn(email: string, password: string) {
     try {
-      await this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      await this.afAuth.signInWithEmailAndPassword(email, password)
       this.router.navigate(['dashboard/alpha'])
       this.notification.success(
         'Logged In',
@@ -54,7 +53,7 @@ export class AuthService {
   }
 
   async SignOut() {
-    await this.afAuth.auth.signOut()
+    await this.afAuth.signOut()
     localStorage.removeItem('user')
     this.router.navigate(['auth/login'])
   }

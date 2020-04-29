@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from '../shared.module'
-import { LayoutModule } from '../components/layout/layout.module'
+import { LayoutModule } from '../components/cui-layout/layout.module'
 
 import { LayoutAuthComponent } from './Auth/auth.component'
 import { LayoutMainComponent } from './Main/main.component'

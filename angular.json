@@ -10,17 +10,14 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "replaceDuplicatePlugins": true
-            },
+            "aot": true,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -38,6 +35,10 @@
               }
             ],
             "styles": [
+              "./node_modules/ng-zorro-antd/style/entry.less",
+              "src/app/components/kit-vendors/antd/themes/default.less",
+              "src/app/components/kit-vendors/antd/themes/dark.less",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/chartist/dist/chartist.css",
               "./node_modules/quill/dist/quill.core.css",
               "./node_modules/quill/dist/quill.bubble.css",
@@ -85,8 +86,9 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
+            "aot": true,
             "browserTarget": "cleanui:build"
           },
           "configurations": {

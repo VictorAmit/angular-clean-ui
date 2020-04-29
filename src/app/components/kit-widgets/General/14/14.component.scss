@@ -88,7 +88,7 @@
 }
 
 // dark theme
-:host-context(body.kit__dark) {
+:host-context([data-kit-theme='dark']) {
   .messageContent {
     background-color: $dark-gray-5;
     &:before {

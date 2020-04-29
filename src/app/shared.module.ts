@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { NgZorroAntdModule } from 'ng-zorro-antd'
 import { RouterModule } from '@angular/router'
 import { TranslateModule } from '@ngx-translate/core'
 
 // acl
-import { ACLComponent } from 'src/app/components/layout/ACL/acl.component'
+import { ACLComponent } from 'src/app/components/cui-layout/ACL/acl.component'
 
-const MODULES = [CommonModule, RouterModule, NgZorroAntdModule, TranslateModule]
+// antd components module
+import { AntdModule } from 'src/app/antd.module'
+
+const MODULES = [CommonModule, RouterModule, AntdModule, TranslateModule]
 
 @NgModule({
   imports: [...MODULES],

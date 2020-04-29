@@ -4,7 +4,6 @@ import { DashboardRouterModule } from './dashboard-routing.module'
 import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
 import { FormsModule } from '@angular/forms'
 import { ChartistModule } from 'ng-chartist'
-import { AngularStickyThingsModule } from '@w11k/angular-sticky-things'
 import { NgApexchartsModule } from 'ng-apexcharts'
 
 // dashboard
@@ -27,7 +26,6 @@ const COMPONENTS = [
     WidgetsComponentsModule,
     FormsModule,
     ChartistModule,
-    AngularStickyThingsModule,
     NgApexchartsModule,
   ],
   declarations: [...COMPONENTS],

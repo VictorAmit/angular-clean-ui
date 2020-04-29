@@ -9,9 +9,9 @@ const data: any = require('./data.json')
   styleUrls: ['./9.component.scss'],
 })
 export class CuiChart9Component implements AfterViewChecked {
-  @ViewChild(ChartComponent, { static: false }) chart: ChartComponent
-  @ViewChild('tooltip', { static: false }) tooltip
-  @ViewChild('legend', { static: false }) legend
+  @ViewChild(ChartComponent) chart: ChartComponent
+  @ViewChild('tooltip') tooltip
+  @ViewChild('legend') legend
   chartData = data
   options = {
     responsive: true,
