@@ -52,7 +52,7 @@
 }
 
 // dark theme
-:host-context(body.kit__dark) {
+:host-context([data-kit-theme='dark']) {
   .tabs {
     ::ng-deep .ant-tabs-bar {
       &::before {

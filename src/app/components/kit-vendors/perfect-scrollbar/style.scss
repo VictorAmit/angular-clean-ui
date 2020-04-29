@@ -54,7 +54,7 @@ perfect-scrollbar > .ps.ps--active-x > .ps__rail-x.ps--clicking {
 }
 
 // dark theme
-body.kit__dark {
+[data-kit-theme='dark'] {
   .ps__thumb-y {
     background: #32304b !important;
   }

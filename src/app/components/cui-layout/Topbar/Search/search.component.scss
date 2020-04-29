@@ -168,7 +168,7 @@
 }
 
 // dark theme
-:host-context(body.kit__dark) {
+:host-context([data-kit-theme='dark']) {
   .extInput {
     background-color: $dark-gray-4;
   }

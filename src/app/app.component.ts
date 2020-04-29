@@ -180,7 +180,7 @@ export class AppComponent implements OnInit {
   }
 
   setTheme = theme => {
-    document.querySelector('body').setAttribute('data-kit-theme', theme)
+    document.querySelector('html').setAttribute('data-kit-theme', theme)
     if (theme === 'default') {
       this.store.dispatch(
         new SettingsActions.SetStateAction({

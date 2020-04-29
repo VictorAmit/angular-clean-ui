@@ -48,7 +48,7 @@
 }
 
 // dark theme
-:global(body.kit__dark) {
+:host-context([data-kit-theme='dark']) {
   .dropdown {
     color: $dark-gray-2;
 

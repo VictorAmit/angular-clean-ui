@@ -98,7 +98,7 @@
 }
 
 // dark theme
-:host-context(body.kit__dark) {
+:host-context([data-kit-theme='dark']) {
   .chatContainer {
     background: $dark-gray-4;
 
