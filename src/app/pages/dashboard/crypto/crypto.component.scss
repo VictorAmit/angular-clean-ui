@@ -174,7 +174,7 @@
 }
 
 // dark theme
-body.kit__dark {
+[data-kit-theme='dark'] {
   .cui-crypto-dashboard {
     &-list-item {
       background: $dark-gray-4 !important;
