@@ -7,7 +7,7 @@ export const getMenuData: any[] = [
     title: 'Dashboards',
     key: 'dashboards',
     icon: 'fe fe-home',
-    // roles: ['admin'], // set accesible roles
+    // roles: ['admin'], // set user roles with access to this route
     count: 4,
     children: [
       {
