@@ -1,12 +1,16 @@
-## Installation
+### Clean UI Pro Angular Admin Template Preview ###
+https://angular.cleanuitemplate.com
 
+### Documentation ###
+Please read documentation here https://docs.cleanuitemplate.com
+
+### Quick Start ###
 * Install latest node.js: https://nodejs.org​
 * Install latest yarn package manager: https://yarnpkg.com/​
 * Install angular cli: `npm install -g @angular/cli`
 * Install node modules by running terminal command `yarn install`
 * Run the app `yarn start` or `ng serve --open`
-* For build production files use `yarn build` or `ng build` (build to /dist/ folder)
+* Or build production app `yarn build` or `ng build`
 
-## Reference
-
-[https://github.com/angular/angular](https://github.com/angular/angular)
+### Support ###
+Use GitHub Issues for tracking bugs and creating new feature requests or write to [support@sellpixels.com](mailto:support@sellpixels.com).
