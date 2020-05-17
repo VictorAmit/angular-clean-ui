@@ -29,7 +29,10 @@ export class KitAntdTableCustomFilterComponent implements OnInit {
   searchValue = ''
   sortName: string | null = null
   sortValue: string | null = null
-  listOfFilterAddress = [{ text: 'London', value: 'London' }, { text: 'Sidney', value: 'Sidney' }]
+  listOfFilterAddress = [
+    { text: 'London', value: 'London' },
+    { text: 'Sidney', value: 'Sidney' },
+  ]
   listOfSearchAddress: string[] = []
   listOfData = [
     {

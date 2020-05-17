@@ -90,7 +90,10 @@ export class ChartsC3Component implements AfterViewInit {
     const step = c3.generate({
       bindto: '#step',
       data: {
-        columns: [['Primary', 300, 350, 300, 0, 0, 100], ['Success', 130, 100, 140, 200, 150, 50]],
+        columns: [
+          ['Primary', 300, 350, 300, 0, 0, 100],
+          ['Success', 130, 100, 140, 200, 150, 50],
+        ],
         types: {
           Primary: 'step',
           Success: 'area-step',
@@ -103,7 +106,10 @@ export class ChartsC3Component implements AfterViewInit {
     const area = c3.generate({
       bindto: '#area',
       data: {
-        columns: [['Primary', 300, 350, 300, 0, 0, 0], ['Success', 130, 100, 140, 200, 150, 50]],
+        columns: [
+          ['Primary', 300, 350, 300, 0, 0, 0],
+          ['Success', 130, 100, 140, 200, 150, 50],
+        ],
         types: {
           Primary: 'area',
           Success: 'area-spline',
@@ -549,7 +555,10 @@ export class ChartsC3Component implements AfterViewInit {
     const pieCHart = c3.generate({
       bindto: '#pie-chart',
       data: {
-        columns: [['Primary', 30], ['Success', 120]],
+        columns: [
+          ['Primary', 30],
+          ['Success', 120],
+        ],
         type: 'pie',
       },
       color: {
@@ -559,7 +568,10 @@ export class ChartsC3Component implements AfterViewInit {
     const donutChart = c3.generate({
       bindto: '#donut-chart',
       data: {
-        columns: [['Danger', 30], ['Success', 120]],
+        columns: [
+          ['Danger', 30],
+          ['Success', 120],
+        ],
         type: 'donut',
       },
       color: {

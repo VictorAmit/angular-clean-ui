@@ -30,7 +30,4 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [logge
 
 export const getSettingsState = createFeatureSelector<any>('settings')
 
-export const getSettings = createSelector(
-  getSettingsState,
-  fromSettings.getSettings,
-)
+export const getSettings = createSelector(getSettingsState, fromSettings.getSettings)

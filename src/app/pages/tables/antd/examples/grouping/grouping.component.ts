@@ -10,7 +10,10 @@ export class KitAntdTableGroupingComponent implements OnInit {
   listOfDisplayData: any[] = []
   listOfData: any[] = []
   sortValue: string | null = null
-  filterName = [{ text: 'Joe', value: 'Joe' }, { text: 'John', value: 'John' }]
+  filterName = [
+    { text: 'Joe', value: 'Joe' },
+    { text: 'John', value: 'John' },
+  ]
   searchName: string[] = []
 
   search(searchName: string[]): void {

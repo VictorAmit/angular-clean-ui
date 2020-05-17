@@ -8,8 +8,14 @@ export class KitAntdTableFilterComponent implements OnInit {
   sortName: string | null = null
   sortValue: string | null = null
   searchAddress: string
-  listOfName = [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }]
-  listOfAddress = [{ text: 'London', value: 'London' }, { text: 'Sidney', value: 'Sidney' }]
+  listOfName = [
+    { text: 'Joe', value: 'Joe' },
+    { text: 'Jim', value: 'Jim' },
+  ]
+  listOfAddress = [
+    { text: 'London', value: 'London' },
+    { text: 'Sidney', value: 'Sidney' },
+  ]
   listOfSearchName: string[] = []
   listOfData: Array<{
     name: string

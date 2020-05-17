@@ -76,10 +76,7 @@ export class KitBootstrapTypeaheadExampleComponent implements OnInit {
   click$ = new Subject<string>()
 
   search = (text$: Observable<string>) => {
-    const debouncedText$ = text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-    )
+    const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged())
     const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()))
     const inputFocus$ = this.focus$
 

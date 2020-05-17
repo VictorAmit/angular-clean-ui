@@ -18,8 +18,14 @@ import { Component, OnInit } from '@angular/core'
 export class KitAntdTableResetFilterComponent implements OnInit {
   listOfSearchName: string[] = []
   listOfSearchAddress: string[] = []
-  listOfFilterName = [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }]
-  listOfFilterAddress = [{ text: 'London', value: 'London' }, { text: 'Sidney', value: 'Sidney' }]
+  listOfFilterName = [
+    { text: 'Joe', value: 'Joe' },
+    { text: 'Jim', value: 'Jim' },
+  ]
+  listOfFilterAddress = [
+    { text: 'London', value: 'London' },
+    { text: 'Sidney', value: 'Sidney' },
+  ]
   listOfData = [
     {
       name: 'John Brown',
@@ -89,7 +95,10 @@ export class KitAntdTableResetFilterComponent implements OnInit {
   }
 
   resetFilters(): void {
-    this.listOfFilterName = [{ text: 'Joe', value: 'Joe' }, { text: 'Jim', value: 'Jim' }]
+    this.listOfFilterName = [
+      { text: 'Joe', value: 'Joe' },
+      { text: 'Jim', value: 'Jim' },
+    ]
     this.listOfFilterAddress = [
       { text: 'London', value: 'London' },
       { text: 'Sidney', value: 'Sidney' },
