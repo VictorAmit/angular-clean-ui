@@ -19,9 +19,10 @@
     <div class="mb-4">
       <nz-radio-group [ngModel]="authProvider">
         <label nz-radio nzValue="firebase">Firebase</label>
-        <label nz-radio nzValue="jwt" nzDisabled nzTooltipTitle="Soon" nzTooltipPlacement="top" nz-tooltip>JWT</label>
-        <label nz-radio nzValue="auth0" nzDisabled nzTooltipTitle="Soon" nzTooltipPlacement="top"
-          nz-tooltip>Auth0</label>
+        <label nz-radio nzValue="jwt" nzDisabled nzTooltipTitle="Read docs — Auth/JWT section" nzTooltipPlacement="top"
+          nz-tooltip>JWT</label>
+        <label nz-radio nzValue="auth0" nzDisabled nzTooltipTitle="Read docs — Auth/Auth0 section"
+          nzTooltipPlacement="top" nz-tooltip>Auth0</label>
       </nz-radio-group>
     </div>
     <form nz-form [nzLayout]="'vertical'" [formGroup]="form" (ngSubmit)="submitForm()" role="form">

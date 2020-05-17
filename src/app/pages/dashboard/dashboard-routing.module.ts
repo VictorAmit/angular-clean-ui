@@ -15,25 +15,21 @@ const routes: Routes = [
     path: 'alpha',
     component: DashboardAlphaComponent,
     data: { title: 'Dashboard Alpha' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'beta',
     component: DashboardBetaComponent,
     data: { title: 'Dashboard Beta' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'crypto',
     component: DashboardCryptoComponent,
     data: { title: 'Dashboard Crypto' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'gamma',
     component: DashboardGammaComponent,
     data: { title: 'Dashboard Gamma' },
-    canActivate: [AuthGuard],
   },
 ]
 

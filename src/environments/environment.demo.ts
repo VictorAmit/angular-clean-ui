@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  authenticated: false,
+  authenticated: true,
   hmr: false,
 }

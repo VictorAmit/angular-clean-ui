@@ -13,6 +13,15 @@ interface User {
   role: string
 }
 
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAE5G0RI2LwzwTBizhJbnRKIKbiXQIA1dY',
+  authDomain: 'cleanui-72a42.firebaseapp.com',
+  databaseURL: 'https://cleanui-72a42.firebaseio.com',
+  projectId: 'cleanui-72a42',
+  storageBucket: 'cleanui-72a42.appspot.com',
+  messagingSenderId: '583382839121',
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -26,8 +35,19 @@ export class AuthService {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         const _user = JSON.parse(JSON.stringify(user))
-        // TODO: add role to backend user model and remove this fake role
-        localStorage.setItem('user', JSON.stringify({ ..._user, role: 'admin' }))
+        // TODO: modify this code for your needs
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            id: _user.uid,
+            name: 'Administrator',
+            email: _user.email,
+            role: 'admin',
+            avatar: '',
+            authorized: true, // set app to authorized state
+            loading: false,
+          }),
+        )
       } else {
         localStorage.setItem('user', null)
       }
@@ -47,9 +67,8 @@ export class AuthService {
     }
   }
 
-  get isLoggedIn(): boolean {
-    const user = JSON.parse(localStorage.getItem('user'))
-    return user !== null
+  get getUser() {
+    return this.afAuth.user
   }
 
   async SignOut() {

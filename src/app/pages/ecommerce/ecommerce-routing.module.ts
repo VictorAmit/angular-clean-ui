@@ -16,31 +16,26 @@ const routes: Routes = [
     path: 'dashboard',
     component: EcommerceDashboardComponent,
     data: { title: 'Ecommerce Dashboard' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'orders',
     component: EcommerceOrdersComponent,
     data: { title: 'Ecommerce Orders' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'product-catalog',
     component: EcommerceProductCatalogComponent,
     data: { title: 'Ecommerce Product Catalog' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'product-details',
     component: EcommerceProductDetailsComponent,
     data: { title: 'Ecommerce Product Details' },
-    canActivate: [AuthGuard],
   },
   {
     path: 'cart',
     component: EcommerceCartComponent,
     data: { title: 'Ecommerce Cart' },
-    canActivate: [AuthGuard],
   },
 ]
 

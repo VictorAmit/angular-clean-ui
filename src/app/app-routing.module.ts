@@ -25,46 +25,56 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('src/app/pages/dashboard/dashboard.module').then(m => m.DashboardModule),
       },
       {
         path: 'ecommerce',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('src/app/pages/ecommerce/ecommerce.module').then(m => m.EcommerceModule),
       },
       {
         path: 'apps',
+        canActivate: [AuthGuard],
         loadChildren: () => import('src/app/pages/apps/apps.module').then(m => m.AppsModule),
       },
       {
         path: 'icons',
+        canActivate: [AuthGuard],
         loadChildren: () => import('src/app/pages/icons/icons.module').then(m => m.IconsModule),
       },
       {
         path: 'charts',
+        canActivate: [AuthGuard],
         loadChildren: () => import('src/app/pages/charts/charts.module').then(m => m.ChartsModule),
       },
       {
         path: 'cards',
+        canActivate: [AuthGuard],
         loadChildren: () => import('src/app/pages/cards/cards.module').then(m => m.CardsModule),
       },
       {
         path: 'advanced',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('src/app/pages/advanced/advanced.module').then(m => m.AdvancedModule),
       },
       {
         path: 'widgets',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('src/app/pages/widgets/widgets.module').then(m => m.WidgetsModule),
       },
       {
         path: 'tables',
+        canActivate: [AuthGuard],
         loadChildren: () => import('src/app/pages/tables/tables.module').then(m => m.TablesModule),
       },
       {
         path: 'ui-kits',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('src/app/pages/ui-kits/ui-kits.module').then(m => m.UIKitsModule),
       },
