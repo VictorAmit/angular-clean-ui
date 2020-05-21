@@ -6,7 +6,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar'
 import { QuillModule } from 'ngx-quill'
 import { SortablejsModule } from 'ngx-sortablejs'
 import { NestableModule } from 'ngx-nestable'
-import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
+import { WidgetsComponentsModule } from 'src/app/components/kit/widgets/widgets-components.module'
 
 // Apps
 import { AppsMessagingComponent } from 'src/app/pages/apps/messaging/messaging.component'

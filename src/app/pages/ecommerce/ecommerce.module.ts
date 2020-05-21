@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { EcommerceRouterModule } from './ecommerce-routing.module'
-import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
+import { WidgetsComponentsModule } from 'src/app/components/kit/widgets/widgets-components.module'
 import { FormsModule } from '@angular/forms'
 
 // Ecommerce

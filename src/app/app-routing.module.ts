@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SharedModule } from 'src/app/shared.module'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 import { AppPreloader } from 'src/app/app-routing-loader'
-import { AuthGuard } from 'src/app/components/cui-layout/Guard/auth.guard'
+import { AuthGuard } from 'src/app/components/cleanui/layout/Guard/auth.guard'
 
 // layouts & notfound
 import { LayoutAuthComponent } from 'src/app/layouts/Auth/auth.component'

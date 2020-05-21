@@ -36,8 +36,8 @@
             ],
             "styles": [
               "./node_modules/ng-zorro-antd/style/entry.less",
-              "src/app/components/kit-vendors/antd/themes/default.less",
-              "src/app/components/kit-vendors/antd/themes/dark.less",
+              "src/app/components/kit/vendors/antd/themes/default.less",
+              "src/app/components/kit/vendors/antd/themes/dark.less",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/chartist/dist/chartist.css",
               "./node_modules/quill/dist/quill.core.css",

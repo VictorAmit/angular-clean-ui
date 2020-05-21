@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { SharedModule } from 'src/app/shared.module'
 import { DashboardRouterModule } from './dashboard-routing.module'
-import { WidgetsComponentsModule } from 'src/app/components/kit-widgets/widgets-components.module'
+import { WidgetsComponentsModule } from 'src/app/components/kit/widgets/widgets-components.module'
 import { FormsModule } from '@angular/forms'
 import { ChartistModule } from 'ng-chartist'
 import { NgApexchartsModule } from 'ng-apexcharts'
