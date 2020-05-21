@@ -1,6 +1,7 @@
+/* eslint-disable */
 const GetPostProcessor = function () {
   function Processor(themeName) {
-    this.options = { wrappers: [ `[data-kit-theme="${themeName}"]` ] } || {}
+    this.options = { wrappers: [`[data-kit-theme="${themeName}"]`] } || {}
   }
 
   Processor.prototype = {
@@ -37,7 +38,7 @@ const GetPostProcessor = function () {
 module.exports = {
   install: function (less, pluginManager, functions) {
     const PostProcessor = GetPostProcessor(less)
-    functions.add('apply', function(theme) {
+    functions.add('apply', function (theme) {
       pluginManager.addPostProcessor(new PostProcessor(theme.value))
       return false;
     });
