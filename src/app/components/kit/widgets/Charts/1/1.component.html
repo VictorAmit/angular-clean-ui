@@ -13,11 +13,6 @@
       <div class="text-uppercase text-gray-4">Avg. Per Day</div>
     </div>
   </div>
-  <x-chartist
-    [data]="chartData"
-    [type]="'Bar'"
-    [options]="chartOptions"
-    class="height-300"
-  >
+  <x-chartist [data]="chartData" [type]="'Bar'" [options]="chartOptions" class="height-300 ct-hidden-points">
   </x-chartist>
 </div>

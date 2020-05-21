@@ -17,11 +17,6 @@
       </div>
     </div>
   </div>
-  <x-chartist
-    [data]="chartData"
-    [type]="'Line'"
-    [options]="chartOptions"
-    class="height-200 chart"
-  >
+  <x-chartist [data]="chartData" [type]="'Line'" [options]="chartOptions" class="height-200 chart ct-hidden-points">
   </x-chartist>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import ChartistTooltip from 'chartist-plugin-tooltips-updated'
 declare var require: any
 const data: any = require('./data.json')
 
@@ -18,7 +19,7 @@ export class CuiChart3Component implements OnInit {
       bottom: 0,
     },
     fullWidth: true,
-    showPoint: false,
+    showPoint: true,
     lineSmooth: false,
     axisY: {
       showGrid: false,
@@ -31,6 +32,13 @@ export class CuiChart3Component implements OnInit {
       offset: 0,
     },
     showArea: true,
+    plugins: [
+      ChartistTooltip({
+        anchorToPoint: false,
+        appendToBody: true,
+        seriesName: false,
+      }),
+    ],
   }
 
   events = {

@@ -5,12 +5,7 @@
     </div>
   </div>
   <div class="position-relative">
-    <x-chartist
-      class="ct-chart height-200"
-      [data]="chartData"
-      type="Line"
-      [options]="chartOptions"
-    >
+    <x-chartist class="ct-chart height-200 ct-hidden-points" [data]="chartData" type="Line" [options]="chartOptions">
     </x-chartist>
   </div>
 </div>
