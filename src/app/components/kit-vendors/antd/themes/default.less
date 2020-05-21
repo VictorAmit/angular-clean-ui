@@ -1,13 +1,5 @@
-/* stylelint-disable */
-/* prettier-ignore */
-@plugin (
-  {
-    "wrappers": [
-      "[data-kit-theme=\"default\"]"
-    ]
-  }
-) 'AntdThemeLoader';
-/* stylelint-enable */
+@plugin 'AntdThemeLoader';
+apply("default");
 
 [data-kit-theme="default"] {
   @import '~ng-zorro-antd/components.less';

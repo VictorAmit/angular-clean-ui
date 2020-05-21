@@ -1,7 +1,6 @@
-/* eslint-disable */
-var GetPostProcessor = function () {
-  function Processor(options) {
-    this.options = options || {}
+const GetPostProcessor = function () {
+  function Processor(themeName) {
+    this.options = { wrappers: [ `[data-kit-theme="${themeName}"]` ] } || {}
   }
 
   Processor.prototype = {
@@ -25,10 +24,7 @@ var GetPostProcessor = function () {
         const finderNested = new RegExp(`(?<!^(?<!s))${escapedMark} `, 'g')
         const replaceNestedLine = line.replace(finderNested, '')
         const replaceLine = `${antDesignTemplateMark} ${replaceNestedLine.replace(finder, '')}`
-        const removeTwoSpace = replaceLine.replace(/( {2})/g, ' ')
-        const final = removeTwoSpace
-
-        return final
+        return replaceLine.replace(/( {2})/g, ' ')
       })
 
       return lines.join('\n')
@@ -38,12 +34,12 @@ var GetPostProcessor = function () {
   return Processor;
 }
 
-registerPlugin({
-  install: function (less, pluginManager) {
-    var PostProcessor = GetPostProcessor(less)
-    pluginManager.addPostProcessor(new PostProcessor(this.options))
+module.exports = {
+  install: function (less, pluginManager, functions) {
+    const PostProcessor = GetPostProcessor(less)
+    functions.add('apply', function(theme) {
+      pluginManager.addPostProcessor(new PostProcessor(theme.value))
+      return false;
+    });
   },
-  setOptions: function (theOptions) {
-    this.options = JSON.parse(theOptions.replace(/(\r\n|\n|\r)/gm, ''))
-  },
-})
+}
