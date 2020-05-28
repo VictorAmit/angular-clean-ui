@@ -1,8 +1,8 @@
 ### Clean UI Pro Angular Admin Template Preview ###
-https://angular.cleanuitemplate.com
+https://angular.cleanui.cloud
 
 ### Documentation ###
-Please read documentation here https://docs.cleanuitemplate.com
+Please read documentation here https://docs.sellpixels.com
 
 ### Quick Start ###
 * Install latest node.js: https://nodejs.org​
