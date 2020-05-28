@@ -1,8 +1,7 @@
 import { Component } from '@angular/core'
 
 @Component({
-  selector: 'cui-system-lockscreen',
+  selector: 'cui-system-lockscreen-page',
   templateUrl: './lockscreen.component.html',
-  styleUrls: ['./lockscreen.component.scss'],
 })
-export class LockscreenComponent {}
+export class LockscreenPage {}

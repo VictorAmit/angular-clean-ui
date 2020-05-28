@@ -9,9 +9,6 @@ import { AuthGuard } from 'src/app/components/cleanui/layout/Guard/auth.guard'
 // layouts & notfound
 import { LayoutAuthComponent } from 'src/app/layouts/Auth/auth.component'
 import { LayoutMainComponent } from 'src/app/layouts/Main/main.component'
-import { Error404Component } from 'src/app/pages/auth/404/404.component'
-
-const COMPONENTS = [Error404Component]
 
 const routes: Routes = [
   {
@@ -92,15 +89,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: LayoutAuthComponent,
-    children: [
-      {
-        path: '',
-        component: Error404Component,
-        canActivate: [AuthGuard],
-        data: { title: 'Not Found' },
-      },
-    ],
+    redirectTo: '/auth/404',
   },
 ]
 
@@ -116,7 +105,6 @@ const routes: Routes = [
     LayoutsModule,
   ],
   providers: [AppPreloader],
-  declarations: [...COMPONENTS],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

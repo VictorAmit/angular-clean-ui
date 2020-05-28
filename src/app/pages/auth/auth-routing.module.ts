@@ -4,42 +4,42 @@ import { AuthService } from 'src/app/services/firebase.auth.service'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 
 // system pages
-import { LoginComponent } from 'src/app/pages/auth/login/login.component'
-import { RegisterComponent } from 'src/app/pages/auth/register/register.component'
-import { LockscreenComponent } from 'src/app/pages/auth/lockscreen/lockscreen.component'
-import { ForgotPasswordComponent } from 'src/app/pages/auth/forgot-password/forgot-password.component'
-import { Error500Component } from 'src/app/pages/auth/500/500.component'
-// import { Error404Component } from 'src/app/pages/auth/404/404.component'
+import { LoginPage } from 'src/app/pages/auth/login/login.component'
+import { RegisterPage } from 'src/app/pages/auth/register/register.component'
+import { LockscreenPage } from 'src/app/pages/auth/lockscreen/lockscreen.component'
+import { ForgotPasswordPage } from 'src/app/pages/auth/forgot-password/forgot-password.component'
+import { Error500Page } from 'src/app/pages/auth/500/500.component'
+import { Error404Page } from 'src/app/pages/auth/404/404.component'
 
 const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent,
+    component: LoginPage,
     data: { title: 'Login' },
   },
   {
     path: 'register',
-    component: RegisterComponent,
+    component: RegisterPage,
     data: { title: 'Sign Up' },
   },
   {
     path: 'locksreen',
-    component: LockscreenComponent,
+    component: LockscreenPage,
     data: { title: 'Lockscreen' },
   },
   {
     path: 'forgot-password',
-    component: ForgotPasswordComponent,
+    component: ForgotPasswordPage,
     data: { title: 'Forgot Password' },
   },
-  // {
-  //   path: '404',
-  //   component: Error404Component,
-  //   data: { title: 'Error 404' },
-  // },
+  {
+    path: '404',
+    component: Error404Page,
+    data: { title: 'Error 404' },
+  },
   {
     path: '500',
-    component: Error500Component,
+    component: Error500Page,
     data: { title: 'Error 500' },
   },
 ]

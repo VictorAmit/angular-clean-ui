@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { TranslateModule } from '@ngx-translate/core'
 
-// acl
-import { ACLComponent } from 'src/app/components/cleanui/layout/ACL/acl.component'
+// basic acl
+import { ACLComponent } from 'src/app/components/cleanui/system/ACL/acl.component'
 
 // antd components module
 import { AntdModule } from 'src/app/antd.module'
