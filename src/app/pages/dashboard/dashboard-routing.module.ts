@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { AuthService } from 'src/app/services/firebase.auth.service'
-import { AuthGuard } from 'src/app/components/cleanui/layout/Guard/auth.guard'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 
 // dashboard
@@ -35,7 +33,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [LayoutsModule, RouterModule.forChild(routes)],
-  providers: [AuthService],
+  providers: [],
   exports: [RouterModule],
 })
 export class DashboardRouterModule {}

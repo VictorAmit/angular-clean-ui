@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
-import { AuthService } from 'src/app/services/firebase.auth.service'
 import { LayoutsModule } from 'src/app/layouts/layouts.module'
 
 // system pages
@@ -46,7 +45,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [LayoutsModule, RouterModule.forChild(routes)],
-  providers: [AuthService],
+  providers: [],
   exports: [RouterModule],
 })
 export class AuthRouterModule {}

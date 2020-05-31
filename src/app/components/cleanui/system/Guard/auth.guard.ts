@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core'
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router'
-import { AuthService } from 'src/app/services/firebase.auth.service'
 import { Observable } from 'rxjs'
 import { environment } from 'src/environments/environment'
-import { take, map } from 'rxjs/operators'
+import { select, Store } from '@ngrx/store'
+import * as Reducers from 'src/app/store/reducers'
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  constructor(public authService: AuthService, public router: Router) {}
+  authorized: boolean
+
+  constructor(private store: Store<any>, public router: Router) {
+    this.store.pipe(select(Reducers.getUser)).subscribe(state => {
+      this.authorized = state.authorized
+    })
+  }
 
   canActivate(
     next: ActivatedRouteSnapshot,
@@ -20,15 +26,11 @@ export class AuthGuard implements CanActivate {
       return true
     }
 
-    return this.authService.getUser.pipe(
-      take(1),
-      map(user => {
-        if (user) {
-          return true
-        }
-        this.router.navigate(['auth/login'], { queryParams: { returnUrl: state.url } })
-        return false
-      }),
-    )
+    if (this.authorized) {
+      return true
+    }
+
+    this.router.navigate(['auth/login'], { queryParams: { returnUrl: state.url } })
+    return false
   }
 }

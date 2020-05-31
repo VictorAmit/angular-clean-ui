@@ -3,7 +3,7 @@ import { Router, NavigationStart } from '@angular/router'
 import { filter } from 'rxjs/operators'
 import * as _ from 'lodash'
 import { select, Store } from '@ngrx/store'
-import { MenuService } from 'src/app/services/menu.service'
+import { MenuService } from 'src/app/services/menu'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
@@ -20,16 +20,17 @@ export class MenuTopComponent implements OnInit {
   role: String
 
   constructor(private menuService: MenuService, private store: Store<any>, private router: Router) {
-    const userInfo = JSON.parse(localStorage.getItem('user'))
-    this.role = userInfo ? userInfo.role : null
-  }
-
-  ngOnInit() {
+    this.store.pipe(select(Reducers.getUser)).subscribe(state => {
+      this.role = state.role
+    })
     this.menuService.getMenuData().subscribe(menuData => (this.menuData = menuData))
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.logo = state.logo
       this.menuColor = state.menuColor
     })
+  }
+
+  ngOnInit() {
     this.activateMenu(this.router.url)
     this.router.events
       .pipe(filter(event => event instanceof NavigationStart))

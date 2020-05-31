@@ -7,25 +7,25 @@
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
       <li nz-menu-item>
-        <strong>{{ 'topBar.profileMenu.hello' | translate }}, {{userName || 'Administrator'}}</strong>
+        <strong>{{ 'topBar.profileMenu.hello' | translate }}, {{name || 'Anonymous'}}</strong>
         <div>
           <strong class="mr-1">
             {{ 'topBar.profileMenu.billingPlan' | translate }}:
           </strong>
-          {{billingPlan}}
+          Professional
         </div>
         <div>
           <strong>
             {{ 'topBar.profileMenu.role' | translate }}:
           </strong>
-          {{role}}
+          {{role || '—'}}
         </div>
       </li>
       <li nz-menu-divider></li>
       <li nz-menu-item>
         <div>
           <strong>{{ 'topBar.profileMenu.email' | translate }}: </strong>
-          {{email}}
+          {{email || '—'}}
           <br />
           <strong>{{ 'topBar.profileMenu.phone' | translate }}: </strong>
           {{phone || '—'}}

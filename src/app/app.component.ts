@@ -129,8 +129,8 @@ export class AppComponent implements OnInit {
       const _isMobileView = window.innerWidth < 768
       const _isTabletView = window.innerWidth < 992
       const _isDesktopView = !_isMobileView && !_isTabletView
-      const isMobileView = JSON.parse(window.localStorage.getItem('app.settings.isMobileView'))
-      const isTabletView = JSON.parse(window.localStorage.getItem('app.settings.isTabletView'))
+      const isMobileView = store.get('app.settings.isMobileView')
+      const isTabletView = store.get('app.settings.isTabletView')
       const isDesktopView = !isMobileView && !isTabletView
       if (_isDesktopView && (_isDesktopView !== isDesktopView || load)) {
         setViewPort(false, false)

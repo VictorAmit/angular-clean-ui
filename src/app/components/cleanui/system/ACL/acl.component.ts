@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core'
-import { Observable } from 'rxjs'
-import { AuthService } from 'src/app/services/firebase.auth.service'
+import { Component, Input } from '@angular/core'
+import { select, Store } from '@ngrx/store'
+import * as Reducers from 'src/app/store/reducers'
 
 @Component({
   selector: 'cui-acl',
@@ -8,15 +8,13 @@ import { AuthService } from 'src/app/services/firebase.auth.service'
     <ng-content *ngIf="authorized"></ng-content>
   `,
 })
-export class ACLComponent implements OnInit {
+export class ACLComponent {
   @Input() roles: any[] = []
   authorized: Boolean = false
-  role: string = ''
 
-  constructor(public authService: AuthService) {}
-
-  ngOnInit() {
-    const user = JSON.parse(localStorage.getItem('user'))
-    this.authorized = this.roles.includes(user.role)
+  constructor(private store: Store<any>) {
+    this.store.pipe(select(Reducers.getUser)).subscribe(state => {
+      this.authorized = this.roles.includes(state.role)
+    })
   }
 }

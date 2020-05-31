@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import store from 'store'
 import { NzMessageService } from 'ng-zorro-antd/message'
-import { MenuService } from 'src/app/services/menu.service'
+import { MenuService } from 'src/app/services/menu'
 
 @Component({
   selector: 'cui-topbar-fav-pages',

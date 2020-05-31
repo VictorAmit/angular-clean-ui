@@ -3,7 +3,7 @@ import { Router, NavigationStart } from '@angular/router'
 import { Store } from '@ngrx/store'
 import { filter } from 'rxjs/operators'
 import { reduce } from 'lodash'
-import { MenuService } from 'src/app/services/menu.service'
+import { MenuService } from 'src/app/services/menu'
 
 @Component({
   selector: 'cui-breadcrumbs',

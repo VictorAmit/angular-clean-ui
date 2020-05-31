@@ -1,5 +1,7 @@
 import { Component } from '@angular/core'
-import { AuthService } from 'src/app/services/firebase.auth.service'
+import { select, Store } from '@ngrx/store'
+import * as UserActions from 'src/app/store/user/actions'
+import * as Reducers from 'src/app/store/reducers'
 
 @Component({
   selector: 'cui-topbar-user-menu',
@@ -8,19 +10,17 @@ import { AuthService } from 'src/app/services/firebase.auth.service'
 })
 export class TopbarUserMenuComponent {
   badgeCount: number = 7
-  userName: string
-  billingPlan: string
-  email: string
-  phone: string
-  role: string
+  name: string = ''
+  role: string = ''
+  email: string = ''
+  phone: string = ''
 
-  constructor(public authService: AuthService) {
-    const userInfo = JSON.parse(localStorage.getItem('user'))
-    this.userName = userInfo ? userInfo.displayName : 'Anonymous'
-    this.billingPlan = 'Professional'
-    this.email = userInfo ? userInfo.email : ''
-    this.phone = userInfo ? userInfo.phoneNumber : '-'
-    this.role = 'admin'
+  constructor(private store: Store<any>) {
+    this.store.pipe(select(Reducers.getUser)).subscribe(state => {
+      this.name = state.name
+      this.role = state.role
+      this.email = state.email
+    })
   }
 
   badgeCountIncrease() {
@@ -28,6 +28,6 @@ export class TopbarUserMenuComponent {
   }
 
   logout() {
-    this.authService.SignOut()
+    this.store.dispatch(new UserActions.Logout())
   }
 }

@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule, LOCALE_ID } from '@angular/core'
 import { TranslateModule } from '@ngx-translate/core'
 import { FormsModule } from '@angular/forms'
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { NgProgressModule } from '@ngx-progressbar/core'
 import { NgProgressRouterModule } from '@ngx-progressbar/router'
@@ -15,13 +15,15 @@ import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { StoreModule } from '@ngrx/store'
+import { EffectsModule } from '@ngrx/effects'
 import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { reducers, metaReducers } from './store/reducers'
-import { firebaseConfig } from './services/firebase.auth.service'
+import { UserEffects } from './store/user/effects'
+import { firebaseConfig, firebaseAuthService } from './services/firebase'
+import { jwtAuthService } from './services/jwt'
+import { MockHttpCallInterceptor } from './services/fakeApi'
 
-/**
- * Locale Registration
- */
+// locale resistration
 import { registerLocaleData } from '@angular/common'
 import { default as localeEn } from '@angular/common/locales/en'
 import { NZ_I18N, en_US as localeZorro } from 'ng-zorro-antd'
@@ -38,17 +40,17 @@ registerLocaleData(localeEn, 'en')
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    HttpClientModule,
+    AppRoutingModule,
+
+    // translate
     TranslateModule.forRoot(),
-    /**
-     * NgRx Store
-     */
+
+    // ngrx
     StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([UserEffects]),
     StoreRouterConnectingModule.forRoot(),
 
-    /**
-     * Nprogress Modules
-     */
+    // nprogress
     NgProgressModule.withConfig({
       thick: true,
       spinner: false,
@@ -57,19 +59,29 @@ registerLocaleData(localeEn, 'en')
     NgProgressRouterModule,
     NgProgressHttpModule,
 
-    /**
-     * Firebase Modules
-     */
+    // init firebase
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-
-    /**
-     * Routing Module
-     */
-    AppRoutingModule,
   ],
-  providers: [...LOCALE_PROVIDERS, { provide: SETTINGS, useValue: {} }],
+  providers: [
+    // auth services
+    firebaseAuthService,
+    jwtAuthService,
+
+    // fake http interceptors
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: MockHttpCallInterceptor,
+      multi: true,
+    },
+
+    // locale providers
+    ...LOCALE_PROVIDERS,
+
+    // firestore settings
+    { provide: SETTINGS, useValue: {} },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

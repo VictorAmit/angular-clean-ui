@@ -8,10 +8,12 @@ import {
 import { environment } from 'src/environments/environment'
 import * as fromRouter from '@ngrx/router-store'
 import * as fromSettings from './settings/reducers'
+import * as fromUser from './user/reducers'
 
 export const reducers: ActionReducerMap<any> = {
   router: fromRouter.routerReducer,
   settings: fromSettings.reducer,
+  user: fromUser.reducer,
 }
 
 export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
@@ -29,5 +31,7 @@ export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [logger] : []
 
 export const getSettingsState = createFeatureSelector<any>('settings')
-
 export const getSettings = createSelector(getSettingsState, fromSettings.getSettings)
+
+export const getUserState = createFeatureSelector<any>('user')
+export const getUser = createSelector(getUserState, fromUser.getUser)
