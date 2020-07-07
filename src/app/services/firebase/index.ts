@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core'
 import { AngularFireAuth } from '@angular/fire/auth'
 import { AngularFireDatabase } from '@angular/fire/database'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { NzNotificationService } from 'ng-zorro-antd'
 import { select, Store } from '@ngrx/store'
 import * as Reducers from 'src/app/store/reducers'
@@ -35,6 +35,7 @@ export class firebaseAuthService {
     public firebaseAuth: AngularFireAuth,
     public firebaseDatabase: AngularFireDatabase,
     public router: Router,
+    public route: ActivatedRoute,
     private notification: NzNotificationService,
     private store: Store<any>,
   ) {
@@ -62,7 +63,11 @@ export class firebaseAuthService {
               authorized: true,
               loading: false,
             }
-            this.router.navigate(['/']) // trigger router
+            if (this.route.snapshot.queryParams.returnUrl) {
+              this.router.navigate([this.route.snapshot.queryParams.returnUrl]) // // redirect to returnUrl
+            } else if (this.router.url.includes('/auth')) {
+              this.router.navigate(['/']) // redirect to root route on auth pages
+            }
             this.store.dispatch(new UserActions.LoadCurrentAccountSuccessful(userData)) // save userData to store
           })
       }

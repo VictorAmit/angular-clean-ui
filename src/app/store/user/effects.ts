@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { Actions, Effect, ofType, OnInitEffects } from '@ngrx/effects'
 import { Action, select, Store } from '@ngrx/store'
 import { Observable, of, empty, from } from 'rxjs'
@@ -19,6 +19,7 @@ export class UserEffects implements OnInitEffects {
     private jwtAuthService: jwtAuthService,
     private firebaseAuthService: firebaseAuthService,
     private router: Router,
+    private route: ActivatedRoute,
     private rxStore: Store<any>,
     private notification: NzNotificationService,
   ) {}
@@ -125,7 +126,11 @@ export class UserEffects implements OnInitEffects {
         return this.jwtAuthService.currentAccount().pipe(
           map(response => {
             if (response && (response.email || response.user)) {
-              this.router.navigate(['/'])
+              if (this.route.snapshot.queryParams.returnUrl) {
+                this.router.navigate([this.route.snapshot.queryParams.returnUrl]) // // redirect to returnUrl
+              } else if (this.router.url.includes('/auth')) {
+                this.router.navigate(['/']) // redirect to root route on auth pages
+              }
               return new UserActions.LoadCurrentAccountSuccessful(response)
             }
             return new UserActions.LoadCurrentAccountUnsuccessful()
